@@ -1,0 +1,15 @@
+C:\Users\Carmen Alas\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\SIFI\bin\Debug\SIFI.exe.config
+C:\Users\Carmen Alas\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\SIFI\bin\Debug\SIFI.exe
+C:\Users\Carmen Alas\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\SIFI\bin\Debug\SIFI.pdb
+C:\Users\Carmen Alas\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\SIFI\bin\Debug\MySql.Data.dll
+C:\Users\Carmen Alas\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\SIFI\bin\Debug\MySql.Data.xml
+C:\Users\Carmen Alas\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\SIFI\obj\Debug\SIFI.csproj.AssemblyReference.cache
+C:\Users\Carmen Alas\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\SIFI\obj\Debug\SIFI.GUI.Login.resources
+C:\Users\Carmen Alas\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\SIFI\obj\Debug\SIFI.GUI.Main.resources
+C:\Users\Carmen Alas\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\SIFI\obj\Debug\SIFI.GUI.Splash.resources
+C:\Users\Carmen Alas\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\SIFI\obj\Debug\SIFI.Properties.Resources.resources
+C:\Users\Carmen Alas\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\SIFI\obj\Debug\SIFI.csproj.GenerateResource.cache
+C:\Users\Carmen Alas\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\SIFI\obj\Debug\SIFI.csproj.CoreCompileInputs.cache
+C:\Users\Carmen Alas\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\SIFI\obj\Debug\SIFI.csproj.CopyComplete
+C:\Users\Carmen Alas\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\SIFI\obj\Debug\SIFI.exe
+C:\Users\Carmen Alas\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\SIFI\obj\Debug\SIFI.pdb
