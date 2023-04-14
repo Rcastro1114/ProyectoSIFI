@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBConexion.cs" />
+    <Compile Include="DBConsultas.cs" />
     <Compile Include="DBOperacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
