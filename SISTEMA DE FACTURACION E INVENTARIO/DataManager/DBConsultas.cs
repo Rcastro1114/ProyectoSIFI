@@ -35,7 +35,7 @@ namespace DataManager
         public static DataTable ROLES()
         {
             DataTable Resultado = new DataTable();
-            String Sentencia = @"SELECT IDRol, Rol FROM roles;";
+            String Sentencia = @"SELECT idRoles, Roles FROM roles;";
             DBOperacion Consultor = new DBOperacion();
             try
             {

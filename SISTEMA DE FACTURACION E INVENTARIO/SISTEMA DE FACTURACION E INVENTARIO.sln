@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIFI", "SIFI\SIFI.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataManager", "DataManager\DataManager.csproj", "{3C3073D0-28DF-4BD9-8B01-1310EC0AA86E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SessionManager", "SessionManager\SessionManager.csproj", "{C48C88F1-7304-46CF-9660-4FE91FB71006}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3C3073D0-28DF-4BD9-8B01-1310EC0AA86E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C3073D0-28DF-4BD9-8B01-1310EC0AA86E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C3073D0-28DF-4BD9-8B01-1310EC0AA86E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C48C88F1-7304-46CF-9660-4FE91FB71006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C48C88F1-7304-46CF-9660-4FE91FB71006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C48C88F1-7304-46CF-9660-4FE91FB71006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C48C88F1-7304-46CF-9660-4FE91FB71006}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
