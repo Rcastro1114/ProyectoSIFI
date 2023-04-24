@@ -23,7 +23,7 @@ namespace SIFI.CLS
             Boolean Resultado = true;
             GUI.Login f = new GUI.Login();
             f.ShowDialog();
-            //Resultado = f.Autorizado;
+            Resultado = f.Autorizado;
 
             return Resultado;
         }

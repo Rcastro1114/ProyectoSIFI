@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("DataManager")]
+[assembly: AssemblyTitle("SessionManager")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DataManager")]
+[assembly: AssemblyProduct("SessionManager")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // El siguiente GUID sirve como id. de typelib si este proyecto se expone a COM.
-[assembly: Guid("3c3073d0-28df-4bd9-8b01-1310ec0aa86e")]
+[assembly: Guid("c48c88f1-7304-46cf-9660-4fe91fb71006")]
 
 // La información de versión de un ensamblado consta de los cuatro valores siguientes:
 //
