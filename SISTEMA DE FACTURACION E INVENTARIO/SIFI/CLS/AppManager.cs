@@ -24,7 +24,6 @@ namespace SIFI.CLS
             GUI.Login f = new GUI.Login();
             f.ShowDialog();
             Resultado = f.Autorizado;
-
             return Resultado;
         }
 

@@ -12,6 +12,11 @@ namespace SIFI.GUI
 {
     public partial class Login : Form
     {
+        SessionManager.Session oSesion = SessionManager.Session.Instancia;
+        Boolean _Autorizado = false;
+
+        public bool Autorizado { get => _Autorizado; }
+
         public Login()
         {
             InitializeComponent();
@@ -19,16 +24,18 @@ namespace SIFI.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-               // DataManager.DBConexion o = new DataManager.DBConexion();
-                //if (o.Conectar())
-                //{
-                  //  MessageBox.Show("Conectado");
-                   // o.Desconectar();
-                //}
-
-
-            
+            if (oSesion.IniciarSesion(txtUsuario.Text, txtClave.Text))
+            {
+                _Autorizado = true;
+                Close();
+            }
+            else
+            {
+                _Autorizado = false;
+                lblMensaje.Text = "USUARIO O CLAVE INCORRECTOS";
+                txtClave.Focus();
+                txtClave.SelectAll();
+            }
         }
     }
 }
