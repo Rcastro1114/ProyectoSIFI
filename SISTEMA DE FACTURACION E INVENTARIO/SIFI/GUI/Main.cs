@@ -19,7 +19,7 @@ namespace SIFI.GUI
             InitializeComponent();
         }
 
-<<<<<<< Updated upstream
+
         private void ShowNewForm(object sender, EventArgs e)
         {
             Form childForm = new Form();
@@ -104,8 +104,5 @@ namespace SIFI.GUI
                 childForm.Close();
             }
         }
-=======
-
->>>>>>> Stashed changes
     }
 }
