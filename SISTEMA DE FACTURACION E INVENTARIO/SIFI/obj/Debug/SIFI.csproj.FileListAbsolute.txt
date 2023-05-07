@@ -47,3 +47,7 @@ C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO
 C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\SIFI\bin\Debug\SessionManager.dll
 C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\SIFI\bin\Debug\DataManager.pdb
 C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\SIFI\bin\Debug\SessionManager.pdb
+C:\Users\Rebeca Hernández\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\SIFI\bin\Debug\DataManager.dll
+C:\Users\Rebeca Hernández\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\SIFI\bin\Debug\SessionManager.dll
+C:\Users\Rebeca Hernández\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\SIFI\bin\Debug\DataManager.pdb
+C:\Users\Rebeca Hernández\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\SIFI\bin\Debug\SessionManager.pdb
