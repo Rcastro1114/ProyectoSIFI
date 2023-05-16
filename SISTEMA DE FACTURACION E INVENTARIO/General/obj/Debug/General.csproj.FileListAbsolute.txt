@@ -12,3 +12,4 @@ C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO
 C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.csproj.CopyComplete
 C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.dll
 C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.pdb
+C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.GUI.RolesEdicion.resources

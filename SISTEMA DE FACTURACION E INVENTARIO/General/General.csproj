@@ -44,6 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CLS\Empleados.cs" />
+    <Compile Include="CLS\Rol.cs" />
+    <Compile Include="GUI\RolesEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\RolesEdicion.Designer.cs">
+      <DependentUpon>RolesEdicion.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\RolesGestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +72,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\RolesEdicion.resx">
+      <DependentUpon>RolesEdicion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\RolesGestion.resx">
       <DependentUpon>RolesGestion.cs</DependentUpon>
     </EmbeddedResource>
