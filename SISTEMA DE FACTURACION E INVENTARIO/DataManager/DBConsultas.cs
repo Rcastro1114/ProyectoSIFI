@@ -47,5 +47,20 @@ namespace DataManager
             }
             return Resultado;
         }
+
+        public static DataTable EMPLEADOS()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"SELECT idRoles, Roles FROM roles;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
     }
 }

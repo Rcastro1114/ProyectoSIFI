@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace DataManager
 {
-    class DBOperacion:DBConexion
+    public class DBOperacion:DBConexion
     {
         public Int32 EjecutarSentencia(String pSentencia)
         {
