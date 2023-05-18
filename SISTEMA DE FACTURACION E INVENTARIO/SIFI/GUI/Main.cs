@@ -38,5 +38,33 @@ namespace SIFI.GUI
             {
             }
         }
+
+        private void gestionDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                General.GUI.ClientesGestion f = new General.GUI.ClientesGestion();
+                f.MdiParent = this;
+                f.Show();
+
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void gestionDeDireccionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                General.GUI.DireccionesGestion f = new General.GUI.DireccionesGestion();
+                f.MdiParent = this;
+                f.Show();
+
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 }

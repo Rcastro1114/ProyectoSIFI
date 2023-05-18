@@ -43,8 +43,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CLS\Clientes.cs" />
+    <Compile Include="CLS\Departaments.cs" />
+    <Compile Include="CLS\Direcciones.cs" />
     <Compile Include="CLS\Empleados.cs" />
     <Compile Include="CLS\Rol.cs" />
+    <Compile Include="GUI\ClientesGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ClientesGestion.Designer.cs">
+      <DependentUpon>ClientesGestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DireccionesGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DireccionesGestion.Designer.cs">
+      <DependentUpon>DireccionesGestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\RolesEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +87,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\ClientesGestion.resx">
+      <DependentUpon>ClientesGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DireccionesGestion.resx">
+      <DependentUpon>DireccionesGestion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\RolesEdicion.resx">
       <DependentUpon>RolesEdicion.cs</DependentUpon>
     </EmbeddedResource>

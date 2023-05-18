@@ -37,5 +37,11 @@ namespace SIFI.GUI
                 txtClave.SelectAll();
             }
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            txtUsuario.Text = "RCASTRO";
+            txtClave.Text = "rC@str0";
+        }
     }
 }

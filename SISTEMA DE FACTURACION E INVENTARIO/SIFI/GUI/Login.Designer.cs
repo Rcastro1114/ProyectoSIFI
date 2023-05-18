@@ -31,12 +31,12 @@ namespace SIFI.GUI
         {
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblMensaje = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtClave = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblMensaje = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,6 +66,19 @@ namespace SIFI.GUI
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(238, 359);
             this.panel1.TabIndex = 1;
+            // 
+            // lblMensaje
+            // 
+            this.lblMensaje.BackColor = System.Drawing.Color.Maroon;
+            this.lblMensaje.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMensaje.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensaje.ForeColor = System.Drawing.Color.White;
+            this.lblMensaje.Location = new System.Drawing.Point(36, 282);
+            this.lblMensaje.Name = "lblMensaje";
+            this.lblMensaje.Size = new System.Drawing.Size(169, 59);
+            this.lblMensaje.TabIndex = 5;
+            this.lblMensaje.Text = "Escriba sus credenciales";
+            this.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -113,19 +126,6 @@ namespace SIFI.GUI
             this.label1.TabIndex = 1;
             this.label1.Text = "Usuario";
             // 
-            // lblMensaje
-            // 
-            this.lblMensaje.BackColor = System.Drawing.Color.Maroon;
-            this.lblMensaje.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblMensaje.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensaje.ForeColor = System.Drawing.Color.White;
-            this.lblMensaje.Location = new System.Drawing.Point(36, 282);
-            this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(169, 59);
-            this.lblMensaje.TabIndex = 5;
-            this.lblMensaje.Text = "Escriba sus credenciales";
-            this.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -136,6 +136,7 @@ namespace SIFI.GUI
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Login";
             this.Text = "Inicio de sesion";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

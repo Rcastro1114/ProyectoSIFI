@@ -34,11 +34,13 @@ namespace SIFI.GUI
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.generalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeRolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblRol = new System.Windows.Forms.ToolStripStatusLabel();
-            this.gestionDeRolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeDireccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -56,10 +58,26 @@ namespace SIFI.GUI
             // generalToolStripMenuItem
             // 
             this.generalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionDeRolesToolStripMenuItem});
+            this.gestionDeRolesToolStripMenuItem,
+            this.gestionDeClientesToolStripMenuItem,
+            this.gestionDeDireccionesToolStripMenuItem});
             this.generalToolStripMenuItem.Name = "generalToolStripMenuItem";
             this.generalToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.generalToolStripMenuItem.Text = "General";
+            // 
+            // gestionDeRolesToolStripMenuItem
+            // 
+            this.gestionDeRolesToolStripMenuItem.Name = "gestionDeRolesToolStripMenuItem";
+            this.gestionDeRolesToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.gestionDeRolesToolStripMenuItem.Text = "Gestión de Roles";
+            this.gestionDeRolesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeRolesToolStripMenuItem_Click);
+            // 
+            // gestionDeClientesToolStripMenuItem
+            // 
+            this.gestionDeClientesToolStripMenuItem.Name = "gestionDeClientesToolStripMenuItem";
+            this.gestionDeClientesToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.gestionDeClientesToolStripMenuItem.Text = "Gestion de Clientes";
+            this.gestionDeClientesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeClientesToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
@@ -96,12 +114,12 @@ namespace SIFI.GUI
             this.lblRol.Size = new System.Drawing.Size(56, 21);
             this.lblRol.Text = "ROL";
             // 
-            // gestionDeRolesToolStripMenuItem
+            // gestionDeDireccionesToolStripMenuItem
             // 
-            this.gestionDeRolesToolStripMenuItem.Name = "gestionDeRolesToolStripMenuItem";
-            this.gestionDeRolesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.gestionDeRolesToolStripMenuItem.Text = "Gestión de Roles";
-            this.gestionDeRolesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeRolesToolStripMenuItem_Click);
+            this.gestionDeDireccionesToolStripMenuItem.Name = "gestionDeDireccionesToolStripMenuItem";
+            this.gestionDeDireccionesToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.gestionDeDireccionesToolStripMenuItem.Text = "Gestion de Direcciones";
+            this.gestionDeDireccionesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeDireccionesToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -132,6 +150,8 @@ namespace SIFI.GUI
         private System.Windows.Forms.ToolStripStatusLabel lblUsuario;
         private System.Windows.Forms.ToolStripStatusLabel lblRol;
         private System.Windows.Forms.ToolStripMenuItem gestionDeRolesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDeClientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDeDireccionesToolStripMenuItem;
     }
 }
 

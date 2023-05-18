@@ -48,6 +48,38 @@ namespace DataManager
             return Resultado;
         }
 
+        public static DataTable DEPARTAMENTOS()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"SELECT idDepartamentos, Departamentos FROM departamentos;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        public static DataTable DIRECCIONES()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"SELECT idDirecciones, Residencia, Canton, Cacerio,idMunicipios FROM direcciones;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
         public static DataTable EMPLEADOS()
         {
             DataTable Resultado = new DataTable();
