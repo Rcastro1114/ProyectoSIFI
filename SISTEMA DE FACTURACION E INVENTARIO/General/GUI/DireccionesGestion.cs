@@ -14,20 +14,38 @@ namespace General.GUI
     {
         BindingSource _DATOS = new BindingSource();
 
-        private void CargarDatos()
+        private void CargarMunicipios()
         {
+            DataTable oMunicipios = new DataTable();
             try
             {
-                _DATOS.DataSource = DataManager.DBConsultas.DIRECCIONES();
-                dtgvDirecciones.AutoGenerateColumns = false;
-                dtgvDirecciones.DataSource = _DATOS;
-                lblRegistrosClt.Text = dtgvDirecciones.Rows.Count.ToString() + " Registros Encontrados";
+                oMunicipios = DataManager.DBConsultas.MUNICIPIOS();
+                cbboMunicipios.DataSource = oMunicipios;
+                cbboMunicipios.DisplayMember = "municipios";
+                cbboMunicipios.ValueMember = "idMunicipios";
             }
             catch (Exception)
             {
 
             }
         }
+
+        private void CargarDirecciones()
+        {
+            DataTable oDirecciones = new DataTable();
+            String pIDMunicipios = cbboMunicipios.SelectedValue.ToString();
+            try
+            {
+                oDirecciones = DataManager.DBConsultas.MOSTRAR_DIRECCIONES();
+                dtgvDirecciones.DataSource = oDirecciones;
+                lblRegistrosClt.Text = dtgvDirecciones.Rows.Count.ToString() + " Registros Encontrados";
+            }
+            catch(Exception)
+            {
+
+            }
+        }
+
         public DireccionesGestion()
         {
             InitializeComponent();
@@ -35,14 +53,56 @@ namespace General.GUI
 
         private void DireccionesGestion_Load(object sender, EventArgs e)
         {
-            CargarDatos();
+            CargarMunicipios();
+            CargarDirecciones();
         }
 
-        private void btn_Agregar_Click(object sender, EventArgs e)
+        private void btn_Guardar_Click(object sender, EventArgs e)
         {
-            DireccionesEdicion f = new DireccionesEdicion();
-            f.ShowDialog();
-            CargarDatos();
+            CLS.Direcciones oDirecciones = new CLS.Direcciones();
+            oDirecciones.Residencia = txt_Residencia.Text;
+            oDirecciones.Canton = txt_Canton.Text;
+            oDirecciones.Cacerio = txt_Cacerio.Text;
+            oDirecciones.IdMunicipios = int.Parse(cbboMunicipios.SelectedValue.ToString());
+            oDirecciones.IdDirecciones = txt_idDirecciones.Text;
+
+            if (txt_idDirecciones.TextLength > 0)
+            {
+                if (oDirecciones.Actualizar())
+                {
+                    MessageBox.Show("¡Registro actualizado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("¡El registro no fue actualizado!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                if (oDirecciones.Insertar())
+                {
+                    MessageBox.Show("¡Registro agregado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("¡El registro no fue agregado!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
+        }
+
+        private void btn_Actualizar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Realmente desea EDITAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                DireccionesGestion f = new DireccionesGestion();
+                f.txt_idDirecciones.Text = dtgvDirecciones.CurrentRow.Cells["idDirecciones"].Value.ToString();
+                f.txt_Residencia.Text = dtgvDirecciones.CurrentRow.Cells["Residencia"].Value.ToString();
+                f.ShowDialog();
+                CargarDirecciones();               
+            }
         }
     }
 }

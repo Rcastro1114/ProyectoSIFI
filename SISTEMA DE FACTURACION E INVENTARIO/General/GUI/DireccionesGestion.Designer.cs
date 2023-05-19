@@ -29,74 +29,34 @@ namespace General.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DireccionesGestion));
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btn_Editar = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btn_Agregar = new System.Windows.Forms.ToolStripLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblRegistrosClt = new System.Windows.Forms.ToolStripStatusLabel();
             this.dtgvDirecciones = new System.Windows.Forms.DataGridView();
-            this.idDirecciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Residencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Canton = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cecerio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idMunicipios = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStrip1.SuspendLayout();
+            this.txt_idDirecciones = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbboMunicipios = new System.Windows.Forms.ComboBox();
+            this.txt_Cacerio = new System.Windows.Forms.TextBox();
+            this.txt_Canton = new System.Windows.Forms.TextBox();
+            this.txt_Residencia = new System.Windows.Forms.TextBox();
+            this.btn_Guardar = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btn_Actualizar = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDirecciones)).BeginInit();
             this.SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSeparator1,
-            this.btn_Editar,
-            this.toolStripSeparator2,
-            this.btn_Agregar});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(545, 25);
-            this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btn_Editar
-            // 
-            this.btn_Editar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Editar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Editar.Image")));
-            this.btn_Editar.Name = "btn_Editar";
-            this.btn_Editar.Size = new System.Drawing.Size(64, 22);
-            this.btn_Editar.Text = "Editar";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btn_Agregar
-            // 
-            this.btn_Agregar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Agregar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Agregar.Image")));
-            this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Size = new System.Drawing.Size(79, 22);
-            this.btn_Agregar.Text = "Agregar";
-            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
             // statusStrip1
             // 
             this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblRegistrosClt});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 310);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 392);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(545, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1025, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -112,71 +72,146 @@ namespace General.GUI
             this.dtgvDirecciones.AllowUserToDeleteRows = false;
             this.dtgvDirecciones.BackgroundColor = System.Drawing.Color.White;
             this.dtgvDirecciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvDirecciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDirecciones,
-            this.Residencia,
-            this.Canton,
-            this.Cecerio,
-            this.idMunicipios});
-            this.dtgvDirecciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvDirecciones.Location = new System.Drawing.Point(0, 25);
             this.dtgvDirecciones.Name = "dtgvDirecciones";
             this.dtgvDirecciones.ReadOnly = true;
-            this.dtgvDirecciones.Size = new System.Drawing.Size(545, 285);
+            this.dtgvDirecciones.Size = new System.Drawing.Size(636, 364);
             this.dtgvDirecciones.TabIndex = 3;
             // 
-            // idDirecciones
+            // txt_idDirecciones
             // 
-            this.idDirecciones.DataPropertyName = "idDirecciones";
-            this.idDirecciones.HeaderText = "idDirecciones";
-            this.idDirecciones.Name = "idDirecciones";
-            this.idDirecciones.ReadOnly = true;
+            this.txt_idDirecciones.Location = new System.Drawing.Point(729, 49);
+            this.txt_idDirecciones.Name = "txt_idDirecciones";
+            this.txt_idDirecciones.ReadOnly = true;
+            this.txt_idDirecciones.Size = new System.Drawing.Size(100, 20);
+            this.txt_idDirecciones.TabIndex = 9;
             // 
-            // Residencia
+            // label1
             // 
-            this.Residencia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Residencia.DataPropertyName = "Residencia";
-            this.Residencia.HeaderText = "Residencia";
-            this.Residencia.Name = "Residencia";
-            this.Residencia.ReadOnly = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(652, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "idDirecciones";
             // 
-            // Canton
+            // cbboMunicipios
             // 
-            this.Canton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Canton.DataPropertyName = "Canton";
-            this.Canton.HeaderText = "Canton";
-            this.Canton.Name = "Canton";
-            this.Canton.ReadOnly = true;
+            this.cbboMunicipios.FormattingEnabled = true;
+            this.cbboMunicipios.Location = new System.Drawing.Point(729, 279);
+            this.cbboMunicipios.Name = "cbboMunicipios";
+            this.cbboMunicipios.Size = new System.Drawing.Size(270, 21);
+            this.cbboMunicipios.TabIndex = 20;
             // 
-            // Cecerio
+            // txt_Cacerio
             // 
-            this.Cecerio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Cecerio.DataPropertyName = "Cacerio";
-            this.Cecerio.HeaderText = "Cacerio";
-            this.Cecerio.Name = "Cecerio";
-            this.Cecerio.ReadOnly = true;
+            this.txt_Cacerio.Location = new System.Drawing.Point(729, 217);
+            this.txt_Cacerio.Name = "txt_Cacerio";
+            this.txt_Cacerio.Size = new System.Drawing.Size(270, 20);
+            this.txt_Cacerio.TabIndex = 19;
             // 
-            // idMunicipios
+            // txt_Canton
             // 
-            this.idMunicipios.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idMunicipios.DataPropertyName = "idMunicipios";
-            this.idMunicipios.HeaderText = "idMunicipio";
-            this.idMunicipios.Name = "idMunicipios";
-            this.idMunicipios.ReadOnly = true;
+            this.txt_Canton.Location = new System.Drawing.Point(729, 155);
+            this.txt_Canton.Name = "txt_Canton";
+            this.txt_Canton.Size = new System.Drawing.Size(270, 20);
+            this.txt_Canton.TabIndex = 18;
+            // 
+            // txt_Residencia
+            // 
+            this.txt_Residencia.Location = new System.Drawing.Point(729, 96);
+            this.txt_Residencia.Name = "txt_Residencia";
+            this.txt_Residencia.Size = new System.Drawing.Size(270, 20);
+            this.txt_Residencia.TabIndex = 17;
+            // 
+            // btn_Guardar
+            // 
+            this.btn_Guardar.Location = new System.Drawing.Point(661, 351);
+            this.btn_Guardar.Name = "btn_Guardar";
+            this.btn_Guardar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Guardar.TabIndex = 16;
+            this.btn_Guardar.Text = "Guardar";
+            this.btn_Guardar.UseVisualStyleBackColor = true;
+            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(658, 287);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Municipio";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(680, 220);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Cacerio";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(682, 155);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Cantón";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(663, 99);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Residencia";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1025, 25);
+            this.toolStrip1.TabIndex = 1;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btn_Actualizar
+            // 
+            this.btn_Actualizar.Location = new System.Drawing.Point(924, 351);
+            this.btn_Actualizar.Name = "btn_Actualizar";
+            this.btn_Actualizar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Actualizar.TabIndex = 21;
+            this.btn_Actualizar.Text = "Actualizar";
+            this.btn_Actualizar.UseVisualStyleBackColor = true;
+            this.btn_Actualizar.Click += new System.EventHandler(this.btn_Actualizar_Click);
             // 
             // DireccionesGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(545, 332);
+            this.ClientSize = new System.Drawing.Size(1025, 414);
+            this.Controls.Add(this.btn_Actualizar);
+            this.Controls.Add(this.cbboMunicipios);
+            this.Controls.Add(this.txt_Cacerio);
+            this.Controls.Add(this.txt_Canton);
+            this.Controls.Add(this.txt_Residencia);
+            this.Controls.Add(this.btn_Guardar);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txt_idDirecciones);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dtgvDirecciones);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "DireccionesGestion";
             this.Text = "DireccionesGestion";
             this.Load += new System.EventHandler(this.DireccionesGestion_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDirecciones)).EndInit();
@@ -186,18 +221,21 @@ namespace General.GUI
         }
 
         #endregion
-        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.DataGridView dtgvDirecciones;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripLabel btn_Editar;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripLabel btn_Agregar;
         private System.Windows.Forms.ToolStripStatusLabel lblRegistrosClt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDirecciones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Residencia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Canton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cecerio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idMunicipios;
+        private System.Windows.Forms.TextBox txt_idDirecciones;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.ComboBox cbboMunicipios;
+        private System.Windows.Forms.TextBox txt_Cacerio;
+        private System.Windows.Forms.TextBox txt_Canton;
+        private System.Windows.Forms.TextBox txt_Residencia;
+        private System.Windows.Forms.Button btn_Guardar;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.Button btn_Actualizar;
     }
 }

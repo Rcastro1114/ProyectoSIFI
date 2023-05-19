@@ -96,6 +96,27 @@ namespace DataManager
             return Resultado;
         }
 
+        public static DataTable MOSTRAR_DIRECCIONES()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"select d.idDirecciones, d.Residencia, d.Canton, d.Cacerio,
+                                m.municipios, dep.departamentos 
+                                from direcciones d
+                                INNER JOIN municipios m
+                                on d.idMunicipios=m.idMunicipios
+                                INNER JOIN departamentos dep
+                                on m.idDepartamentos=dep.idDepartamentos;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            } catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
         public static DataTable EMPLEADOS()
         {
             DataTable Resultado = new DataTable();
