@@ -54,12 +54,6 @@
     <Compile Include="GUI\ClientesGestion.Designer.cs">
       <DependentUpon>ClientesGestion.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\DireccionesEdicion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\DireccionesEdicion.Designer.cs">
-      <DependentUpon>DireccionesEdicion.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\DireccionesGestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,9 +89,6 @@
   <ItemGroup>
     <EmbeddedResource Include="GUI\ClientesGestion.resx">
       <DependentUpon>ClientesGestion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\DireccionesEdicion.resx">
-      <DependentUpon>DireccionesEdicion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DireccionesGestion.resx">
       <DependentUpon>DireccionesGestion.cs</DependentUpon>
