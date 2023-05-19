@@ -37,5 +37,12 @@ namespace General.GUI
         {
             CargarDatos();
         }
+
+        private void btn_Agregar_Click(object sender, EventArgs e)
+        {
+            DireccionesEdicion f = new DireccionesEdicion();
+            f.ShowDialog();
+            CargarDatos();
+        }
     }
 }

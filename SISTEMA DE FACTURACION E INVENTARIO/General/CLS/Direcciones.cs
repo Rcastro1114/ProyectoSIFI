@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,17 +9,18 @@ namespace General.CLS
 {
     class Direcciones
     {
-        int _idDirecciones;
+        String _idDirecciones;
         String _Residencia;
         String _Canton;
         String _Cacerio;
-        String _idMunicipios;
+        int _idMunicipios;
 
-        public int IdDirecciones { get => _idDirecciones; set => _idDirecciones = value; }
+        public String IdDirecciones { get => _idDirecciones; set => _idDirecciones = value; }
         public string Residencia { get => _Residencia; set => _Residencia = value; }
         public string Canton { get => _Canton; set => _Canton = value; }
         public string Cacerio { get => _Cacerio; set => _Cacerio = value; }
-        public string IdMunicipios { get => _idMunicipios; set => _idMunicipios = value; }
+        public int IdMunicipios { get => _idMunicipios; set => _idMunicipios = value; }
+
 
         public Boolean Insertar()
         {
@@ -50,7 +52,7 @@ namespace General.CLS
             Int32 FilasInsertadas = 0;
             try
             {
-                Sentencia = @"UPDATE direcciones SET Residencia='" + _Residencia + "',Canton='" + _Canton + "',Cacerio='" + _Cacerio + "',idMunicipio='" + _idMunicipios + "' " +
+                Sentencia = @"UPDATE direcciones SET Residencia='" + _Residencia + "',Canton='" + _Canton + "',Cacerio='" + _Cacerio + "',idMunicipios='" + _idMunicipios + "' " +
                 "WHERE idDirecciones=" + _idDirecciones + ";";
                 DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
                 FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);

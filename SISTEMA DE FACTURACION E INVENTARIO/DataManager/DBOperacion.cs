@@ -10,6 +10,31 @@ namespace DataManager
 {
     public class DBOperacion:DBConexion
     {
+        public Int32 EjecutarProcedimiento(String pProcedimiento)
+        {
+            Int32 Afectado = 0;
+            MySqlCommand Comando = new MySqlCommand();
+            if(base.Conectar())
+            {
+                Comando.Connection = base._CONEXION;
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.CommandText = "agregarClientes";
+                Comando.Parameters.AddWithValue("Residencia",pProcedimiento);
+                Comando.Parameters.AddWithValue("Canton", pProcedimiento);
+                Comando.Parameters.AddWithValue("Cacerio", pProcedimiento);
+                Comando.Parameters.AddWithValue("idMunicipios", pProcedimiento);
+
+                try
+                {
+                    Afectado = Comando.ExecuteNonQuery();
+                }catch (Exception)
+                {
+                    Afectado = -1;
+                }
+            }
+            return Afectado;
+        }
+
         public Int32 EjecutarSentencia(String pSentencia)
         {
             Int32 FilasAfectadas = 0;

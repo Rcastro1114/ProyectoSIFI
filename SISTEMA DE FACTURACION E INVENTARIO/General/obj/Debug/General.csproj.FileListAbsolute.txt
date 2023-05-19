@@ -15,3 +15,4 @@ C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO
 C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.GUI.RolesEdicion.resources
 C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.GUI.ClientesGestion.resources
 C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.GUI.DireccionesGestion.resources
+C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.GUI.DireccionesEdicion.resources

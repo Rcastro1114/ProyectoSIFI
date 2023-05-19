@@ -64,6 +64,22 @@ namespace DataManager
             return Resultado;
         }
 
+        public static DataTable MUNICIPIOS()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"SELECT idMunicipios, municipios, idDepartamentos FROM municipios;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
         public static DataTable DIRECCIONES()
         {
             DataTable Resultado = new DataTable();
