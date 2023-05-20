@@ -48,6 +48,22 @@ namespace DataManager
             return Resultado;
         }
 
+        public static DataTable PRODUCTOS()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"SELECT idProductos,Productos,PrecioUnitario,Marca FROM productos;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
         public static DataTable DEPARTAMENTOS()
         {
             DataTable Resultado = new DataTable();

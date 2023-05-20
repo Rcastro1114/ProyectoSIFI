@@ -51,16 +51,17 @@ namespace General.GUI
             this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblRegistroEmpleados});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 374);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 371);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(484, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(484, 25);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // lblRegistroEmpleados
             // 
+            this.lblRegistroEmpleados.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistroEmpleados.Name = "lblRegistroEmpleados";
-            this.lblRegistroEmpleados.Size = new System.Drawing.Size(133, 17);
+            this.lblRegistroEmpleados.Size = new System.Drawing.Size(168, 20);
             this.lblRegistroEmpleados.Text = "0 Registros Encontrados";
             // 
             // toolStrip1
@@ -128,7 +129,7 @@ namespace General.GUI
             this.dtgvDatos.Location = new System.Drawing.Point(0, 25);
             this.dtgvDatos.Name = "dtgvDatos";
             this.dtgvDatos.ReadOnly = true;
-            this.dtgvDatos.Size = new System.Drawing.Size(484, 349);
+            this.dtgvDatos.Size = new System.Drawing.Size(484, 346);
             this.dtgvDatos.TabIndex = 2;
             // 
             // idRoles

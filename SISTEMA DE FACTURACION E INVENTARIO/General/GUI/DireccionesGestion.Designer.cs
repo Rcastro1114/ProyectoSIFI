@@ -54,16 +54,17 @@ namespace General.GUI
             this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblRegistrosClt});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 392);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 389);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1025, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1025, 25);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // lblRegistrosClt
             // 
+            this.lblRegistrosClt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistrosClt.Name = "lblRegistrosClt";
-            this.lblRegistrosClt.Size = new System.Drawing.Size(133, 17);
+            this.lblRegistrosClt.Size = new System.Drawing.Size(168, 20);
             this.lblRegistrosClt.Text = "0 Registros Encontrados";
             // 
             // dtgvDirecciones

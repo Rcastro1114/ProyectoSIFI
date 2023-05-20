@@ -32,7 +32,6 @@ namespace SIFI.GUI
                 General.GUI.RolesGestion f = new General.GUI.RolesGestion();
                 f.MdiParent = this;
                 f.Show();
-
             }
             catch (Exception)
             {
@@ -46,7 +45,6 @@ namespace SIFI.GUI
                 General.GUI.ClientesGestion f = new General.GUI.ClientesGestion();
                 f.MdiParent = this;
                 f.Show();
-
             }
             catch (Exception)
             {
@@ -60,7 +58,19 @@ namespace SIFI.GUI
                 General.GUI.DireccionesGestion f = new General.GUI.DireccionesGestion();
                 f.MdiParent = this;
                 f.Show();
+            }
+            catch (Exception)
+            {
+            }
+        }
 
+        private void gestiónDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                General.GUI.ProductosGestion f = new General.GUI.ProductosGestion();
+                f.MdiParent = this;
+                f.Show();
             }
             catch (Exception)
             {

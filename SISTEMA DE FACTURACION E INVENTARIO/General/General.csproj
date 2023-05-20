@@ -47,6 +47,7 @@
     <Compile Include="CLS\Departaments.cs" />
     <Compile Include="CLS\Direcciones.cs" />
     <Compile Include="CLS\Empleados.cs" />
+    <Compile Include="CLS\Product.cs" />
     <Compile Include="CLS\Rol.cs" />
     <Compile Include="GUI\ClientesGestion.cs">
       <SubType>Form</SubType>
@@ -59,6 +60,18 @@
     </Compile>
     <Compile Include="GUI\DireccionesGestion.Designer.cs">
       <DependentUpon>DireccionesGestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ProductosEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ProductosEdicion.Designer.cs">
+      <DependentUpon>ProductosEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ProductosGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ProductosGestion.Designer.cs">
+      <DependentUpon>ProductosGestion.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\RolesEdicion.cs">
       <SubType>Form</SubType>
@@ -92,6 +105,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DireccionesGestion.resx">
       <DependentUpon>DireccionesGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ProductosEdicion.resx">
+      <DependentUpon>ProductosEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ProductosGestion.resx">
+      <DependentUpon>ProductosGestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\RolesEdicion.resx">
       <DependentUpon>RolesEdicion.cs</DependentUpon>
