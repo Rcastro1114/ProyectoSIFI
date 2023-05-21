@@ -71,7 +71,7 @@ namespace General.GUI
                 if (oDirecciones.Actualizar())
                 {
                     MessageBox.Show("¡Registro actualizado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
+                    CargarDirecciones();
                 }
                 else
                 {
@@ -83,7 +83,7 @@ namespace General.GUI
                 if (oDirecciones.Insertar())
                 {
                     MessageBox.Show("¡Registro agregado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
+                    CargarDirecciones();
                 }
                 else
                 {

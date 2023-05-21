@@ -37,11 +37,12 @@ namespace SIFI.GUI
             this.gestionDeRolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeDireccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestiónDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblRol = new System.Windows.Forms.ToolStripStatusLabel();
-            this.gestiónDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestiónEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +63,8 @@ namespace SIFI.GUI
             this.gestionDeRolesToolStripMenuItem,
             this.gestionDeClientesToolStripMenuItem,
             this.gestionDeDireccionesToolStripMenuItem,
-            this.gestiónDeProductosToolStripMenuItem});
+            this.gestiónDeProductosToolStripMenuItem,
+            this.gestiónEmpleadosToolStripMenuItem});
             this.generalToolStripMenuItem.Name = "generalToolStripMenuItem";
             this.generalToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.generalToolStripMenuItem.Text = "General";
@@ -87,6 +89,13 @@ namespace SIFI.GUI
             this.gestionDeDireccionesToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.gestionDeDireccionesToolStripMenuItem.Text = "Gestión de Direcciones";
             this.gestionDeDireccionesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeDireccionesToolStripMenuItem_Click);
+            // 
+            // gestiónDeProductosToolStripMenuItem
+            // 
+            this.gestiónDeProductosToolStripMenuItem.Name = "gestiónDeProductosToolStripMenuItem";
+            this.gestiónDeProductosToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.gestiónDeProductosToolStripMenuItem.Text = "Gestión de Productos";
+            this.gestiónDeProductosToolStripMenuItem.Click += new System.EventHandler(this.gestiónDeProductosToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
@@ -123,12 +132,12 @@ namespace SIFI.GUI
             this.lblRol.Size = new System.Drawing.Size(56, 21);
             this.lblRol.Text = "ROL";
             // 
-            // gestiónDeProductosToolStripMenuItem
+            // gestiónEmpleadosToolStripMenuItem
             // 
-            this.gestiónDeProductosToolStripMenuItem.Name = "gestiónDeProductosToolStripMenuItem";
-            this.gestiónDeProductosToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.gestiónDeProductosToolStripMenuItem.Text = "Gestión de Productos";
-            this.gestiónDeProductosToolStripMenuItem.Click += new System.EventHandler(this.gestiónDeProductosToolStripMenuItem_Click);
+            this.gestiónEmpleadosToolStripMenuItem.Name = "gestiónEmpleadosToolStripMenuItem";
+            this.gestiónEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.gestiónEmpleadosToolStripMenuItem.Text = "Gestión Empleados";
+            this.gestiónEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.gestiónEmpleadosToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -162,6 +171,7 @@ namespace SIFI.GUI
         private System.Windows.Forms.ToolStripMenuItem gestionDeClientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeDireccionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestiónDeProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestiónEmpleadosToolStripMenuItem;
     }
 }
 

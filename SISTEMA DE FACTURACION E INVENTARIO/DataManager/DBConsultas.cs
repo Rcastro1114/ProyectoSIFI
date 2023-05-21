@@ -147,5 +147,29 @@ namespace DataManager
             }
             return Resultado;
         }
+
+        public static DataTable MOSTRAR_EMPLEADOS()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"select em.idEmpleados, em.Nombres, em.Apellidos, em.DUI,
+                                em.Telefono, em.Correo, em.idDirecciones,
+                                d.Residencia, d.Cacerio, d.Canton, m.municipios
+                                from empleados em
+                                INNER JOIN direcciones d
+                                on em.idDirecciones=d.idDirecciones
+                                INNER JOIN municipios m
+                                on d.idMunicipios=m.idMunicipios
+                                INNER JOIN departamentos dep
+                                on m.idDepartamentos=dep.idDepartamentos;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }catch(Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
     }
 }

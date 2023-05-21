@@ -17,3 +17,5 @@ C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO
 C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.GUI.DireccionesGestion.resources
 C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.GUI.ProductosGestion.resources
 C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.GUI.ProductosEdicion.resources
+C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.GUI.EmpleadosGestion.resources
+C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.GUI.EmpleadosEdicion.resources
