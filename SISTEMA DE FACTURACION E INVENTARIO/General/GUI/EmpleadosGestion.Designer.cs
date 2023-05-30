@@ -29,6 +29,7 @@ namespace General.GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmpleadosGestion));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btn_Editar = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -45,11 +46,12 @@ namespace General.GUI
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btn_Editar,
-            this.toolStripSeparator1,
             this.btn_Eliminar,
             this.toolStripSeparator2,
+            this.btn_Editar,
+            this.toolStripSeparator1,
             this.btn_Agregar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -59,9 +61,12 @@ namespace General.GUI
             // 
             // btn_Editar
             // 
+            this.btn_Editar.AutoSize = false;
             this.btn_Editar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Editar.ForeColor = System.Drawing.Color.White;
+            this.btn_Editar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Editar.Image")));
             this.btn_Editar.Name = "btn_Editar";
-            this.btn_Editar.Size = new System.Drawing.Size(48, 22);
+            this.btn_Editar.Size = new System.Drawing.Size(100, 22);
             this.btn_Editar.Text = "Editar";
             this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
             // 
@@ -72,9 +77,12 @@ namespace General.GUI
             // 
             // btn_Eliminar
             // 
+            this.btn_Eliminar.AutoSize = false;
             this.btn_Eliminar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Eliminar.ForeColor = System.Drawing.Color.White;
+            this.btn_Eliminar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Eliminar.Image")));
             this.btn_Eliminar.Name = "btn_Eliminar";
-            this.btn_Eliminar.Size = new System.Drawing.Size(63, 22);
+            this.btn_Eliminar.Size = new System.Drawing.Size(100, 22);
             this.btn_Eliminar.Text = "Eliminar";
             this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
@@ -85,14 +93,18 @@ namespace General.GUI
             // 
             // btn_Agregar
             // 
+            this.btn_Agregar.AutoSize = false;
             this.btn_Agregar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Agregar.ForeColor = System.Drawing.Color.White;
+            this.btn_Agregar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Agregar.Image")));
             this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Size = new System.Drawing.Size(63, 22);
+            this.btn_Agregar.Size = new System.Drawing.Size(100, 22);
             this.btn_Agregar.Text = "Agregar";
             this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblRegistrosEmpleados});
             this.statusStrip1.Location = new System.Drawing.Point(0, 390);
@@ -104,6 +116,7 @@ namespace General.GUI
             // lblRegistrosEmpleados
             // 
             this.lblRegistrosEmpleados.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistrosEmpleados.ForeColor = System.Drawing.Color.White;
             this.lblRegistrosEmpleados.Name = "lblRegistrosEmpleados";
             this.lblRegistrosEmpleados.Size = new System.Drawing.Size(168, 20);
             this.lblRegistrosEmpleados.Text = "0 Registros Encontrados";

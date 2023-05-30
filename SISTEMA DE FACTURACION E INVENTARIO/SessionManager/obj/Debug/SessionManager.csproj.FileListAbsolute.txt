@@ -9,3 +9,14 @@ C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO
 C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\SessionManager\obj\Debug\SessionManager.csproj.CopyComplete
 C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\SessionManager\obj\Debug\SessionManager.dll
 C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\SessionManager\obj\Debug\SessionManager.pdb
+C:\Users\ranto\Desktop\SISTEMA DE FACTURACION E INVENTARIO\SessionManager\bin\Debug\SessionManager.dll
+C:\Users\ranto\Desktop\SISTEMA DE FACTURACION E INVENTARIO\SessionManager\bin\Debug\SessionManager.pdb
+C:\Users\ranto\Desktop\SISTEMA DE FACTURACION E INVENTARIO\SessionManager\bin\Debug\DataManager.dll
+C:\Users\ranto\Desktop\SISTEMA DE FACTURACION E INVENTARIO\SessionManager\bin\Debug\MySql.Data.dll
+C:\Users\ranto\Desktop\SISTEMA DE FACTURACION E INVENTARIO\SessionManager\bin\Debug\DataManager.pdb
+C:\Users\ranto\Desktop\SISTEMA DE FACTURACION E INVENTARIO\SessionManager\bin\Debug\MySql.Data.xml
+C:\Users\ranto\Desktop\SISTEMA DE FACTURACION E INVENTARIO\SessionManager\obj\Debug\SessionManager.csproj.AssemblyReference.cache
+C:\Users\ranto\Desktop\SISTEMA DE FACTURACION E INVENTARIO\SessionManager\obj\Debug\SessionManager.csproj.CoreCompileInputs.cache
+C:\Users\ranto\Desktop\SISTEMA DE FACTURACION E INVENTARIO\SessionManager\obj\Debug\SessionManager.csproj.CopyComplete
+C:\Users\ranto\Desktop\SISTEMA DE FACTURACION E INVENTARIO\SessionManager\obj\Debug\SessionManager.dll
+C:\Users\ranto\Desktop\SISTEMA DE FACTURACION E INVENTARIO\SessionManager\obj\Debug\SessionManager.pdb

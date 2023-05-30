@@ -60,6 +60,7 @@ namespace General.GUI
             // lblRegistroEmpleados
             // 
             this.lblRegistroEmpleados.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistroEmpleados.ForeColor = System.Drawing.Color.White;
             this.lblRegistroEmpleados.Name = "lblRegistroEmpleados";
             this.lblRegistroEmpleados.Size = new System.Drawing.Size(168, 20);
             this.lblRegistroEmpleados.Text = "0 Registros Encontrados";
@@ -81,10 +82,12 @@ namespace General.GUI
             // 
             // btnEliminar
             // 
+            this.btnEliminar.AutoSize = false;
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(79, 22);
+            this.btnEliminar.Size = new System.Drawing.Size(100, 22);
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
@@ -95,10 +98,12 @@ namespace General.GUI
             // 
             // btnEditar
             // 
+            this.btnEditar.AutoSize = false;
             this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(64, 22);
+            this.btnEditar.Size = new System.Drawing.Size(100, 22);
             this.btnEditar.Text = "Editar";
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
@@ -109,10 +114,12 @@ namespace General.GUI
             // 
             // btnAgregar
             // 
+            this.btnAgregar.AutoSize = false;
             this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(79, 22);
+            this.btnAgregar.Size = new System.Drawing.Size(100, 22);
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -135,7 +142,7 @@ namespace General.GUI
             // idRoles
             // 
             this.idRoles.DataPropertyName = "idRoles";
-            this.idRoles.HeaderText = "idRoles";
+            this.idRoles.HeaderText = "ID Roles";
             this.idRoles.Name = "idRoles";
             this.idRoles.ReadOnly = true;
             // 
