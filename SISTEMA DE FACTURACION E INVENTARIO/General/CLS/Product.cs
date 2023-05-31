@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace General.CLS
 {
-    class Product
+    public class Product
     {
         String _idProductos;
         String _Productos;
         float _PrecioUnitario;
         String _Marca;
 
-        public string IdProductos { get => _idProductos; set => _idProductos = value; }
+        public string idProductos { get => _idProductos; set => _idProductos = value; }
         public string Productos { get => _Productos; set => _Productos = value; }
         public float PrecioUnitario { get => _PrecioUnitario; set => _PrecioUnitario = value; }
         public string Marca { get => _Marca; set => _Marca = value; }

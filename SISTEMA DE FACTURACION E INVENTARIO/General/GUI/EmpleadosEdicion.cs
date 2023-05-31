@@ -12,6 +12,8 @@ namespace General.GUI
 {
     public partial class EmpleadosEdicion : Form
     {
+        
+
         public EmpleadosEdicion()
         {
             InitializeComponent();

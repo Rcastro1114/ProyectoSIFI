@@ -1,4 +1,5 @@
-﻿using System;
+﻿using General.CLS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,12 +15,14 @@ namespace General.GUI
     {
         BindingSource _DATOS = new BindingSource();
 
+        public Empleados _Empleados { get; set; }
+
         private void CargarEmpleados()
         {
             DataTable oEmpleados = new DataTable();
             try
             {
-                oEmpleados = DataManager.DBConsultas.MOSTRAR_EMPLEADOS();
+                oEmpleados = DataManager.DBConsultas.EMPLEADOS();
                 dtgvEmpleados.DataSource = oEmpleados;
                 lblRegistrosEmpleados.Text = dtgvEmpleados.Rows.Count.ToString() + " Registros Encontrados";
             }
@@ -78,6 +81,25 @@ namespace General.GUI
                 {
                     MessageBox.Show("¡El registro no fue eliminado!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+            }
+        }
+
+
+        private void dtgvEmpleados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int iRow = e.RowIndex;
+            int iColum = e.ColumnIndex;
+
+            if(iRow >= 0 && iColum > 1)
+            {
+                _Empleados = new Empleados()
+                {
+                    idEmpleados = dtgvEmpleados.Rows[iRow].Cells["idEmpleados"].Value.ToString(),
+                    Nombres = dtgvEmpleados.Rows[iRow].Cells["Nombres"].Value.ToString(),
+                    Apellidos = dtgvEmpleados.Rows[iRow].Cells["Apellidos"].Value.ToString()
+                };
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
         }
     }

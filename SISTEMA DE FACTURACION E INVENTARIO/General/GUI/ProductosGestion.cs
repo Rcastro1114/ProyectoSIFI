@@ -1,4 +1,5 @@
-﻿using System;
+﻿using General.CLS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,7 @@ namespace General.GUI
     {
         BindingSource _DATOS = new BindingSource();
 
+        public Product _Productos { get; set; }
 
         private void CargarDatos()
         {
@@ -59,7 +61,7 @@ namespace General.GUI
             if (MessageBox.Show("¿Realmente desea ELIMINAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 CLS.Product oProductos = new CLS.Product();
-                oProductos.IdProductos = dtgvProductos.CurrentRow.Cells["idProductos"].Value.ToString().ToUpper(); ;
+                oProductos.idProductos = dtgvProductos.CurrentRow.Cells["idProductos"].Value.ToString().ToUpper(); ;
                 //Realizar la operacion de Eliminar
                 if (oProductos.Eliminar())
                 {
@@ -78,6 +80,24 @@ namespace General.GUI
             ProductosEdicion f = new ProductosEdicion();
             f.ShowDialog();
             CargarDatos();
+        }
+
+        private void dtgvProductos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int iRow = e.RowIndex;
+            int iColum = e.ColumnIndex;
+
+            if (iRow >= 0 && iColum > 0)
+            {
+                _Productos = new Product()
+                {
+                    idProductos = dtgvProductos.Rows[iRow].Cells["idProductos"].Value.ToString(),
+                    Productos = dtgvProductos.Rows[iRow].Cells["Productos"].Value.ToString(),
+                    PrecioUnitario = (float)Convert.ToDecimal(dtgvProductos.Rows[iRow].Cells["PrecioUnitario"].Value.ToString()),
+                };
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
     }
 }

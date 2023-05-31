@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -85,6 +86,12 @@
     <Compile Include="GUI\ProductosGestion.Designer.cs">
       <DependentUpon>ProductosGestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\PuntoDeVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PuntoDeVenta.Designer.cs">
+      <DependentUpon>PuntoDeVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\RolesEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ProductosGestion.resx">
       <DependentUpon>ProductosGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PuntoDeVenta.resx">
+      <DependentUpon>PuntoDeVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\RolesEdicion.resx">
       <DependentUpon>RolesEdicion.cs</DependentUpon>

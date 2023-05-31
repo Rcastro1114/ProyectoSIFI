@@ -31,14 +31,21 @@ namespace General.GUI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmpleadosGestion));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btn_Editar = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btn_Eliminar = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btn_Editar = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btn_Agregar = new System.Windows.Forms.ToolStripLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblRegistrosEmpleados = new System.Windows.Forms.ToolStripStatusLabel();
             this.dtgvEmpleados = new System.Windows.Forms.DataGridView();
+            this.idEmpleados = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DUI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDirecciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvEmpleados)).BeginInit();
@@ -59,22 +66,6 @@ namespace General.GUI
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // btn_Editar
-            // 
-            this.btn_Editar.AutoSize = false;
-            this.btn_Editar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Editar.ForeColor = System.Drawing.Color.White;
-            this.btn_Editar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Editar.Image")));
-            this.btn_Editar.Name = "btn_Editar";
-            this.btn_Editar.Size = new System.Drawing.Size(100, 22);
-            this.btn_Editar.Text = "Editar";
-            this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
             // btn_Eliminar
             // 
             this.btn_Eliminar.AutoSize = false;
@@ -90,6 +81,22 @@ namespace General.GUI
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btn_Editar
+            // 
+            this.btn_Editar.AutoSize = false;
+            this.btn_Editar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Editar.ForeColor = System.Drawing.Color.White;
+            this.btn_Editar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Editar.Image")));
+            this.btn_Editar.Name = "btn_Editar";
+            this.btn_Editar.Size = new System.Drawing.Size(100, 22);
+            this.btn_Editar.Text = "Editar";
+            this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // btn_Agregar
             // 
@@ -126,12 +133,73 @@ namespace General.GUI
             this.dtgvEmpleados.AllowUserToAddRows = false;
             this.dtgvEmpleados.AllowUserToDeleteRows = false;
             this.dtgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idEmpleados,
+            this.Nombres,
+            this.Apellidos,
+            this.DUI,
+            this.Telefono,
+            this.Correo,
+            this.idDirecciones});
             this.dtgvEmpleados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvEmpleados.Location = new System.Drawing.Point(0, 25);
             this.dtgvEmpleados.Name = "dtgvEmpleados";
             this.dtgvEmpleados.ReadOnly = true;
             this.dtgvEmpleados.Size = new System.Drawing.Size(1014, 365);
             this.dtgvEmpleados.TabIndex = 2;
+            this.dtgvEmpleados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvEmpleados_CellDoubleClick);
+            // 
+            // idEmpleados
+            // 
+            this.idEmpleados.DataPropertyName = "idEmpleados";
+            this.idEmpleados.HeaderText = "idEmpleados";
+            this.idEmpleados.Name = "idEmpleados";
+            this.idEmpleados.ReadOnly = true;
+            // 
+            // Nombres
+            // 
+            this.Nombres.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nombres.DataPropertyName = "Nombres";
+            this.Nombres.HeaderText = "Nombres";
+            this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
+            // 
+            // Apellidos
+            // 
+            this.Apellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Apellidos.DataPropertyName = "Apellidos";
+            this.Apellidos.HeaderText = "Apellidos";
+            this.Apellidos.Name = "Apellidos";
+            this.Apellidos.ReadOnly = true;
+            // 
+            // DUI
+            // 
+            this.DUI.DataPropertyName = "DUI";
+            this.DUI.HeaderText = "DUI";
+            this.DUI.Name = "DUI";
+            this.DUI.ReadOnly = true;
+            // 
+            // Telefono
+            // 
+            this.Telefono.DataPropertyName = "Telefono";
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            // 
+            // Correo
+            // 
+            this.Correo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Correo.DataPropertyName = "Correo";
+            this.Correo.HeaderText = "Correo";
+            this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
+            // 
+            // idDirecciones
+            // 
+            this.idDirecciones.DataPropertyName = "idDirecciones";
+            this.idDirecciones.HeaderText = "idDirecciones";
+            this.idDirecciones.Name = "idDirecciones";
+            this.idDirecciones.ReadOnly = true;
             // 
             // EmpleadosGestion
             // 
@@ -165,5 +233,12 @@ namespace General.GUI
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripLabel btn_Agregar;
         private System.Windows.Forms.ToolStripStatusLabel lblRegistrosEmpleados;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idEmpleados;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DUI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDirecciones;
     }
 }

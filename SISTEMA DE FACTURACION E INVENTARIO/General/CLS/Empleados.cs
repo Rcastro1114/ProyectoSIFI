@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace General.CLS
 {
-    internal class Empleados
+    public class Empleados
     {
         String _idEmpleados;
         String _Nombres;

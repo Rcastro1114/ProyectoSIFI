@@ -29,7 +29,7 @@ namespace General.GUI
             oProductos.Productos = txt_Productos.Text;
             oProductos.PrecioUnitario = (float)Convert.ToDouble(txt_PrecioUnitario.Text);
             oProductos.Marca = txt_Marca.Text;
-            oProductos.IdProductos = txt_idProductos.Text;
+            oProductos.idProductos = txt_idProductos.Text;
             
             if (txt_idProductos.TextLength > 0)
             {

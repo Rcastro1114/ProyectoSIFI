@@ -136,7 +136,7 @@ namespace DataManager
         public static DataTable EMPLEADOS()
         {
             DataTable Resultado = new DataTable();
-            String Sentencia = @"SELECT idRoles, Roles FROM roles;";
+            String Sentencia = @"SELECT idEmpleados, Nombres, Apellidos,DUI,Telefono,Correo,idDirecciones FROM empleados;";
             DBOperacion Consultor = new DBOperacion();
             try
             {

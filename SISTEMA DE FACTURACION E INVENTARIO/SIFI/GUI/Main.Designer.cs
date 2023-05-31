@@ -39,6 +39,8 @@ namespace SIFI.GUI
             this.gestionDeDireccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.puntoDeVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
@@ -50,7 +52,8 @@ namespace SIFI.GUI
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.generalToolStripMenuItem});
+            this.generalToolStripMenuItem,
+            this.ventasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(632, 24);
@@ -103,6 +106,21 @@ namespace SIFI.GUI
             this.gestiónEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.gestiónEmpleadosToolStripMenuItem.Text = "Gestión Empleados";
             this.gestiónEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.gestiónEmpleadosToolStripMenuItem_Click);
+            // 
+            // ventasToolStripMenuItem
+            // 
+            this.ventasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.puntoDeVentaToolStripMenuItem});
+            this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ventasToolStripMenuItem.Text = "Ventas";
+            // 
+            // puntoDeVentaToolStripMenuItem
+            // 
+            this.puntoDeVentaToolStripMenuItem.Name = "puntoDeVentaToolStripMenuItem";
+            this.puntoDeVentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.puntoDeVentaToolStripMenuItem.Text = "Punto de Ventas";
+            this.puntoDeVentaToolStripMenuItem.Click += new System.EventHandler(this.puntoDeVentaToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
@@ -173,6 +191,8 @@ namespace SIFI.GUI
         private System.Windows.Forms.ToolStripMenuItem gestionDeDireccionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestiónDeProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestiónEmpleadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem puntoDeVentaToolStripMenuItem;
     }
 }
 

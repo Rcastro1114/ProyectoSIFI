@@ -142,6 +142,7 @@ namespace General.GUI
             this.dtgvProductos.ReadOnly = true;
             this.dtgvProductos.Size = new System.Drawing.Size(800, 368);
             this.dtgvProductos.TabIndex = 2;
+            this.dtgvProductos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvProductos_CellContentDoubleClick);
             // 
             // idProductos
             // 

@@ -89,5 +89,18 @@ namespace SIFI.GUI
             {
             }
         }
+
+        private void puntoDeVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                General.GUI.PuntoDeVenta f = new General.GUI.PuntoDeVenta();
+                f.MdiParent = this;
+                f.Show();
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 }
