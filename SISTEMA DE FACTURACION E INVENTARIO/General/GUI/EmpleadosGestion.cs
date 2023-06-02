@@ -90,7 +90,7 @@ namespace General.GUI
             int iRow = e.RowIndex;
             int iColum = e.ColumnIndex;
 
-            if(iRow >= 0 && iColum > 1)
+            if(iRow >= 0 && iColum > 0)
             {
                 _Empleados = new Empleados()
                 {

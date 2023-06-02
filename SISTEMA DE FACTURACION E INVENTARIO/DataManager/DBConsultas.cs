@@ -51,7 +51,7 @@ namespace DataManager
         public static DataTable PRODUCTOS()
         {
             DataTable Resultado = new DataTable();
-            String Sentencia = @"SELECT idProductos,Productos,PrecioUnitario,Marca FROM productos;";
+            String Sentencia = @"SELECT idProductos,Productos,PrecioUnitario,Marca,Stock FROM productos;";
             DBOperacion Consultor = new DBOperacion();
             try
             {

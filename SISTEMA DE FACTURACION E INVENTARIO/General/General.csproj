@@ -111,7 +111,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\eliminar.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataManager\DataManager.csproj">
       <Project>{3c3073d0-28df-4bd9-8b01-1310ec0aa86e}</Project>
@@ -150,6 +152,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminar25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminar15.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

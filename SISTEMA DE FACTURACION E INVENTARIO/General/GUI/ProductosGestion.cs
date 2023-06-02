@@ -51,6 +51,7 @@ namespace General.GUI
                 f.txt_Productos.Text = dtgvProductos.CurrentRow.Cells["Productos"].Value.ToString();
                 f.txt_PrecioUnitario.Text = dtgvProductos.CurrentRow.Cells["PrecioUnitario"].Value.ToString();
                 f.txt_Marca.Text = dtgvProductos.CurrentRow.Cells["Marca"].Value.ToString();
+                f.txt_Stock.Text = dtgvProductos.CurrentRow.Cells["Stock"].Value.ToString();
                 f.ShowDialog();
                 CargarDatos();
             }
@@ -94,6 +95,7 @@ namespace General.GUI
                     idProductos = dtgvProductos.Rows[iRow].Cells["idProductos"].Value.ToString(),
                     Productos = dtgvProductos.Rows[iRow].Cells["Productos"].Value.ToString(),
                     PrecioUnitario = (float)Convert.ToDecimal(dtgvProductos.Rows[iRow].Cells["PrecioUnitario"].Value.ToString()),
+                    Stock = dtgvProductos.Rows[iRow].Cells["Stock"].Value.ToString(),
                 };
                 this.DialogResult = DialogResult.OK;
                 this.Close();

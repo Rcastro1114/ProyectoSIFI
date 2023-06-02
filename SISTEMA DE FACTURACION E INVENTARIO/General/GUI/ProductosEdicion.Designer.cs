@@ -43,6 +43,8 @@ namespace General.GUI
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txt_Stock = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +65,7 @@ namespace General.GUI
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(307, 82);
+            this.label2.Location = new System.Drawing.Point(307, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 16);
             this.label2.TabIndex = 1;
@@ -74,7 +76,7 @@ namespace General.GUI
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(307, 149);
+            this.label3.Location = new System.Drawing.Point(307, 144);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 16);
             this.label3.TabIndex = 2;
@@ -85,7 +87,7 @@ namespace General.GUI
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(310, 217);
+            this.label4.Location = new System.Drawing.Point(310, 206);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 16);
             this.label4.TabIndex = 3;
@@ -101,21 +103,21 @@ namespace General.GUI
             // 
             // txt_Productos
             // 
-            this.txt_Productos.Location = new System.Drawing.Point(310, 109);
+            this.txt_Productos.Location = new System.Drawing.Point(310, 106);
             this.txt_Productos.Name = "txt_Productos";
             this.txt_Productos.Size = new System.Drawing.Size(190, 20);
             this.txt_Productos.TabIndex = 5;
             // 
             // txt_PrecioUnitario
             // 
-            this.txt_PrecioUnitario.Location = new System.Drawing.Point(311, 175);
+            this.txt_PrecioUnitario.Location = new System.Drawing.Point(311, 170);
             this.txt_PrecioUnitario.Name = "txt_PrecioUnitario";
             this.txt_PrecioUnitario.Size = new System.Drawing.Size(188, 20);
             this.txt_PrecioUnitario.TabIndex = 6;
             // 
             // txt_Marca
             // 
-            this.txt_Marca.Location = new System.Drawing.Point(313, 244);
+            this.txt_Marca.Location = new System.Drawing.Point(313, 233);
             this.txt_Marca.Name = "txt_Marca";
             this.txt_Marca.Size = new System.Drawing.Size(188, 20);
             this.txt_Marca.TabIndex = 7;
@@ -170,12 +172,32 @@ namespace General.GUI
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // txt_Stock
+            // 
+            this.txt_Stock.Location = new System.Drawing.Point(311, 294);
+            this.txt_Stock.Name = "txt_Stock";
+            this.txt_Stock.Size = new System.Drawing.Size(188, 20);
+            this.txt_Stock.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(308, 267);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 16);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Stock";
+            // 
             // ProductosEdicion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(529, 377);
+            this.Controls.Add(this.txt_Stock);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_Cancelar);
             this.Controls.Add(this.btn_Agregar);
@@ -212,5 +234,7 @@ namespace General.GUI
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.TextBox txt_Stock;
+        private System.Windows.Forms.Label label6;
     }
 }

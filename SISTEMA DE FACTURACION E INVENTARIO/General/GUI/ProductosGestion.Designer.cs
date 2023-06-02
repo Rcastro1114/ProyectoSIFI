@@ -43,6 +43,7 @@ namespace General.GUI
             this.Productos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvProductos)).BeginInit();
@@ -135,7 +136,8 @@ namespace General.GUI
             this.idProductos,
             this.Productos,
             this.PrecioUnitario,
-            this.Marca});
+            this.Marca,
+            this.Stock});
             this.dtgvProductos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvProductos.Location = new System.Drawing.Point(0, 25);
             this.dtgvProductos.Name = "dtgvProductos";
@@ -174,6 +176,13 @@ namespace General.GUI
             this.Marca.Name = "Marca";
             this.Marca.ReadOnly = true;
             // 
+            // Stock
+            // 
+            this.Stock.DataPropertyName = "Stock";
+            this.Stock.HeaderText = "Stock";
+            this.Stock.Name = "Stock";
+            this.Stock.ReadOnly = true;
+            // 
             // ProductosGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,7 +208,6 @@ namespace General.GUI
 
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.DataGridView dtgvProductos;
         private System.Windows.Forms.ToolStripStatusLabel lblRegistrosProd;
         private System.Windows.Forms.ToolStripLabel btn_Editar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -210,5 +218,7 @@ namespace General.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn Productos;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
+        public System.Windows.Forms.DataGridView dtgvProductos;
     }
 }

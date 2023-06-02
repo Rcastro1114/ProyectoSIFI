@@ -30,6 +30,7 @@ namespace General.GUI
             oProductos.PrecioUnitario = (float)Convert.ToDouble(txt_PrecioUnitario.Text);
             oProductos.Marca = txt_Marca.Text;
             oProductos.idProductos = txt_idProductos.Text;
+            oProductos.Stock = txt_Stock.Text;
             
             if (txt_idProductos.TextLength > 0)
             {

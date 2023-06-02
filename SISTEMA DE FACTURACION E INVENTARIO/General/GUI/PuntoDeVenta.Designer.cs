@@ -36,6 +36,7 @@
             this.txt_Fecha = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_buscar_cli = new System.Windows.Forms.Button();
             this.cmbo_Formadepago = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.txt_Apellidos_cli = new System.Windows.Forms.TextBox();
@@ -45,6 +46,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txt_DUI = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btn_buscar_emp = new System.Windows.Forms.Button();
             this.txt_apellidos_emp = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_Nombres_emp = new System.Windows.Forms.TextBox();
@@ -52,6 +54,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txt_idEmpleados = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btn_Buscar_Prod = new System.Windows.Forms.Button();
             this.btn_Agregar = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.txt_Cantidad = new System.Windows.Forms.TextBox();
@@ -72,16 +75,13 @@
             this.label19 = new System.Windows.Forms.Label();
             this.txt_cambio = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgtv_ventas = new System.Windows.Forms.DataGridView();
-            this.btn_buscar_emp = new System.Windows.Forms.Button();
-            this.btn_buscar_cli = new System.Windows.Forms.Button();
-            this.btn_Buscar_Prod = new System.Windows.Forms.Button();
+            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -179,6 +179,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información sobre el cliente";
             // 
+            // btn_buscar_cli
+            // 
+            this.btn_buscar_cli.Location = new System.Drawing.Point(123, 47);
+            this.btn_buscar_cli.Name = "btn_buscar_cli";
+            this.btn_buscar_cli.Size = new System.Drawing.Size(75, 23);
+            this.btn_buscar_cli.TabIndex = 11;
+            this.btn_buscar_cli.Text = "Buscar";
+            this.btn_buscar_cli.UseVisualStyleBackColor = true;
+            // 
             // cmbo_Formadepago
             // 
             this.cmbo_Formadepago.FormattingEnabled = true;
@@ -269,6 +278,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Información sobre el empleado";
             // 
+            // btn_buscar_emp
+            // 
+            this.btn_buscar_emp.Location = new System.Drawing.Point(126, 47);
+            this.btn_buscar_emp.Name = "btn_buscar_emp";
+            this.btn_buscar_emp.Size = new System.Drawing.Size(75, 23);
+            this.btn_buscar_emp.TabIndex = 10;
+            this.btn_buscar_emp.Text = "Buscar";
+            this.btn_buscar_emp.UseVisualStyleBackColor = true;
+            this.btn_buscar_emp.Click += new System.EventHandler(this.btn_buscar_emp_Click);
+            // 
             // txt_apellidos_emp
             // 
             this.txt_apellidos_emp.Location = new System.Drawing.Point(226, 107);
@@ -346,6 +365,16 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Información sobre el producto";
             // 
+            // btn_Buscar_Prod
+            // 
+            this.btn_Buscar_Prod.Location = new System.Drawing.Point(126, 47);
+            this.btn_Buscar_Prod.Name = "btn_Buscar_Prod";
+            this.btn_Buscar_Prod.Size = new System.Drawing.Size(75, 23);
+            this.btn_Buscar_Prod.TabIndex = 11;
+            this.btn_Buscar_Prod.Text = "Buscar";
+            this.btn_Buscar_Prod.UseVisualStyleBackColor = true;
+            this.btn_Buscar_Prod.Click += new System.EventHandler(this.btn_Buscar_Prod_Click);
+            // 
             // btn_Agregar
             // 
             this.btn_Agregar.Location = new System.Drawing.Point(741, 60);
@@ -354,6 +383,7 @@
             this.btn_Agregar.TabIndex = 13;
             this.btn_Agregar.Text = "Agregar";
             this.btn_Agregar.UseVisualStyleBackColor = true;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
             // label15
             // 
@@ -369,7 +399,6 @@
             // 
             this.txt_Cantidad.Location = new System.Drawing.Point(563, 109);
             this.txt_Cantidad.Name = "txt_Cantidad";
-            this.txt_Cantidad.ReadOnly = true;
             this.txt_Cantidad.Size = new System.Drawing.Size(100, 22);
             this.txt_Cantidad.TabIndex = 17;
             // 
@@ -441,6 +470,7 @@
             // 
             this.txt_idproductos.Location = new System.Drawing.Point(9, 48);
             this.txt_idproductos.Name = "txt_idproductos";
+            this.txt_idproductos.ReadOnly = true;
             this.txt_idproductos.Size = new System.Drawing.Size(100, 22);
             this.txt_idproductos.TabIndex = 11;
             // 
@@ -478,6 +508,7 @@
             this.txt_paga.Name = "txt_paga";
             this.txt_paga.Size = new System.Drawing.Size(100, 20);
             this.txt_paga.TabIndex = 21;
+            this.txt_paga.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_paga_KeyDown);
             // 
             // label18
             // 
@@ -524,44 +555,6 @@
             this.button1.Text = "Generar Venta";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // eliminar
-            // 
-            this.eliminar.HeaderText = "eliminar";
-            this.eliminar.Name = "eliminar";
-            this.eliminar.ReadOnly = true;
-            this.eliminar.Visible = false;
-            // 
-            // SubTotal
-            // 
-            this.SubTotal.HeaderText = "Sub Total";
-            this.SubTotal.Name = "SubTotal";
-            this.SubTotal.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            // 
-            // Producto
-            // 
-            this.Producto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            this.Producto.ReadOnly = true;
-            // 
-            // idProducto
-            // 
-            this.idProducto.HeaderText = "idProducto";
-            this.idProducto.Name = "idProducto";
-            this.idProducto.ReadOnly = true;
-            // 
             // dgtv_ventas
             // 
             this.dgtv_ventas.AllowUserToAddRows = false;
@@ -580,35 +573,45 @@
             this.dgtv_ventas.ReadOnly = true;
             this.dgtv_ventas.Size = new System.Drawing.Size(651, 202);
             this.dgtv_ventas.TabIndex = 12;
+            this.dgtv_ventas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgtv_ventas_CellContentClick);
+            this.dgtv_ventas.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgtv_ventas_CellPainting);
             // 
-            // btn_buscar_emp
+            // idProducto
             // 
-            this.btn_buscar_emp.Location = new System.Drawing.Point(126, 47);
-            this.btn_buscar_emp.Name = "btn_buscar_emp";
-            this.btn_buscar_emp.Size = new System.Drawing.Size(75, 23);
-            this.btn_buscar_emp.TabIndex = 10;
-            this.btn_buscar_emp.Text = "Buscar";
-            this.btn_buscar_emp.UseVisualStyleBackColor = true;
-            this.btn_buscar_emp.Click += new System.EventHandler(this.btn_buscar_emp_Click);
+            this.idProducto.HeaderText = "idProducto";
+            this.idProducto.Name = "idProducto";
+            this.idProducto.ReadOnly = true;
             // 
-            // btn_buscar_cli
+            // Producto
             // 
-            this.btn_buscar_cli.Location = new System.Drawing.Point(123, 47);
-            this.btn_buscar_cli.Name = "btn_buscar_cli";
-            this.btn_buscar_cli.Size = new System.Drawing.Size(75, 23);
-            this.btn_buscar_cli.TabIndex = 11;
-            this.btn_buscar_cli.Text = "Buscar";
-            this.btn_buscar_cli.UseVisualStyleBackColor = true;
+            this.Producto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Producto.HeaderText = "Producto";
+            this.Producto.Name = "Producto";
+            this.Producto.ReadOnly = true;
             // 
-            // btn_Buscar_Prod
+            // Precio
             // 
-            this.btn_Buscar_Prod.Location = new System.Drawing.Point(126, 47);
-            this.btn_Buscar_Prod.Name = "btn_Buscar_Prod";
-            this.btn_Buscar_Prod.Size = new System.Drawing.Size(75, 23);
-            this.btn_Buscar_Prod.TabIndex = 11;
-            this.btn_Buscar_Prod.Text = "Buscar";
-            this.btn_Buscar_Prod.UseVisualStyleBackColor = true;
-            this.btn_Buscar_Prod.Click += new System.EventHandler(this.btn_Buscar_Prod_Click);
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // SubTotal
+            // 
+            this.SubTotal.HeaderText = "Sub Total";
+            this.SubTotal.Name = "SubTotal";
+            this.SubTotal.ReadOnly = true;
+            // 
+            // eliminar
+            // 
+            this.eliminar.HeaderText = "eliminar";
+            this.eliminar.Name = "eliminar";
+            this.eliminar.ReadOnly = true;
             // 
             // PuntoDeVenta
             // 
@@ -632,6 +635,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "PuntoDeVenta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PuntoDeVenta";
             this.Load += new System.EventHandler(this.PuntoDeVenta_Load);
             this.groupBox1.ResumeLayout(false);
@@ -691,12 +695,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txt_cambio;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewButtonColumn eliminar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridView dgtv_ventas;
         private System.Windows.Forms.Button btn_buscar_cli;
         private System.Windows.Forms.Button btn_buscar_emp;
@@ -704,5 +702,11 @@
         public System.Windows.Forms.TextBox txt_Nombres_emp;
         public System.Windows.Forms.TextBox txt_idEmpleados;
         private System.Windows.Forms.Button btn_Buscar_Prod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
+        private System.Windows.Forms.DataGridViewButtonColumn eliminar;
     }
 }

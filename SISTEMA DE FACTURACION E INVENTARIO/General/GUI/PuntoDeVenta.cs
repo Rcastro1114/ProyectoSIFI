@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataManager;
+using General.CLS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -57,6 +59,7 @@ namespace General.GUI
                     txt_idproductos.Text = formulario._Productos.idProductos.ToString();
                     txt_producto.Text = formulario._Productos.Productos.ToString();
                     txt_precio_pro.Text = formulario._Productos.PrecioUnitario.ToString("0.00");
+                    txt_stock.Text = formulario._Productos.Stock.ToString();
                     txt_Cantidad.Select();
                 }
                 else
@@ -64,6 +67,154 @@ namespace General.GUI
                     txt_idproductos.Select();
                 }
 
+            }
+        }
+
+        private void btn_Agregar_Click(object sender, EventArgs e)
+        {
+            float precio = 0;
+            bool producto_existe = false;
+
+            if(int.Parse(txt_idproductos.Text) == 0)
+            {
+                MessageBox.Show("Debe seleccionar un PRODUCTO","Mensaje",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if(!float.TryParse(txt_precio_pro.Text, out precio))
+            {
+                MessageBox.Show("Formato de Moneda incorrecto","Mensaje", MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                txt_precio_pro.Select();
+                return;
+            }
+
+            if(Convert.ToInt32(txt_stock.Text) < Convert.ToInt32(txt_Cantidad.Text))
+            {
+                MessageBox.Show("La Cantidad no puede ser mayor al Stock","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                return;
+                
+            }
+
+            foreach(DataGridViewRow fila in dgtv_ventas.Rows)
+            {
+                if(fila.Cells["idProducto"].Value.ToString() == txt_idproductos.Text)
+                {
+                    producto_existe = true;
+                    break;
+                }
+            }
+
+            if(!producto_existe)
+            {
+                dgtv_ventas.Rows.Add(new object[]
+                { 
+                    txt_idproductos.Text,
+                    txt_producto.Text,
+                    precio.ToString("0.00"),
+                    txt_Cantidad.Text,
+                    (int.Parse(txt_Cantidad.Text) * precio).ToString("0.00")
+                });
+                calculartotal();
+                limpiarproducto();
+                txt_idproductos.Select();
+
+            }
+        }
+
+        private void calculartotal()
+        {
+            float total = 0;
+            if(dgtv_ventas.Rows.Count > 0)
+            {
+                foreach(DataGridViewRow row in dgtv_ventas.Rows)
+                {
+                    total += float.Parse(row.Cells["SubTotal"].Value.ToString());
+                }
+                txt_Total.Text = total.ToString("0.00");
+            }
+        }
+
+        private void limpiarproducto()
+        {
+            txt_idproductos.Text = "0";
+            txt_producto.Text = "";
+            txt_precio_pro.Text = "";
+            txt_stock.Text = "";
+            txt_Cantidad.Text = "0";
+        }
+
+        private void dgtv_ventas_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if(e.RowIndex < 0)
+             return; 
+
+            if(e.ColumnIndex == 5)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                var w = Properties.Resources.eliminar15.Width;
+                var h = Properties.Resources.eliminar15.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - w) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.eliminar15, new Rectangle(x,y,w,h));
+                e.Handled = true;
+            }
+
+        }
+
+        private void dgtv_ventas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dgtv_ventas.Columns[e.ColumnIndex].Name == "eliminar")
+            {
+                int index = e.RowIndex;
+                if(index >= 0)
+                {
+                    dgtv_ventas.Rows.RemoveAt(index);
+                    calculartotal();
+                }
+            }
+        }
+
+        private void calcularcambio()
+        { 
+            if(txt_Total.Text.Trim() == "")
+            {
+                MessageBox.Show("No existen productos en la venta","Mensaje", MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            float pagacon;
+            float total = float.Parse(txt_Total.Text);
+
+            if(txt_paga.Text.Trim() == "")
+            {
+                txt_paga.Text = "0";
+            }
+
+            if (float.TryParse(txt_paga.Text.Trim(),out  pagacon))
+            {
+                if (pagacon < total)
+                {
+                    txt_cambio.Text = "0.00";
+                }
+                else
+                {
+                    float cambio = pagacon - total;
+                    txt_cambio.Text = cambio.ToString("0.00");
+                }
+            }
+
+
+
+
+        }
+
+        private void txt_paga_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyData == Keys.Enter)
+            {
+                calcularcambio();
             }
         }
     }
