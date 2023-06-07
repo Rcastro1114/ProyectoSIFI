@@ -44,7 +44,7 @@
             this.txt_Nombres_cli = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txt_DUI = new System.Windows.Forms.TextBox();
+            this.txt_idClientes = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btn_buscar_emp = new System.Windows.Forms.Button();
             this.txt_apellidos_emp = new System.Windows.Forms.TextBox();
@@ -76,10 +76,10 @@
             this.txt_cambio = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dgtv_ventas = new System.Windows.Forms.DataGridView();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProductos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Productos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1.SuspendLayout();
@@ -145,7 +145,6 @@
             // 
             this.txt_Fecha.Location = new System.Drawing.Point(9, 53);
             this.txt_Fecha.Name = "txt_Fecha";
-            this.txt_Fecha.ReadOnly = true;
             this.txt_Fecha.Size = new System.Drawing.Size(100, 21);
             this.txt_Fecha.TabIndex = 1;
             // 
@@ -170,7 +169,7 @@
             this.groupBox2.Controls.Add(this.txt_Nombres_cli);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.txt_DUI);
+            this.groupBox2.Controls.Add(this.txt_idClientes);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(513, 112);
             this.groupBox2.Name = "groupBox2";
@@ -248,17 +247,16 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(6, 27);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 18);
+            this.label6.Size = new System.Drawing.Size(94, 18);
             this.label6.TabIndex = 4;
-            this.label6.Text = "N° de DUI";
+            this.label6.Text = "ID del Cliente";
             // 
-            // txt_DUI
+            // txt_idClientes
             // 
-            this.txt_DUI.Location = new System.Drawing.Point(9, 48);
-            this.txt_DUI.Name = "txt_DUI";
-            this.txt_DUI.ReadOnly = true;
-            this.txt_DUI.Size = new System.Drawing.Size(100, 22);
-            this.txt_DUI.TabIndex = 5;
+            this.txt_idClientes.Location = new System.Drawing.Point(9, 48);
+            this.txt_idClientes.Name = "txt_idClientes";
+            this.txt_idClientes.Size = new System.Drawing.Size(100, 22);
+            this.txt_idClientes.TabIndex = 5;
             // 
             // groupBox3
             // 
@@ -338,7 +336,6 @@
             // 
             this.txt_idEmpleados.Location = new System.Drawing.Point(9, 48);
             this.txt_idEmpleados.Name = "txt_idEmpleados";
-            this.txt_idEmpleados.ReadOnly = true;
             this.txt_idEmpleados.Size = new System.Drawing.Size(100, 22);
             this.txt_idEmpleados.TabIndex = 5;
             // 
@@ -377,11 +374,11 @@
             // 
             // btn_Agregar
             // 
-            this.btn_Agregar.Location = new System.Drawing.Point(741, 60);
+            this.btn_Agregar.Location = new System.Drawing.Point(743, 60);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(95, 46);
             this.btn_Agregar.TabIndex = 13;
-            this.btn_Agregar.Text = "Agregar";
+            this.btn_Agregar.Text = "Agregar Producto";
             this.btn_Agregar.UseVisualStyleBackColor = true;
             this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
@@ -470,7 +467,6 @@
             // 
             this.txt_idproductos.Location = new System.Drawing.Point(9, 48);
             this.txt_idproductos.Name = "txt_idproductos";
-            this.txt_idproductos.ReadOnly = true;
             this.txt_idproductos.Size = new System.Drawing.Size(100, 22);
             this.txt_idproductos.TabIndex = 11;
             // 
@@ -524,7 +520,6 @@
             // 
             this.txt_IVA.Location = new System.Drawing.Point(742, 448);
             this.txt_IVA.Name = "txt_IVA";
-            this.txt_IVA.ReadOnly = true;
             this.txt_IVA.Size = new System.Drawing.Size(100, 20);
             this.txt_IVA.TabIndex = 23;
             // 
@@ -554,46 +549,40 @@
             this.button1.TabIndex = 26;
             this.button1.Text = "Generar Venta";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dgtv_ventas
             // 
             this.dgtv_ventas.AllowUserToAddRows = false;
-            this.dgtv_ventas.AllowUserToDeleteRows = false;
             this.dgtv_ventas.BackgroundColor = System.Drawing.Color.White;
             this.dgtv_ventas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgtv_ventas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idProducto,
-            this.Producto,
-            this.Precio,
+            this.idProductos,
+            this.Productos,
             this.Cantidad,
+            this.PrecioVenta,
             this.SubTotal,
             this.eliminar});
-            this.dgtv_ventas.Location = new System.Drawing.Point(82, 428);
+            this.dgtv_ventas.Location = new System.Drawing.Point(73, 427);
             this.dgtv_ventas.Name = "dgtv_ventas";
             this.dgtv_ventas.ReadOnly = true;
-            this.dgtv_ventas.Size = new System.Drawing.Size(651, 202);
-            this.dgtv_ventas.TabIndex = 12;
+            this.dgtv_ventas.Size = new System.Drawing.Size(660, 206);
+            this.dgtv_ventas.TabIndex = 27;
             this.dgtv_ventas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgtv_ventas_CellContentClick);
             this.dgtv_ventas.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgtv_ventas_CellPainting);
             // 
-            // idProducto
+            // idProductos
             // 
-            this.idProducto.HeaderText = "idProducto";
-            this.idProducto.Name = "idProducto";
-            this.idProducto.ReadOnly = true;
+            this.idProductos.HeaderText = "idProductos";
+            this.idProductos.Name = "idProductos";
+            this.idProductos.ReadOnly = true;
+            this.idProductos.Width = 83;
             // 
-            // Producto
+            // Productos
             // 
-            this.Producto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            this.Producto.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
+            this.Productos.HeaderText = "Productos";
+            this.Productos.Name = "Productos";
+            this.Productos.ReadOnly = true;
             // 
             // Cantidad
             // 
@@ -601,15 +590,21 @@
             this.Cantidad.Name = "Cantidad";
             this.Cantidad.ReadOnly = true;
             // 
+            // PrecioVenta
+            // 
+            this.PrecioVenta.HeaderText = "PrecioVenta";
+            this.PrecioVenta.Name = "PrecioVenta";
+            this.PrecioVenta.ReadOnly = true;
+            // 
             // SubTotal
             // 
-            this.SubTotal.HeaderText = "Sub Total";
+            this.SubTotal.HeaderText = "SubTotal";
             this.SubTotal.Name = "SubTotal";
             this.SubTotal.ReadOnly = true;
             // 
             // eliminar
             // 
-            this.eliminar.HeaderText = "eliminar";
+            this.eliminar.HeaderText = "";
             this.eliminar.Name = "eliminar";
             this.eliminar.ReadOnly = true;
             // 
@@ -618,6 +613,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1030, 642);
+            this.Controls.Add(this.dgtv_ventas);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.txt_cambio);
@@ -627,7 +623,6 @@
             this.Controls.Add(this.txt_paga);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.txt_Total);
-            this.Controls.Add(this.dgtv_ventas);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -665,7 +660,7 @@
         private System.Windows.Forms.TextBox txt_Nombres_cli;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txt_DUI;
+        private System.Windows.Forms.TextBox txt_idClientes;
         private System.Windows.Forms.ComboBox cmbo_Formadepago;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txt_Apellidos_cli;
@@ -695,17 +690,17 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txt_cambio;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dgtv_ventas;
         private System.Windows.Forms.Button btn_buscar_cli;
         private System.Windows.Forms.Button btn_buscar_emp;
         public System.Windows.Forms.TextBox txt_apellidos_emp;
         public System.Windows.Forms.TextBox txt_Nombres_emp;
         public System.Windows.Forms.TextBox txt_idEmpleados;
         private System.Windows.Forms.Button btn_Buscar_Prod;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridView dgtv_ventas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProductos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Productos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
         private System.Windows.Forms.DataGridViewButtonColumn eliminar;
     }

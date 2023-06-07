@@ -88,7 +88,7 @@ namespace General.GUI
             int iRow = e.RowIndex;
             int iColum = e.ColumnIndex;
 
-            if (iRow >= 0 && iColum > 0)
+            if (iRow >= 0 && iColum >= 0)
             {
                 _Productos = new Product()
                 {

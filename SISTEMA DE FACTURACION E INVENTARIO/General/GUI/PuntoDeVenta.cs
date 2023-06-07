@@ -14,7 +14,23 @@ namespace General.GUI
 {
     public partial class PuntoDeVenta : Form
     {
+        BindingSource _DATOS = new BindingSource();
 
+        private void CargarFormasDePago()
+        {
+            DataTable oMunicipios = new DataTable();
+            try
+            {
+                oMunicipios = DataManager.DBConsultas.FORMASDEPAGO();
+                cmbo_Formadepago.DataSource = oMunicipios;
+                cmbo_Formadepago.DisplayMember = "FormadePago";
+                cmbo_Formadepago.ValueMember = "idFormasdePagos";
+            }
+            catch (Exception)
+            {
+
+            }
+        }
         public PuntoDeVenta()
         {
             InitializeComponent();
@@ -22,11 +38,11 @@ namespace General.GUI
 
         private void PuntoDeVenta_Load(object sender, EventArgs e)
         {
-            txt_Fecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            txt_idproductos.Text = "0";
-            txt_paga.Text = "";
-            txt_cambio.Text = "";
-            txt_Total.Text = "";
+            txt_Fecha.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            txt_IVA.Text = "0";
+            //txt_Fecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
+
+            CargarFormasDePago();
         }
 
         private void btn_buscar_emp_Click(object sender, EventArgs e)
@@ -97,7 +113,7 @@ namespace General.GUI
 
             foreach(DataGridViewRow fila in dgtv_ventas.Rows)
             {
-                if(fila.Cells["idProducto"].Value.ToString() == txt_idproductos.Text)
+                if(fila.Cells["Productos"].Value.ToString() == txt_Nombres_emp.Text)
                 {
                     producto_existe = true;
                     break;
@@ -107,11 +123,11 @@ namespace General.GUI
             if(!producto_existe)
             {
                 dgtv_ventas.Rows.Add(new object[]
-                { 
+                {
                     txt_idproductos.Text,
-                    txt_producto.Text,
-                    precio.ToString("0.00"),
+                    txt_producto.Text,                    
                     txt_Cantidad.Text,
+                    precio.ToString("0.00"),                    
                     (int.Parse(txt_Cantidad.Text) * precio).ToString("0.00")
                 });
                 calculartotal();
@@ -135,46 +151,15 @@ namespace General.GUI
         }
 
         private void limpiarproducto()
-        {
-            txt_idproductos.Text = "0";
+        {           
             txt_producto.Text = "";
+            txt_idproductos.Text = "0";
             txt_precio_pro.Text = "";
             txt_stock.Text = "";
             txt_Cantidad.Text = "0";
         }
 
-        private void dgtv_ventas_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-            if(e.RowIndex < 0)
-             return; 
-
-            if(e.ColumnIndex == 5)
-            {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-
-                var w = Properties.Resources.eliminar15.Width;
-                var h = Properties.Resources.eliminar15.Height;
-                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
-                var y = e.CellBounds.Top + (e.CellBounds.Height - w) / 2;
-
-                e.Graphics.DrawImage(Properties.Resources.eliminar15, new Rectangle(x,y,w,h));
-                e.Handled = true;
-            }
-
-        }
-
-        private void dgtv_ventas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if(dgtv_ventas.Columns[e.ColumnIndex].Name == "eliminar")
-            {
-                int index = e.RowIndex;
-                if(index >= 0)
-                {
-                    dgtv_ventas.Rows.RemoveAt(index);
-                    calculartotal();
-                }
-            }
-        }
+        
 
         private void calcularcambio()
         { 
@@ -204,10 +189,6 @@ namespace General.GUI
                     txt_cambio.Text = cambio.ToString("0.00");
                 }
             }
-
-
-
-
         }
 
         private void txt_paga_KeyDown(object sender, KeyEventArgs e)
@@ -217,5 +198,147 @@ namespace General.GUI
                 calcularcambio();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(txt_idEmpleados.Text == "")
+            {
+                MessageBox.Show("Debe ingresar los DATOS DEL EMPLEADO","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            /*if (txt_idClientes.Text == "")
+            {
+                MessageBox.Show("Debe ingresar los DATOS DEL CLIENTE", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }*/
+
+            if (dgtv_ventas.Rows.Count < 1)
+            {
+                MessageBox.Show("Debe ingresar PRODUCTOS a la VENTA", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            General.CLS.ventas vent = new General.CLS.ventas();
+            vent.idClientes = txt_idClientes.Text.ToString();
+            vent.idEmpleados = txt_idEmpleados.Text.ToString();
+            vent.idFormasdePago = int.Parse(cmbo_Formadepago.SelectedValue.ToString());
+            vent.Total = (float)Convert.ToDouble(txt_Total.Text);
+
+            Boolean b = vent.Insertar();
+
+            if(b == false)
+            {
+                MessageBox.Show("Fallo al crear la venta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                MessageBox.Show("Factura creada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+            String ultimaventa = null;
+
+            DataTable _ULTIMAVENTA = new DataTable();
+
+            try 
+            {
+                _ULTIMAVENTA = DataManager.DBConsultas.OBTENERULTIMAVENTA();
+                ultimaventa = _ULTIMAVENTA.Rows[0]["idVentas"].ToString();
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Ha ocurrido un error en buscar el idVentas", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+            General.CLS.detalleventas dv = new CLS.detalleventas();
+            String udv = null;
+
+            for (int i = 0; i < dgtv_ventas.Rows.Count; i++)
+            {
+                dv.idVentas = ultimaventa;
+                dv.idProductos = dgtv_ventas.Rows[i].Cells[0].Value.ToString();
+                dv.Cantidad = dgtv_ventas.Rows[i].Cells[2].Value.ToString();
+                dv.PrecioVenta = (float)Convert.ToDouble(dgtv_ventas.Rows[i].Cells[3].Value.ToString());
+                dv.SubTotal = (float)Convert.ToDouble(dgtv_ventas.Rows[i].Cells[4].Value.ToString());
+
+                Boolean pr = dv.Insertar();
+
+                DataTable _ULTIMODETALLEVENTAS = new DataTable();
+
+                _ULTIMODETALLEVENTAS = DataManager.DBConsultas.BuscarUltimoDetalleVenta();
+                udv = _ULTIMODETALLEVENTAS.Rows[0]["idDetalleVentas"].ToString();
+
+                Boolean pdv = dv.ProcesarDetalleVenta(udv);
+                Close();
+            }
+        }
+
+        private void dgtv_ventas_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            if (e.ColumnIndex == 5)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                var w = Properties.Resources.eliminar15.Width;
+                var h = Properties.Resources.eliminar15.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - w) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.eliminar15, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+        }
+
+        private void dgtv_ventas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgtv_ventas.Columns[e.ColumnIndex].Name == "eliminar")
+            {
+                int index = e.RowIndex;
+                if (index >= 0)
+                {
+                    dgtv_ventas.Rows.RemoveAt(index);
+                    calculartotal();
+                }
+            }
+        }
+
+
+
+
+
+        /*foreach (DataGridViewRow row in dgtv_ventas.Rows) 
+        {
+            if (!row.IsNewRow)
+            {
+                String idprod = row.Cells[0].Value.ToString();//id
+                String prod = row.Cells[1].Value.ToString();
+                String cant = row.Cells[2].Value.ToString();//can
+                float prevent = (float)Convert.ToDouble(row.Cells[3].Value.ToString());
+                float subt = (float)Convert.ToDouble(row.Cells[4].Value.ToString());
+
+                CLS.detalleventas oDetalleVentas = new CLS.detalleventas();
+
+                oDetalleVentas.idProductos = idprod;
+                oDetalleVentas.Cantidad = cant;
+                oDetalleVentas.PrecioVenta = prevent;
+                oDetalleVentas.SubTotal = subt;
+
+                if (oDetalleVentas.Insertar())
+                {
+                    MessageBox.Show("¡Factura creada correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("¡La factura no fue creada!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+        }*/
+
+
     }
 }

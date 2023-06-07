@@ -171,5 +171,58 @@ namespace DataManager
             }
             return Resultado;
         }
+
+        public static DataTable FORMASDEPAGO()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"SELECT * FROM formasdepagos;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        public static DataTable BuscarUltimoDetalleVenta()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"select idDetalleVentas from detalleventas  order by idDetalleVentas desc limit 1;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+
+            return Resultado;
+
+        }
+
+        public static DataTable OBTENERULTIMAVENTA()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"select idVentas from ventas order by idVentas desc limit 1";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+
+            return Resultado;
+
+        }
+
     }
 }

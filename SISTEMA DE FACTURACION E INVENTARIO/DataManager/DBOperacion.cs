@@ -10,29 +10,27 @@ namespace DataManager
 {
     public class DBOperacion:DBConexion
     {
-        public Int32 EjecutarProcedimiento(String pProcedimiento)
+        public int NoFactura()
         {
-            Int32 Afectado = 0;
+            int NoFactura = 0;
             MySqlCommand Comando = new MySqlCommand();
             if(base.Conectar())
             {
-                Comando.Connection = base._CONEXION;
-                Comando.CommandType = CommandType.StoredProcedure;
-                Comando.CommandText = "agregarClientes";
-                Comando.Parameters.AddWithValue("Residencia",pProcedimiento);
-                Comando.Parameters.AddWithValue("Canton", pProcedimiento);
-                Comando.Parameters.AddWithValue("Cacerio", pProcedimiento);
-                Comando.Parameters.AddWithValue("idMunicipios", pProcedimiento);
-
+              
                 try
                 {
-                    Afectado = Comando.ExecuteNonQuery();
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("select count(*) + 1 ventas");
+                    MySqlCommand comando = new MySqlCommand(query.ToString());
+                    comando.CommandType = CommandType.Text;
+
+                    NoFactura = Convert.ToInt32(comando.ExecuteScalar());
                 }catch (Exception)
                 {
-                    Afectado = -1;
+                    NoFactura = 0;
                 }
             }
-            return Afectado;
+            return NoFactura;
         }
 
         public Int32 EjecutarSentencia(String pSentencia)

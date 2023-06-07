@@ -62,3 +62,5 @@ C:\Users\ranto\Desktop\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\Gen
 C:\Users\ranto\Desktop\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.dll
 C:\Users\ranto\Desktop\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.pdb
 C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.GUI.PuntoDeVenta.resources
+C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.GUI.detalledeventas.resources
+C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.GUI.ventas.resources
