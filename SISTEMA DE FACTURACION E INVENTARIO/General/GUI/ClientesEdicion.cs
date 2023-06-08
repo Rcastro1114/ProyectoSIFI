@@ -24,21 +24,20 @@ namespace General.GUI
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
-            //Creacion del objeto entidad
             CLS.Clientes oClientes = new CLS.Clientes();
-            //Sincronizar la entidad con la interfaz
-            oClientes.Nombres = txtNombres.Text;
-            oClientes.Apellidos = txtNombres.Text;
-            oClientes.DUI = txtDUI.Text;
-            oClientes.Telefono = txtTelefono.Text;
-            oClientes.Correo = txtCorreo.Text;
-            oClientes.IdDirecciones = txtDireccion.Text;
-            oClientes.IdClientes = txtIDCliente.Text;
-            //Identificar la accion a realizar
-            if (txtIDRol.TextLength > 0)
+
+            oClientes.Nombres = txt_Nombres.Text;
+            oClientes.Apellidos = txt_Apellidos.Text;
+            oClientes.Telefono = txt_Telefono.Text;
+            oClientes.Correo = txt_Correo.Text;
+            oClientes.idDirecciones = txt_idDirecciones.Text;
+            oClientes.idClientes = txt_idClientes.Text;
+
+
+            if (txt_idClientes.TextLength > 0)
             {
-                //Realizar la operacion de actualizar
-                if (oRol.Actualizar())
+
+                if (oClientes.Actualizar())
                 {
                     MessageBox.Show("¡Registro actualizado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
@@ -50,8 +49,8 @@ namespace General.GUI
             }
             else
             {
-                //Realizar la operacion de insertar
-                if (oRol.Insertar())
+
+                if (oClientes.Insertar())
                 {
                     MessageBox.Show("¡Registro insertado correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
@@ -62,6 +61,11 @@ namespace General.GUI
                 }
             }
         }
-    }
+        private void btn_Direccion_Click(object sender, EventArgs e)
+        {
+            DireccionesGestion f = new DireccionesGestion();
+            f.ShowDialog();
+        }
+
     }
 }

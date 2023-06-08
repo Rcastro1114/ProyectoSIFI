@@ -207,11 +207,11 @@ namespace General.GUI
                 return;
             }
 
-            /*if (txt_idClientes.Text == "")
+            if (txt_idClientes.Text == "")
             {
                 MessageBox.Show("Debe ingresar los DATOS DEL CLIENTE", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
-            }*/
+            }
 
             if (dgtv_ventas.Rows.Count < 1)
             {
@@ -263,14 +263,14 @@ namespace General.GUI
 
                 Boolean pr = dv.Insertar();
 
-                DataTable _ULTIMODETALLEVENTAS = new DataTable();
+                /*DataTable _ULTIMODETALLEVENTAS = new DataTable();
 
                 _ULTIMODETALLEVENTAS = DataManager.DBConsultas.BuscarUltimoDetalleVenta();
                 udv = _ULTIMODETALLEVENTAS.Rows[0]["idDetalleVentas"].ToString();
 
-                Boolean pdv = dv.ProcesarDetalleVenta(udv);
-                Close();
+                Boolean pdv = dv.ProcesarDetalleVenta(udv);*/
             }
+            Close();
         }
 
         private void dgtv_ventas_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -301,6 +301,25 @@ namespace General.GUI
                 {
                     dgtv_ventas.Rows.RemoveAt(index);
                     calculartotal();
+                }
+            }
+        }
+
+        private void btn_buscar_cli_Click(object sender, EventArgs e)
+        {
+            using (var formulario = new ClientesGestion())
+            {
+                var result = formulario.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    txt_idClientes.Text = formulario._Clientes.idClientes.ToString();
+                    txt_Nombres_cli.Text = formulario._Clientes.Nombres.ToString();
+                    txt_Apellidos_cli.Text = formulario._Clientes.Apellidos.ToString();
+                }
+                else
+                {
+                    txt_idClientes.Select();
                 }
             }
         }

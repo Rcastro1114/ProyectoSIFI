@@ -192,6 +192,7 @@ namespace General.GUI
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "ProductosGestion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductosGestion";
             this.Load += new System.EventHandler(this.ProductosGestion_Load);
             this.toolStrip1.ResumeLayout(false);

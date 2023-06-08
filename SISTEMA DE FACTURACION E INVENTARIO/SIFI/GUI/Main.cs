@@ -102,5 +102,18 @@ namespace SIFI.GUI
             {
             }
         }
+
+        private void registrarComprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                General.GUI.ComprasGestion f = new General.GUI.ComprasGestion();
+                f.MdiParent = this;
+                f.Show();
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 }

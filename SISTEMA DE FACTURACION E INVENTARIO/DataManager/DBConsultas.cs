@@ -64,6 +64,22 @@ namespace DataManager
             return Resultado;
         }
 
+        public static DataTable BUSCARPRODUCTOS()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"select idProductos,Productos, PrecioUnitario, Stock from productos;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
         public static DataTable DEPARTAMENTOS()
         {
             DataTable Resultado = new DataTable();
@@ -172,6 +188,46 @@ namespace DataManager
             return Resultado;
         }
 
+        public static DataTable CLIENTES()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"SELECT idClientes, Nombres, Apellidos,Telefono,Correo,idDirecciones FROM clientes;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        public static DataTable MOSTRAR_CLIENTES()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"select em.idClientes, em.Nombres, em.Apellidos,
+                                em.Telefono, em.Correo, em.idDirecciones,
+                                d.Residencia, d.Cacerio, d.Canton, m.municipios
+                                from Clientes em
+                                INNER JOIN direcciones d
+                                on em.idDirecciones=d.idDirecciones
+                                INNER JOIN municipios m
+                                on d.idMunicipios=m.idMunicipios
+                                INNER JOIN departamentos dep
+                                on m.idDepartamentos=dep.idDepartamentos;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
         public static DataTable FORMASDEPAGO()
         {
             DataTable Resultado = new DataTable();
@@ -201,9 +257,7 @@ namespace DataManager
             {
                 Resultado = new DataTable();
             }
-
             return Resultado;
-
         }
 
         public static DataTable OBTENERULTIMAVENTA()
@@ -219,10 +273,23 @@ namespace DataManager
             {
                 Resultado = new DataTable();
             }
-
             return Resultado;
-
         }
 
+        public static DataTable OBTENERULRIMACOMPRA()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"select idCompras from compras order by idCompras desc limit 1";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
     }
 }

@@ -128,7 +128,7 @@ namespace General.GUI
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(75, 23);
             this.btn_Agregar.TabIndex = 8;
-            this.btn_Agregar.Text = "Agregar";
+            this.btn_Agregar.Text = "Guardar";
             this.btn_Agregar.UseVisualStyleBackColor = true;
             this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 

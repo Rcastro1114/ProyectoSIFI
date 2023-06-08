@@ -52,18 +52,50 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CLS\Clientes.cs" />
+    <Compile Include="CLS\compras.cs" />
     <Compile Include="CLS\Departaments.cs" />
+    <Compile Include="CLS\detallecompras.cs" />
     <Compile Include="CLS\detalleventas.cs" />
     <Compile Include="CLS\Direcciones.cs" />
     <Compile Include="CLS\Empleados.cs" />
     <Compile Include="CLS\Product.cs" />
     <Compile Include="CLS\Rol.cs" />
     <Compile Include="CLS\ventas.cs" />
+    <Compile Include="GUI BUSQUEDAS\BuscarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI BUSQUEDAS\BuscarCliente.Designer.cs">
+      <DependentUpon>BuscarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI BUSQUEDAS\BuscarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI BUSQUEDAS\BuscarEmpleado.Designer.cs">
+      <DependentUpon>BuscarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI BUSQUEDAS\BuscarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI BUSQUEDAS\BuscarProductos.Designer.cs">
+      <DependentUpon>BuscarProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ClientesEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ClientesEdicion.Designer.cs">
+      <DependentUpon>ClientesEdicion.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ClientesGestion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\ClientesGestion.Designer.cs">
       <DependentUpon>ClientesGestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ComprasGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ComprasGestion.Designer.cs">
+      <DependentUpon>ComprasGestion.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\detalledeventas.cs">
       <SubType>Form</SubType>
@@ -143,8 +175,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI BUSQUEDAS\BuscarProductos.resx">
+      <DependentUpon>BuscarProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ClientesEdicion.resx">
+      <DependentUpon>ClientesEdicion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ClientesGestion.resx">
       <DependentUpon>ClientesGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ComprasGestion.resx">
+      <DependentUpon>ComprasGestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\detalledeventas.resx">
       <DependentUpon>detalledeventas.cs</DependentUpon>

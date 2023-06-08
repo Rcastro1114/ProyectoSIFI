@@ -71,5 +71,10 @@ namespace General.GUI
             DireccionesGestion f = new DireccionesGestion();
             f.ShowDialog();
         }
+
+        private void EmpleadosEdicion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -163,6 +163,7 @@ namespace General.GUI
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Name = "RolesGestion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RolesGestion";
             this.Load += new System.EventHandler(this.RolesGestion_Load);
             this.statusStrip1.ResumeLayout(false);

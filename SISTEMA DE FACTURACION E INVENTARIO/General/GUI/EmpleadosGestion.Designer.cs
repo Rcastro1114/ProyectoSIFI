@@ -132,6 +132,7 @@ namespace General.GUI
             // 
             this.dtgvEmpleados.AllowUserToAddRows = false;
             this.dtgvEmpleados.AllowUserToDeleteRows = false;
+            this.dtgvEmpleados.BackgroundColor = System.Drawing.Color.White;
             this.dtgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idEmpleados,
@@ -210,6 +211,7 @@ namespace General.GUI
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "EmpleadosGestion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmpleadosGestion";
             this.Load += new System.EventHandler(this.EmpleadosGestion_Load);
             this.toolStrip1.ResumeLayout(false);

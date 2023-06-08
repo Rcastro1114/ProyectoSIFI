@@ -186,6 +186,7 @@
             this.btn_buscar_cli.TabIndex = 11;
             this.btn_buscar_cli.Text = "Buscar";
             this.btn_buscar_cli.UseVisualStyleBackColor = true;
+            this.btn_buscar_cli.Click += new System.EventHandler(this.btn_buscar_cli_Click);
             // 
             // cmbo_Formadepago
             // 
@@ -280,6 +281,7 @@
             // 
             this.btn_buscar_emp.Location = new System.Drawing.Point(126, 47);
             this.btn_buscar_emp.Name = "btn_buscar_emp";
+            this.btn_buscar_emp.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btn_buscar_emp.Size = new System.Drawing.Size(75, 23);
             this.btn_buscar_emp.TabIndex = 10;
             this.btn_buscar_emp.Text = "Buscar";
@@ -660,7 +662,6 @@
         private System.Windows.Forms.TextBox txt_Nombres_cli;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txt_idClientes;
         private System.Windows.Forms.ComboBox cmbo_Formadepago;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txt_Apellidos_cli;
@@ -703,5 +704,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
         private System.Windows.Forms.DataGridViewButtonColumn eliminar;
+        public System.Windows.Forms.TextBox txt_idClientes;
     }
 }
