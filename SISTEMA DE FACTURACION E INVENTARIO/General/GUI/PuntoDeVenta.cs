@@ -133,7 +133,6 @@ namespace General.GUI
                 calculartotal();
                 limpiarproducto();
                 txt_idproductos.Select();
-
             }
         }
 
@@ -251,7 +250,7 @@ namespace General.GUI
             }
 
             General.CLS.detalleventas dv = new CLS.detalleventas();
-            String udv = null;
+            //String udv = null;
 
             for (int i = 0; i < dgtv_ventas.Rows.Count; i++)
             {
@@ -262,13 +261,6 @@ namespace General.GUI
                 dv.SubTotal = (float)Convert.ToDouble(dgtv_ventas.Rows[i].Cells[4].Value.ToString());
 
                 Boolean pr = dv.Insertar();
-
-                /*DataTable _ULTIMODETALLEVENTAS = new DataTable();
-
-                _ULTIMODETALLEVENTAS = DataManager.DBConsultas.BuscarUltimoDetalleVenta();
-                udv = _ULTIMODETALLEVENTAS.Rows[0]["idDetalleVentas"].ToString();
-
-                Boolean pdv = dv.ProcesarDetalleVenta(udv);*/
             }
             Close();
         }

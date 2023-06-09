@@ -79,19 +79,16 @@ DROP TABLE IF EXISTS `compras`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `compras` (
   `idCompras` int(11) NOT NULL AUTO_INCREMENT,
-  `Fecha` date NOT NULL,
+  `Fecha` datetime NOT NULL,
   `idProveedores` int(11) NOT NULL,
   `idEmpleados` int(11) NOT NULL,
-  `idFormasdePagos` int(11) NOT NULL,
   `Total` decimal(10,2) NOT NULL,
   PRIMARY KEY (`idCompras`),
   KEY `fk_idEmpleados_idx` (`idEmpleados`),
-  KEY `fk_idFormasdePagos_idx` (`idFormasdePagos`),
   KEY `fk_idProveedores_idx` (`idProveedores`),
   CONSTRAINT `fk_idEmpleados` FOREIGN KEY (`idEmpleados`) REFERENCES `empleados` (`idEmpleados`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_idFormasdePagos` FOREIGN KEY (`idFormasdePagos`) REFERENCES `formasdepagos` (`idFormasdePagos`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_idProveedores` FOREIGN KEY (`idProveedores`) REFERENCES `proveedores` (`idProveedores`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,6 +97,7 @@ CREATE TABLE `compras` (
 
 LOCK TABLES `compras` WRITE;
 /*!40000 ALTER TABLE `compras` DISABLE KEYS */;
+INSERT INTO `compras` VALUES (1,'2023-06-08 02:29:20',1,1,75.50),(2,'2023-06-08 02:32:56',1,1,100.50),(3,'2023-06-08 02:55:26',1,1,160.00),(4,'2023-06-08 02:56:05',1,1,160.00),(5,'2023-06-08 03:04:58',1,1,10.00),(6,'2023-06-08 03:15:12',1,1,16.00);
 /*!40000 ALTER TABLE `compras` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -138,14 +136,14 @@ CREATE TABLE `detallecompras` (
   `idDetalleCompras` int(11) NOT NULL AUTO_INCREMENT,
   `idProductos` int(11) NOT NULL,
   `Cantidad` int(11) NOT NULL,
-  `PrecioUnitario` decimal(5,2) NOT NULL,
-  `idComrpas` int(11) NOT NULL,
+  `idCompras` int(11) NOT NULL,
+  `PrecioCompra` decimal(5,2) NOT NULL,
   PRIMARY KEY (`idDetalleCompras`),
   KEY `fk_idProductos_idx` (`idProductos`),
-  KEY `fk_idCompras_idx` (`idComrpas`),
-  CONSTRAINT `fk_idCompras` FOREIGN KEY (`idComrpas`) REFERENCES `compras` (`idCompras`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  KEY `fk_idCompras_idx` (`idCompras`),
+  CONSTRAINT `fk_idCompras` FOREIGN KEY (`idCompras`) REFERENCES `compras` (`idCompras`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_idProductos` FOREIGN KEY (`idProductos`) REFERENCES `productos` (`idProductos`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,6 +152,7 @@ CREATE TABLE `detallecompras` (
 
 LOCK TABLES `detallecompras` WRITE;
 /*!40000 ALTER TABLE `detallecompras` DISABLE KEYS */;
+INSERT INTO `detallecompras` VALUES (1,3,500,1,5.50),(2,4,43,2,6.50),(3,5,43,5,4.50),(4,5,24,5,3.60),(5,6,80,6,4.50),(6,8,92,6,7.90);
 /*!40000 ALTER TABLE `detallecompras` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -176,7 +175,7 @@ CREATE TABLE `detalleventas` (
   KEY `fkidProductos_idx` (`idProductos`),
   CONSTRAINT `fkidProductos` FOREIGN KEY (`idProductos`) REFERENCES `productos` (`idProductos`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fkidVentas` FOREIGN KEY (`idVentas`) REFERENCES `ventas` (`idVentas`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -185,7 +184,7 @@ CREATE TABLE `detalleventas` (
 
 LOCK TABLES `detalleventas` WRITE;
 /*!40000 ALTER TABLE `detalleventas` DISABLE KEYS */;
-INSERT INTO `detalleventas` VALUES (8,54,1,8,9.50,76.00),(9,55,1,9,9.50,85.50),(10,56,1,2,9.50,19.00),(11,56,1,2,9.50,19.00),(12,58,1,2,9.50,19.00);
+INSERT INTO `detalleventas` VALUES (8,54,1,8,9.50,76.00),(9,55,1,9,9.50,85.50),(10,56,1,2,9.50,19.00),(11,56,1,2,9.50,19.00),(12,58,1,2,9.50,19.00),(13,58,1,2,9.50,19.00),(14,59,1,2,9.50,19.00),(15,60,1,2,9.50,19.00),(16,61,2,3,5.25,15.75),(17,65,1,2,9.50,19.00),(18,69,1,3,9.50,28.50),(19,70,1,2,9.50,19.00),(20,71,1,3,9.50,28.50),(21,72,1,4,9.50,38.00),(22,73,1,2,9.50,19.00),(23,74,1,5,9.50,47.50),(24,73,1,7,8.90,89.00),(25,75,1,2,9.50,19.00),(26,76,1,4,9.50,38.00),(27,76,1,4,9.50,38.00),(28,77,3,54,8.60,464.40),(29,78,1,23,9.50,218.50),(30,79,1,3,9.50,28.50),(31,80,1,8,9.50,76.00),(32,80,2,9,5.25,47.25),(33,80,5,6,0.80,4.80);
 /*!40000 ALTER TABLE `detalleventas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -290,7 +289,7 @@ CREATE TABLE `movimientos` (
   PRIMARY KEY (`idMovimientos`),
   KEY `movimientos_ibfk_1` (`idProductos`),
   CONSTRAINT `movimientos_ibfk_1` FOREIGN KEY (`idProductos`) REFERENCES `productos` (`idProductos`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -299,7 +298,7 @@ CREATE TABLE `movimientos` (
 
 LOCK TABLES `movimientos` WRITE;
 /*!40000 ALTER TABLE `movimientos` DISABLE KEYS */;
-INSERT INTO `movimientos` VALUES (1,1,300,'2023-05-31','Entrada',300),(2,2,75,'2023-06-04','Entrada',75),(3,1,4,'2023-06-04','Salida',296),(4,1,4,'2023-06-04','Salida',292),(5,1,5,'2023-06-04','Salida',287),(6,1,5,'2023-06-04','Salida',282),(7,1,3,'2023-06-04','Salida',279),(8,1,3,'2023-06-04','Salida',276),(9,1,4,'2023-06-05','Salida',272),(10,1,4,'2023-06-05','Salida',268),(11,1,8,'2023-06-06','Salida',260),(12,1,9,'2023-06-07','Salida',251),(13,1,2,'2023-06-07','Salida',249),(14,1,2,'2023-06-07','Salida',247),(15,1,2,'2023-06-07','Salida',245);
+INSERT INTO `movimientos` VALUES (1,1,300,'2023-05-31','Entrada',300),(2,2,75,'2023-06-04','Entrada',75),(3,1,4,'2023-06-04','Salida',296),(4,1,4,'2023-06-04','Salida',292),(5,1,5,'2023-06-04','Salida',287),(6,1,5,'2023-06-04','Salida',282),(7,1,3,'2023-06-04','Salida',279),(8,1,3,'2023-06-04','Salida',276),(9,1,4,'2023-06-05','Salida',272),(10,1,4,'2023-06-05','Salida',268),(11,1,8,'2023-06-06','Salida',260),(12,1,9,'2023-06-07','Salida',251),(13,1,2,'2023-06-07','Salida',249),(14,1,2,'2023-06-07','Salida',247),(15,1,2,'2023-06-07','Salida',245),(16,1,2,'2023-06-07','Salida',243),(17,1,2,'2023-06-07','Salida',241),(18,1,2,'2023-06-07','Salida',239),(19,2,3,'2023-06-07','Salida',72),(20,1,2,'2023-06-07','Salida',237),(21,1,3,'2023-06-07','Salida',234),(22,1,2,'2023-06-07','Salida',232),(23,1,3,'2023-06-07','Salida',229),(24,1,4,'2023-06-07','Salida',225),(25,1,2,'2023-06-07','Salida',223),(26,1,5,'2023-06-07','Salida',218),(27,1,7,'2023-06-07','Salida',211),(28,1,2,'2023-06-07','Salida',209),(29,1,4,'2023-06-07','Salida',205),(30,1,4,'2023-06-07','Salida',201),(31,3,500,'2023-06-08','Entrada',-500),(32,4,43,'2023-06-08','Entrada',43),(33,5,43,'2023-06-08','Entrada',43),(34,5,24,'2023-06-08','Entrada',67),(35,6,80,'2023-06-08','Entrada',80),(36,8,92,'2023-06-08','Entrada',92),(37,3,54,'2023-06-08','Salida',446),(38,1,23,'2023-06-08','Salida',178),(39,1,3,'2023-06-08','Salida',175),(40,1,8,'2023-06-08','Salida',167),(41,2,9,'2023-06-08','Salida',63),(42,5,6,'2023-06-08','Salida',61);
 /*!40000 ALTER TABLE `movimientos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -407,7 +406,7 @@ CREATE TABLE `productos` (
 
 LOCK TABLES `productos` WRITE;
 /*!40000 ALTER TABLE `productos` DISABLE KEYS */;
-INSERT INTO `productos` VALUES (1,'Bolsa de cemento Cessa',9.50,'Holcim',245),(2,'Cinta metrica',5.25,'Truper',75),(3,'Bolsa de cemento Cuscatlan',8.60,'Holcim',0),(4,'Pegamento PVC',2.50,'Durman',0),(5,'Brocha',0.80,'Truper',0),(6,'Brocha',0.90,'Truper',0),(7,'Brocha',1.00,'Truper',0),(8,'Bolsa de PowerMix',8.00,'Reflex',0),(9,'Tubo PVC 1/2\"',3.50,'Amanco',0),(10,'Galon Pintura',9.00,'Megacolor',0),(11,'Spray',2.00,'ABRO',0),(12,'Llave P/piso',3.00,'Foset',0),(13,'Llave P/piso',3.00,'Foset',0),(14,'Libra clavo 1\"',0.50,'Fiero',0),(15,'Libra clavo 2\"',0.50,'Fiero',0),(16,'Libra clavo 3\"',0.50,'Fiero',0),(17,'Libra clavo 4\"',0.50,'Fiero',0),(18,'QQ Hierro 1/4\"',35.00,'Corinca',0),(19,'QQ Hierro 3/8\"',35.00,'Corinca',0),(20,'Tornillo',0.15,'Truper',0),(21,'Tornillos 6-32 x 1/2\"',0.15,'Ciser',0),(22,'Tornillos 8-32 x 3/4\"',0.30,'Ciser',0),(23,'Tornillos 10-32 x 1\"',0.50,'Ciser',0),(24,'Tornillos 6-32 x 3/4\"',0.30,'Romasa',0),(25,'Tornillos 8-32 x 1\"',0.35,'Romasa',0),(26,'Tornillos 10-32 x 1 1/4\"',0.85,'Romasa',0),(27,'Tornillos 6 x 1\"',0.25,'Martek.',0),(28,'Tornillos 8 x 1 1/4\"',0.50,'Martek.',0),(29,'Tornillos 10 x 2\"',0.65,'Martek.',0),(30,'Tornillos 3/16\" x 1 1/4\"',0.40,'Tornikasa',0),(31,'Tornillos 1/4\" x 2 1/4\"',0.65,'Tornikasa',0),(32,'Tornillos 3/8\" x 3\"',0.75,'Tornikasa',0),(33,'Codo PVC 90 grados 1/2\"',0.30,'Amanco',0),(34,'Codo PVC 90 grados 3/4\"',0.45,'Amanco',0),(35,'Codo PVC 90 grados 1\"',0.90,'Amanco',0),(36,'Codo PVC 90 grados 1 1/4\"',1.30,'Amanco',0),(37,'Codo PVC 90 grados 1 1/2\"',1.90,'Amanco',0),(38,'Codo PVC 90 grados 2\"',2.50,'Amanco',0),(39,'Codo PVC 90 grados 3\"',2.75,'Amanco',0),(40,'Codo PVC 90 grados 4\"',3.80,'Amanco',0),(41,'Codo PVC 90 grados 6\"',4.25,'Amanco',0),(42,'Codo PVC 45 grados 1/2\"',0.35,'Amanco',0),(43,'Codo PVC 45 grados 3/4\"',0.50,'Amanco',0),(44,'Codo PVC 45 grados 1\"',1.00,'Amanco',0),(45,'Codo PVC 45 grados 1 1/4\"',1.30,'Amanco',0),(46,'Codo PVC 45 grados 1 1/2\"',1.90,'Amanco',0),(47,'Codo PVC 45 grados 2\"',2.70,'Amanco',0),(48,'Codo PVC 45 grados 3\"',2.80,'Amanco',0),(49,'Codo PVC 45 grados 4\"',3.90,'Amanco',0),(50,'Codo PVC 45 grados 6\"',4.50,'Amanco',0),(51,'Codo PVC 90 c/r grados 1/2\"',0.35,'Amanco',0),(52,'Codo PVC 90 c/r grados 3/4\"',0.55,'Amanco',0),(53,'Codo PVC 90 c/r grados 1\"',0.95,'Amanco',0),(54,'Codo PVC 90 c/r grados 1 1/4\"',1.50,'Amanco',0),(55,'Codo PVC 90 c/r grados 1 1/2\"',2.00,'Amanco',0),(56,'Codo PVC 90 c/r grados 2\"',2.60,'Amanco',0),(57,'Codo PVC 90 c/r grados 3\"',2.80,'Amanco',0),(58,'Codo PVC 90 c/r grados 4\"',3.90,'Amanco',0),(59,'Codo PVC 90 c/r grados 6\"',4.50,'Amanco',0),(60,'Codo PVC 45 c/r grados 1/2\"',0.35,'Amanco',0),(61,'Codo PVC 45 c/r grados 3/4\"',0.55,'Amanco',0),(62,'Codo PVC 45 c/r grados 1\"',1.50,'Amanco',0),(63,'Codo PVC 45 c/r grados 1 1/4\"',1.60,'Amanco',0),(64,'Codo PVC 45 c/r grados 1 1/2\"',1.95,'Amanco',0),(65,'Codo PVC 45 c/r grados 2\"',2.80,'Amanco',0),(66,'Codo PVC 45 c/r grados 3\"',3.30,'Amanco',0),(67,'Codo PVC 45 c/r grados 4\"',4.00,'Amanco',0),(68,'Codo PVC 45 c/r grados 6\"',5.00,'Amanco',0),(69,'Unión PVC de 1/2\"',0.35,'Amanco',0),(70,'Unión PVC de 3/4\"',0.50,'Amanco',0),(71,'Unión PVC de 1\"',1.00,'Amanco',0),(72,'Unión PVC de 1 1/4\"',1.30,'Amanco',0),(73,'Unión PVC de 1 1/2\"',1.90,'Amanco',0),(74,'Unión PVC de  2\"',2.70,'Amanco',0),(75,'Unión PVC de  3\"',2.80,'Amanco',0),(76,'Unión PVC de  4\"',3.90,'Amanco',0),(77,'Unión PVC de 6\"',4.50,'Amanco',0),(78,'Unión PVC c/r de 1/2\"',0.45,'Amanco',0),(79,'Unión PVC c/r de 3/4\"',0.55,'Amanco',0),(80,'Unión PVC c/r de 1\"',1.25,'Amanco',0),(81,'Unión PVC c/r de 1 1/4\"',1.40,'Amanco',0),(82,'Unión PVC c/r de 1 1/2\"',2.00,'Amanco',0),(83,'Unión PVC c/r de  2\"',2.80,'Amanco',0),(84,'Unión PVC c/r de  3\"',3.00,'Amanco',0),(85,'Unión PVC c/r de  4\"',4.00,'Amanco',0),(86,'Unión PVC c/r de 6\"',4.80,'Amanco',0),(87,'Adaptador PVC  1/2\"',0.35,'Amanco',0),(88,'Adaptador PVC  3/4\"',0.50,'Amanco',0),(89,'Adaptador PVC  1\"',1.00,'Amanco',0),(90,'Adaptador PVC e 1 1/4\"',1.30,'Amanco',0),(91,'Adaptador PVC 1 1/2\"',1.90,'Amanco',0),(92,'Adaptador PVC  2\"',2.70,'Amanco',0),(93,'Adaptador PVC   3\"',2.80,'Amanco',0),(94,'Adaptador PVC  4\"',3.90,'Amanco',0),(95,'Adaptador PVC  6\"',4.50,'Amanco',0),(96,'Tapón PVC 1/2\"',0.35,'Amanco',0),(97,'Tapón PVC 3/4\"',0.50,'Amanco',0),(98,'Tapón PVC 1\"',1.00,'Amanco',0),(99,'Tapón PVCe 1 1/4\"',1.30,'Amanco',0),(100,'Tapón PVC 1 1/2\"',1.90,'Amanco',0),(101,'Tapón PVC 2\"',2.70,'Amanco',0),(102,'Tapón PVC   3\"',2.80,'Amanco',0),(103,'Tapón PVC 4\"',3.90,'Amanco',0),(104,'Tapón PVC  6\"',4.50,'Amanco',0);
+INSERT INTO `productos` VALUES (1,'Bolsa de cemento Cessa',9.50,'Holcim',167),(2,'Cinta metrica',5.25,'Truper',63),(3,'Bolsa de cemento Cuscatlan',8.60,'Holcim',446),(4,'Pegamento PVC',2.50,'Durman',43),(5,'Brocha',0.80,'Truper',61),(6,'Brocha',0.90,'Truper',80),(7,'Brocha',1.00,'Truper',0),(8,'Bolsa de PowerMix',8.00,'Reflex',92),(9,'Tubo PVC 1/2\"',3.50,'Amanco',0),(10,'Galon Pintura',9.00,'Megacolor',0),(11,'Spray',2.00,'ABRO',0),(12,'Llave P/piso',3.00,'Foset',0),(13,'Llave P/piso',3.00,'Foset',0),(14,'Libra clavo 1\"',0.50,'Fiero',0),(15,'Libra clavo 2\"',0.50,'Fiero',0),(16,'Libra clavo 3\"',0.50,'Fiero',0),(17,'Libra clavo 4\"',0.50,'Fiero',0),(18,'QQ Hierro 1/4\"',35.00,'Corinca',0),(19,'QQ Hierro 3/8\"',35.00,'Corinca',0),(20,'Tornillo',0.15,'Truper',0),(21,'Tornillos 6-32 x 1/2\"',0.15,'Ciser',0),(22,'Tornillos 8-32 x 3/4\"',0.30,'Ciser',0),(23,'Tornillos 10-32 x 1\"',0.50,'Ciser',0),(24,'Tornillos 6-32 x 3/4\"',0.30,'Romasa',0),(25,'Tornillos 8-32 x 1\"',0.35,'Romasa',0),(26,'Tornillos 10-32 x 1 1/4\"',0.85,'Romasa',0),(27,'Tornillos 6 x 1\"',0.25,'Martek.',0),(28,'Tornillos 8 x 1 1/4\"',0.50,'Martek.',0),(29,'Tornillos 10 x 2\"',0.65,'Martek.',0),(30,'Tornillos 3/16\" x 1 1/4\"',0.40,'Tornikasa',0),(31,'Tornillos 1/4\" x 2 1/4\"',0.65,'Tornikasa',0),(32,'Tornillos 3/8\" x 3\"',0.75,'Tornikasa',0),(33,'Codo PVC 90 grados 1/2\"',0.30,'Amanco',0),(34,'Codo PVC 90 grados 3/4\"',0.45,'Amanco',0),(35,'Codo PVC 90 grados 1\"',0.90,'Amanco',0),(36,'Codo PVC 90 grados 1 1/4\"',1.30,'Amanco',0),(37,'Codo PVC 90 grados 1 1/2\"',1.90,'Amanco',0),(38,'Codo PVC 90 grados 2\"',2.50,'Amanco',0),(39,'Codo PVC 90 grados 3\"',2.75,'Amanco',0),(40,'Codo PVC 90 grados 4\"',3.80,'Amanco',0),(41,'Codo PVC 90 grados 6\"',4.25,'Amanco',0),(42,'Codo PVC 45 grados 1/2\"',0.35,'Amanco',0),(43,'Codo PVC 45 grados 3/4\"',0.50,'Amanco',0),(44,'Codo PVC 45 grados 1\"',1.00,'Amanco',0),(45,'Codo PVC 45 grados 1 1/4\"',1.30,'Amanco',0),(46,'Codo PVC 45 grados 1 1/2\"',1.90,'Amanco',0),(47,'Codo PVC 45 grados 2\"',2.70,'Amanco',0),(48,'Codo PVC 45 grados 3\"',2.80,'Amanco',0),(49,'Codo PVC 45 grados 4\"',3.90,'Amanco',0),(50,'Codo PVC 45 grados 6\"',4.50,'Amanco',0),(51,'Codo PVC 90 c/r grados 1/2\"',0.35,'Amanco',0),(52,'Codo PVC 90 c/r grados 3/4\"',0.55,'Amanco',0),(53,'Codo PVC 90 c/r grados 1\"',0.95,'Amanco',0),(54,'Codo PVC 90 c/r grados 1 1/4\"',1.50,'Amanco',0),(55,'Codo PVC 90 c/r grados 1 1/2\"',2.00,'Amanco',0),(56,'Codo PVC 90 c/r grados 2\"',2.60,'Amanco',0),(57,'Codo PVC 90 c/r grados 3\"',2.80,'Amanco',0),(58,'Codo PVC 90 c/r grados 4\"',3.90,'Amanco',0),(59,'Codo PVC 90 c/r grados 6\"',4.50,'Amanco',0),(60,'Codo PVC 45 c/r grados 1/2\"',0.35,'Amanco',0),(61,'Codo PVC 45 c/r grados 3/4\"',0.55,'Amanco',0),(62,'Codo PVC 45 c/r grados 1\"',1.50,'Amanco',0),(63,'Codo PVC 45 c/r grados 1 1/4\"',1.60,'Amanco',0),(64,'Codo PVC 45 c/r grados 1 1/2\"',1.95,'Amanco',0),(65,'Codo PVC 45 c/r grados 2\"',2.80,'Amanco',0),(66,'Codo PVC 45 c/r grados 3\"',3.30,'Amanco',0),(67,'Codo PVC 45 c/r grados 4\"',4.00,'Amanco',0),(68,'Codo PVC 45 c/r grados 6\"',5.00,'Amanco',0),(69,'Unión PVC de 1/2\"',0.35,'Amanco',0),(70,'Unión PVC de 3/4\"',0.50,'Amanco',0),(71,'Unión PVC de 1\"',1.00,'Amanco',0),(72,'Unión PVC de 1 1/4\"',1.30,'Amanco',0),(73,'Unión PVC de 1 1/2\"',1.90,'Amanco',0),(74,'Unión PVC de  2\"',2.70,'Amanco',0),(75,'Unión PVC de  3\"',2.80,'Amanco',0),(76,'Unión PVC de  4\"',3.90,'Amanco',0),(77,'Unión PVC de 6\"',4.50,'Amanco',0),(78,'Unión PVC c/r de 1/2\"',0.45,'Amanco',0),(79,'Unión PVC c/r de 3/4\"',0.55,'Amanco',0),(80,'Unión PVC c/r de 1\"',1.25,'Amanco',0),(81,'Unión PVC c/r de 1 1/4\"',1.40,'Amanco',0),(82,'Unión PVC c/r de 1 1/2\"',2.00,'Amanco',0),(83,'Unión PVC c/r de  2\"',2.80,'Amanco',0),(84,'Unión PVC c/r de  3\"',3.00,'Amanco',0),(85,'Unión PVC c/r de  4\"',4.00,'Amanco',0),(86,'Unión PVC c/r de 6\"',4.80,'Amanco',0),(87,'Adaptador PVC  1/2\"',0.35,'Amanco',0),(88,'Adaptador PVC  3/4\"',0.50,'Amanco',0),(89,'Adaptador PVC  1\"',1.00,'Amanco',0),(90,'Adaptador PVC e 1 1/4\"',1.30,'Amanco',0),(91,'Adaptador PVC 1 1/2\"',1.90,'Amanco',0),(92,'Adaptador PVC  2\"',2.70,'Amanco',0),(93,'Adaptador PVC   3\"',2.80,'Amanco',0),(94,'Adaptador PVC  4\"',3.90,'Amanco',0),(95,'Adaptador PVC  6\"',4.50,'Amanco',0),(96,'Tapón PVC 1/2\"',0.35,'Amanco',0),(97,'Tapón PVC 3/4\"',0.50,'Amanco',0),(98,'Tapón PVC 1\"',1.00,'Amanco',0),(99,'Tapón PVCe 1 1/4\"',1.30,'Amanco',0),(100,'Tapón PVC 1 1/2\"',1.90,'Amanco',0),(101,'Tapón PVC 2\"',2.70,'Amanco',0),(102,'Tapón PVC   3\"',2.80,'Amanco',0),(103,'Tapón PVC 4\"',3.90,'Amanco',0),(104,'Tapón PVC  6\"',4.50,'Amanco',0);
 /*!40000 ALTER TABLE `productos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -422,12 +421,12 @@ CREATE TABLE `proveedores` (
   `idProveedores` int(11) NOT NULL AUTO_INCREMENT,
   `Proveedor` varchar(80) NOT NULL,
   `Telefono` varchar(10) NOT NULL,
-  `Correo` varchar(10) NOT NULL,
+  `Correo` varchar(25) NOT NULL,
   `idDirecciones` int(11) NOT NULL,
   PRIMARY KEY (`idProveedores`),
   KEY `proveedores_ibfk_1` (`idDirecciones`),
   CONSTRAINT `proveedores_ibfk_1` FOREIGN KEY (`idDirecciones`) REFERENCES `direcciones` (`idDirecciones`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -436,6 +435,7 @@ CREATE TABLE `proveedores` (
 
 LOCK TABLES `proveedores` WRITE;
 /*!40000 ALTER TABLE `proveedores` DISABLE KEYS */;
+INSERT INTO `proveedores` VALUES (1,'La Palma','2222','lp@gmail.com',1);
 /*!40000 ALTER TABLE `proveedores` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -515,7 +515,7 @@ CREATE TABLE `ventas` (
   CONSTRAINT `ventas_ibfk_1` FOREIGN KEY (`idClientes`) REFERENCES `clientes` (`idClientes`),
   CONSTRAINT `ventas_ibfk_2` FOREIGN KEY (`idEmpleados`) REFERENCES `empleados` (`idEmpleados`),
   CONSTRAINT `ventas_ibfk_3` FOREIGN KEY (`idFormasdePago`) REFERENCES `formasdepagos` (`idFormasdePagos`)
-) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -524,7 +524,7 @@ CREATE TABLE `ventas` (
 
 LOCK TABLES `ventas` WRITE;
 /*!40000 ALTER TABLE `ventas` DISABLE KEYS */;
-INSERT INTO `ventas` VALUES (54,1,1,1,'2023-06-06 00:00:00',1.00),(55,1,1,2,'2023-06-07 00:43:26',216.75),(56,1,1,1,'2023-06-07 11:48:26',29.50),(57,1,2,1,'2023-06-07 11:54:27',123.50),(58,1,1,1,'2023-06-07 11:56:04',29.50);
+INSERT INTO `ventas` VALUES (54,1,1,1,'2023-06-06 00:00:00',1.00),(55,1,1,2,'2023-06-07 00:43:26',216.75),(56,1,1,1,'2023-06-07 11:48:26',29.50),(57,1,2,1,'2023-06-07 11:54:27',123.50),(58,1,1,1,'2023-06-07 11:56:04',29.50),(59,1,1,1,'2023-06-07 14:16:28',34.75),(60,1,1,1,'2023-06-07 14:36:59',34.75),(61,1,1,1,'2023-06-07 15:02:31',34.75),(62,1,1,1,'2023-06-07 15:44:29',39.00),(63,1,1,1,'2023-06-07 15:46:14',98.00),(64,1,1,1,'2023-06-07 15:46:18',98.00),(65,1,1,1,'2023-06-07 15:47:49',34.75),(66,1,1,1,'2023-06-07 15:56:46',92.75),(67,1,1,1,'2023-06-07 15:59:46',92.75),(68,1,1,1,'2023-06-07 16:04:00',139.75),(69,1,1,1,'2023-06-07 16:05:33',39.00),(70,1,1,1,'2023-06-07 16:07:23',34.75),(71,1,1,1,'2023-06-07 16:20:21',49.50),(72,1,1,1,'2023-06-07 21:47:24',64.25),(73,1,1,1,'2023-06-07 22:09:07',40.00),(74,1,1,1,'2023-06-07 22:15:00',168.75),(75,1,1,1,'2023-06-07 22:30:51',53.75),(76,1,1,1,'2023-06-07 22:36:39',64.25),(77,1,1,1,'2023-06-08 03:18:03',1423.15),(78,1,1,1,'2023-06-08 03:18:53',444.25),(79,1,1,1,'2023-06-08 03:20:25',42.60),(80,1,1,1,'2023-06-08 03:22:27',128.05);
 /*!40000 ALTER TABLE `ventas` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -537,4 +537,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-07 12:00:59
+-- Dump completed on 2023-06-08 11:55:42

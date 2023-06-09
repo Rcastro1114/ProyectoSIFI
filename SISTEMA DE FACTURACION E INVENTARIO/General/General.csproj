@@ -79,6 +79,12 @@
     <Compile Include="GUI BUSQUEDAS\BuscarProductos.Designer.cs">
       <DependentUpon>BuscarProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI KARDEX\Kardex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI KARDEX\Kardex.Designer.cs">
+      <DependentUpon>Kardex.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ClientesEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
   <ItemGroup>
     <EmbeddedResource Include="GUI BUSQUEDAS\BuscarProductos.resx">
       <DependentUpon>BuscarProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI KARDEX\Kardex.resx">
+      <DependentUpon>Kardex.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ClientesEdicion.resx">
       <DependentUpon>ClientesEdicion.cs</DependentUpon>

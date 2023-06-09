@@ -115,5 +115,24 @@ namespace SIFI.GUI
             {
             }
         }
+
+        private void kardexDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                General.GUI_KARDEX.Kardex f = new General.GUI_KARDEX.Kardex();
+                f.MdiParent = this;
+                f.Show();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void reporteDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteProductos.GUI.ViewProductos f = new ReporteProductos.GUI.ViewProductos();
+            f.Show();
+        }
     }
 }

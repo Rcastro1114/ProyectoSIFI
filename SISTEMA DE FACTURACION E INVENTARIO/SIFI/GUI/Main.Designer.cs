@@ -42,12 +42,14 @@ namespace SIFI.GUI
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.puntoDeVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kardexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kardexDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblRol = new System.Windows.Forms.ToolStripStatusLabel();
-            this.registrarComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -161,15 +163,32 @@ namespace SIFI.GUI
             this.comprasToolStripMenuItem.Size = new System.Drawing.Size(122, 35);
             this.comprasToolStripMenuItem.Text = "Compras";
             // 
+            // registrarComprasToolStripMenuItem
+            // 
+            this.registrarComprasToolStripMenuItem.Name = "registrarComprasToolStripMenuItem";
+            this.registrarComprasToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.registrarComprasToolStripMenuItem.Text = "Registrar Compras";
+            this.registrarComprasToolStripMenuItem.Click += new System.EventHandler(this.registrarComprasToolStripMenuItem_Click);
+            // 
             // kardexToolStripMenuItem
             // 
             this.kardexToolStripMenuItem.AutoSize = false;
+            this.kardexToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.kardexDeProductosToolStripMenuItem,
+            this.reporteDeProductosToolStripMenuItem});
             this.kardexToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.kardexToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.kardexToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("kardexToolStripMenuItem.Image")));
             this.kardexToolStripMenuItem.Name = "kardexToolStripMenuItem";
             this.kardexToolStripMenuItem.Size = new System.Drawing.Size(122, 35);
             this.kardexToolStripMenuItem.Text = "Kardex";
+            // 
+            // kardexDeProductosToolStripMenuItem
+            // 
+            this.kardexDeProductosToolStripMenuItem.Name = "kardexDeProductosToolStripMenuItem";
+            this.kardexDeProductosToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.kardexDeProductosToolStripMenuItem.Text = "Kardex de Productos";
+            this.kardexDeProductosToolStripMenuItem.Click += new System.EventHandler(this.kardexDeProductosToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
@@ -206,12 +225,12 @@ namespace SIFI.GUI
             this.lblRol.Size = new System.Drawing.Size(56, 21);
             this.lblRol.Text = "ROL";
             // 
-            // registrarComprasToolStripMenuItem
+            // reporteDeProductosToolStripMenuItem
             // 
-            this.registrarComprasToolStripMenuItem.Name = "registrarComprasToolStripMenuItem";
-            this.registrarComprasToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.registrarComprasToolStripMenuItem.Text = "Registrar Compras";
-            this.registrarComprasToolStripMenuItem.Click += new System.EventHandler(this.registrarComprasToolStripMenuItem_Click);
+            this.reporteDeProductosToolStripMenuItem.Name = "reporteDeProductosToolStripMenuItem";
+            this.reporteDeProductosToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.reporteDeProductosToolStripMenuItem.Text = "Reporte de Productos";
+            this.reporteDeProductosToolStripMenuItem.Click += new System.EventHandler(this.reporteDeProductosToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -255,6 +274,8 @@ namespace SIFI.GUI
         private System.Windows.Forms.ToolStripMenuItem comprasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kardexToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarComprasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kardexDeProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeProductosToolStripMenuItem;
     }
 }
 
