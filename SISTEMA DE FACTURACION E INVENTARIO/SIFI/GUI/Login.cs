@@ -27,7 +27,12 @@ namespace SIFI.GUI
             if (oSesion.IniciarSesion(txtUsuario.Text, txtClave.Text))
             {
                 _Autorizado = true;
-                Close();
+
+                Main main = new Main();
+                main.Show();
+                main.FormClosed += Logout;
+                this.Hide();
+                //Close();
             }
             else
             {
@@ -42,6 +47,14 @@ namespace SIFI.GUI
         {
             //txtUsuario.Text = "RCASTRO";
             //txtClave.Text = "rC@str0";
+        }
+
+        private void Logout(object sender, FormClosedEventArgs e)
+        {
+            txtClave.Clear();
+            txtUsuario.Clear();
+            this.Show();
+            txtUsuario.Focus();
         }
     }
 }

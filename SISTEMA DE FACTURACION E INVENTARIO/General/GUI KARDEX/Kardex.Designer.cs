@@ -128,6 +128,7 @@ namespace General.GUI_KARDEX
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dgt_kardex);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Kardex";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kardex";

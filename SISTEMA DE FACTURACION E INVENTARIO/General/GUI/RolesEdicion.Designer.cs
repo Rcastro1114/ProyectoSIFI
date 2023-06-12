@@ -144,6 +144,7 @@ namespace General.GUI
             this.Controls.Add(this.lbl_Rol);
             this.Controls.Add(this.txtIDRol);
             this.Controls.Add(this.lbl_idRol);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RolesEdicion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel1.ResumeLayout(false);

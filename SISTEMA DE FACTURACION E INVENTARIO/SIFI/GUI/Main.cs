@@ -195,5 +195,13 @@ namespace SIFI.GUI
             f.MdiParent = this;
             f.Show();
         }
+
+        private void loToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Desea salir?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 }

@@ -29,6 +29,7 @@ namespace General.GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DireccionesGestion));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblRegistrosClt = new System.Windows.Forms.ToolStripStatusLabel();
             this.dtgvDirecciones = new System.Windows.Forms.DataGridView();
@@ -210,6 +211,7 @@ namespace General.GUI
             this.Controls.Add(this.dtgvDirecciones);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DireccionesGestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DireccionesGestion";

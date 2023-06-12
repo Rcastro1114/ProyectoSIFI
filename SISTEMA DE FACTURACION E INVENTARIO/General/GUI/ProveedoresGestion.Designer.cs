@@ -138,11 +138,10 @@ namespace General.GUI
             this.Telefono,
             this.Correo,
             this.idDirecciones});
-            this.dtgvProveedores.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvProveedores.Location = new System.Drawing.Point(0, 25);
+            this.dtgvProveedores.Location = new System.Drawing.Point(0, 28);
             this.dtgvProveedores.Name = "dtgvProveedores";
             this.dtgvProveedores.ReadOnly = true;
-            this.dtgvProveedores.Size = new System.Drawing.Size(658, 400);
+            this.dtgvProveedores.Size = new System.Drawing.Size(658, 397);
             this.dtgvProveedores.TabIndex = 7;
             this.dtgvProveedores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvProveedores_CellDoubleClick);
             // 
@@ -191,6 +190,7 @@ namespace General.GUI
             this.Controls.Add(this.dtgvProveedores);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ProveedoresGestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProveedoresGestion";

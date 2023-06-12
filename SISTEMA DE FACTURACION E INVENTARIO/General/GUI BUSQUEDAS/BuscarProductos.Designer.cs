@@ -29,17 +29,15 @@ namespace General.GUI_BUSQUEDAS
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuscarProductos));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lbl_registros_prod = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btn_buscar = new System.Windows.Forms.ToolStripLabel();
             this.dgv_bProductos = new System.Windows.Forms.DataGridView();
             this.idProductos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Productos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_bProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,22 +56,6 @@ namespace General.GUI_BUSQUEDAS
             this.lbl_registros_prod.Size = new System.Drawing.Size(133, 17);
             this.lbl_registros_prod.Text = "0 Registros encontrados";
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btn_buscar});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(477, 25);
-            this.toolStrip1.TabIndex = 4;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // btn_buscar
-            // 
-            this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(94, 22);
-            this.btn_buscar.Text = "Buscar Producto";
-            // 
             // dgv_bProductos
             // 
             this.dgv_bProductos.AllowUserToAddRows = false;
@@ -85,12 +67,12 @@ namespace General.GUI_BUSQUEDAS
             this.PrecioUnitario,
             this.Stock});
             this.dgv_bProductos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_bProductos.Location = new System.Drawing.Point(0, 25);
+            this.dgv_bProductos.Location = new System.Drawing.Point(0, 0);
             this.dgv_bProductos.Name = "dgv_bProductos";
             this.dgv_bProductos.ReadOnly = true;
             this.dgv_bProductos.RowHeadersVisible = false;
             this.dgv_bProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_bProductos.Size = new System.Drawing.Size(477, 403);
+            this.dgv_bProductos.Size = new System.Drawing.Size(477, 428);
             this.dgv_bProductos.TabIndex = 5;
             this.dgv_bProductos.DoubleClick += new System.EventHandler(this.dgv_bProductos_DoubleClick);
             // 
@@ -132,15 +114,13 @@ namespace General.GUI_BUSQUEDAS
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(477, 450);
             this.Controls.Add(this.dgv_bProductos);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BuscarProductos";
             this.Text = "BuscarProductos";
             this.Load += new System.EventHandler(this.BuscarProductos_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_bProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -150,8 +130,6 @@ namespace General.GUI_BUSQUEDAS
         #endregion
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lbl_registros_prod;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel btn_buscar;
         private System.Windows.Forms.DataGridView dgv_bProductos;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProductos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Productos;
