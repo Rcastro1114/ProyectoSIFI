@@ -40,8 +40,8 @@ namespace SIFI.GUI
 
         private void Login_Load(object sender, EventArgs e)
         {
-            txtUsuario.Text = "RCASTRO";
-            txtClave.Text = "rC@str0";
+            //txtUsuario.Text = "RCASTRO";
+            //txtClave.Text = "rC@str0";
         }
     }
 }

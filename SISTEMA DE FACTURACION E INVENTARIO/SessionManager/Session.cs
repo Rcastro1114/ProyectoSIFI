@@ -41,7 +41,7 @@ namespace SessionManager
 
         public string Usuario { get => _Usuario; }
         public string IDUsuario { get => _idUsuarios; }
-        public string Rol { get => _Roles; }
+        public string Roles { get => _Roles; }
         public string IDRol { get => _idRoles; }
 
 

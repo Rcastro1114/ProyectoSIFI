@@ -66,5 +66,11 @@ namespace General.GUI
             DireccionesGestion f = new DireccionesGestion();
             f.ShowDialog();
         }
+
+        private void btn_Direccion_Click_1(object sender, EventArgs e)
+        {
+            DireccionesGestion f = new DireccionesGestion();
+            f.ShowDialog();
+        }
     }
 }

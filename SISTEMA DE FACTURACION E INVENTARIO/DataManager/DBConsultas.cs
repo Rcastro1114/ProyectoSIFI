@@ -48,6 +48,23 @@ namespace DataManager
             return Resultado;
         }
 
+        public static DataTable OPCIONESROL(String _IDROL)
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"SELECT o.Opciones FROM opciones o, permisos p, roles r
+            where  p.idOpciones = o.idOpciones and p.idRoles = r.idRoles and r.idRoles = '"+_IDROL+"';";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
         public static DataTable PRODUCTOS()
         {
             DataTable Resultado = new DataTable();

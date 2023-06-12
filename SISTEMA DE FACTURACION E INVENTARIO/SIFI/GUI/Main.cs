@@ -22,7 +22,41 @@ namespace SIFI.GUI
         private void Main_Load(object sender, EventArgs e)
         {
             lblUsuario.Text = oSesion.Usuario;
-            lblRol.Text = oSesion.Rol;
+            lblRol.Text = oSesion.Roles;
+
+            String r = oSesion.IDRol;
+            String f = null;
+            DataTable _OPCIONES = new DataTable();
+            _OPCIONES = DataManager.DBConsultas.OPCIONESROL(r);
+            for(int i = 0; i < _OPCIONES.Rows.Count; i++)
+            {
+                f = _OPCIONES.Rows[i]["Opciones"].ToString();
+
+                if(f == "General")
+                {
+                    GeneralT.Visible = true;
+                }
+                if(f == "Ventas")
+                {
+                    VentasT.Visible = true;
+                }
+                if(f == "Compras")
+                {
+                    ComprasT.Visible = true;
+                }
+                if(f == "Kardex")
+                {
+                    KardexT.Visible = true;
+                }
+                if(f == "Clientes")
+                {
+                    ClientesT.Visible = true;
+                }
+                if(f == "Stock")
+                {
+                    StockT.Visible = true;
+                }
+            }
         }
 
         private void gestionDeRolesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -145,6 +179,20 @@ namespace SIFI.GUI
         private void reporteDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ReporteProductos.GUI.ViewProductos f = new ReporteProductos.GUI.ViewProductos();
+            f.Show();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            General.GUI.ClientesGestion f = new General.GUI.ClientesGestion();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void stockDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            General.GUI_BUSQUEDAS.BuscarProductos f = new General.GUI_BUSQUEDAS.BuscarProductos();
+            f.MdiParent = this;
             f.Show();
         }
     }

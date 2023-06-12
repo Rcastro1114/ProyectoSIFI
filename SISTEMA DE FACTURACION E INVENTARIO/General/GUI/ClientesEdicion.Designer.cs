@@ -90,6 +90,7 @@ namespace General.GUI
             this.btn_Direccion.TabIndex = 31;
             this.btn_Direccion.Text = "Agregar Dirección";
             this.btn_Direccion.UseVisualStyleBackColor = true;
+            this.btn_Direccion.Click += new System.EventHandler(this.btn_Direccion_Click_1);
             // 
             // txt_idDirecciones
             // 
