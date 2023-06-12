@@ -66,6 +66,5 @@ namespace General.GUI
             DireccionesGestion f = new DireccionesGestion();
             f.ShowDialog();
         }
-
     }
 }

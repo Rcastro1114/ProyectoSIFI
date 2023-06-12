@@ -129,6 +129,19 @@ namespace SIFI.GUI
             }
         }
 
+        private void gestiónProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                General.GUI.ProveedoresGestion f = new General.GUI.ProveedoresGestion();
+                f.MdiParent = this;
+                f.Show();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
         private void reporteDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ReporteProductos.GUI.ViewProductos f = new ReporteProductos.GUI.ViewProductos();

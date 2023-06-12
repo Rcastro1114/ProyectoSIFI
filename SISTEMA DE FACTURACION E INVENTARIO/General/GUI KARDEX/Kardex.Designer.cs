@@ -29,6 +29,7 @@ namespace General.GUI_KARDEX
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Kardex));
             this.label1 = new System.Windows.Forms.Label();
             this.dgt_kardex = new System.Windows.Forms.DataGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -39,13 +40,16 @@ namespace General.GUI_KARDEX
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(194, 9);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Location = new System.Drawing.Point(126, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(331, 37);
+            this.label1.Size = new System.Drawing.Size(390, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Kardex de productos";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dgt_kardex
             // 
@@ -63,24 +67,28 @@ namespace General.GUI_KARDEX
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblKardex});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 425);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(628, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(628, 25);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // lblKardex
             // 
+            this.lblKardex.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.lblKardex.ForeColor = System.Drawing.Color.White;
             this.lblKardex.Name = "lblKardex";
-            this.lblKardex.Size = new System.Drawing.Size(133, 17);
+            this.lblKardex.Size = new System.Drawing.Size(168, 20);
             this.lblKardex.Text = "0 Registros encontrados";
             // 
             // Kardex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(628, 450);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dgt_kardex);

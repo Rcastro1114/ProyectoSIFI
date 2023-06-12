@@ -53,9 +53,9 @@ namespace General.GUI
             // 
             this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btn_Editar,
-            this.toolStripSeparator1,
             this.btn_Eliminar,
+            this.toolStripSeparator1,
+            this.btn_Editar,
             this.toolStripSeparator2,
             this.btn_Agregar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);

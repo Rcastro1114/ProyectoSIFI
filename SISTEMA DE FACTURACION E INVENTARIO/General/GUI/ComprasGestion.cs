@@ -20,12 +20,38 @@ namespace General.GUI
 
         private void btn_proveedor_Click(object sender, EventArgs e)
         {
+            using (var formulario = new ProveedoresGestion())
+            {
+                var result = formulario.ShowDialog();
 
+                if (result == DialogResult.OK)
+                {
+                    txt_idproveedores.Text = formulario._Proveedores.idProveedores.ToString();
+                    
+                }
+                else
+                {
+                    txt_idproveedores.Select();
+                }
+            }
         }
 
         private void btn_empleado_Click(object sender, EventArgs e)
         {
+            using (var formulario = new EmpleadosGestion())
+            {
+                var result = formulario.ShowDialog();
 
+                if (result == DialogResult.OK)
+                {
+                    txt_idempleados.Text = formulario._Empleados.idEmpleados.ToString();
+                  
+                }
+                else
+                {
+                    txt_idempleados.Select();
+                }
+            }
         }
 
         private void btn_Agregar_Prod_Click(object sender, EventArgs e)

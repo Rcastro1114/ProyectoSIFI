@@ -117,6 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btn_proveedor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAVlJREFUOE+Nkk8rRGEUxo2ZK2UzC0uJ0pRslD87PoJ8ACsWFkoWGsVCWcy3mCws
+        Btko+QQ2GgtZoEzJbBQLxDCK9/o97z3Tdc2UeerXue9zznPmvdPtkMIwTDvnpqEE91CHayjAkB9qJQuu
+        wBs8wQnePvUK3uEWJm08KRpToGAZJrRMPrWb85z1Kpx7feC3aOzQeKY2bcdP4S/BF+TNjoVZhdPGL/4V
+        vRzofzhgJmN2JMxXOLRjk+j1gd77mHCX2ZEwL6ACPWYlRGAM9Frb1E6zI2Fuwgcs0EyZ7cU5g1+iSrNm
+        x8IcYODGFqzCMF4/dRz24Bt0sxH8wGKxMEdpXtrgA9zBC35IPQctfoQtrOTVJcwsTX0su3AERZiBQaja
+        In15+ZYLJBppCMC/vwYJzEONZy34hA3N+EA7IrAIdVugr27ZWv+LjG6wBo0blK3VnsgEhNapZ8653A+g
+        t7DMxe4BqQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btn_empleado.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAVlJREFUOE+Nkk8rRGEUxo2ZK2UzC0uJ0pRslD87PoJ8ACsWFkoWGsVCWcy3mCws
+        Btko+QQ2GgtZoEzJbBQLxDCK9/o97z3Tdc2UeerXue9zznPmvdPtkMIwTDvnpqEE91CHayjAkB9qJQuu
+        wBs8wQnePvUK3uEWJm08KRpToGAZJrRMPrWb85z1Kpx7feC3aOzQeKY2bcdP4S/BF+TNjoVZhdPGL/4V
+        vRzofzhgJmN2JMxXOLRjk+j1gd77mHCX2ZEwL6ACPWYlRGAM9Frb1E6zI2Fuwgcs0EyZ7cU5g1+iSrNm
+        x8IcYODGFqzCMF4/dRz24Bt0sxH8wGKxMEdpXtrgA9zBC35IPQctfoQtrOTVJcwsTX0su3AERZiBQaja
+        In15+ZYLJBppCMC/vwYJzEONZy34hA3N+EA7IrAIdVugr27ZWv+LjG6wBo0blK3VnsgEhNapZ8653A+g
+        t7DMxe4BqQAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="idProductos.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -126,4 +151,28 @@
   <metadata name="PrecioCompra.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="btn_Agregar_Prod.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAW5JREFUOE+Fkr0vBEEYxufO4eIrGhRKvVYjKDX+g6v0Ijr/hUZzQcRFoxPR+EgE
+        EeW1ChSXC0FEhOB2Z3f93pnZm1uXnCf53fvOM++zM7d3qlVxHI/AchRFR9QXqoZn+kNYTJJk2I16YeaD
+        IJhl8A5i1m0irOGGuSmWORdVKgzDOTnJjlmxfoNt+HCWEQ+v4U2YIM0o3Lu9phiqUHqoZ9bxwrskMyTh
+        FWi7KtYWpUA9tY4XXgMWJHzivIw6hUWcvqf4eJUFQ/J2y9R1QWtdws7TL6UebMC7Cz/JyaEL71D6qL0C
+        fUHeCbU79aCfkLkJfSDhR7f4giu4ELBWoYt+LfUIXlMbMk9fk2vvy+KvGPrvO5fl5BJo5zXVKYwnv/20
+        hAeham0vvF1KkRPOrePFnty2mP5RJhm6tVtWeJ9wDN/OMmJdhTETFOHlMMZlmIf82LGs2JOHHWSCrWJm
+        gM15HlCBBwihjrcJM+zbqxop9Qu9U+/+wWsZmAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btn_eliminar_prod.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAVFJREFUOE91k01OAkEUhPsMkLB3TuANYI0XwIDGEENiIivO4wkcdq5c4BlY6hVc
+        OCz8CUz3+FXPG5zRtkLl/dbr7unGpRBCGMAzeAnHiq30P6qqymjMfQgl/hHkSrjGzay1CwojRLugZinS
+        KODIJDVIZG2hVmalKbyAM+hJR+DvMD878N6vSUr0jmpF8QqewoUstTlcwQ9iDcijEGeAWCtJvMU5x79L
+        UPmtifew78LhoK+qRNwydsaQDfYBPpl9hFMJGxCPXShLXcdRDBaI+YW5AqzqX/A6Vg3Ka9u6xz9irM6t
+        vD5YSszKrTP/WnmpAHsDO2J8nbkXPxrinCCKmbJE+UYcZ8mCV3irWMC/j0KBOGOfhboRPjNggqttR9I8
+        gS/4QoF/YtIaJIbNANt+ChIOTdLFZ/3S9Lb31hyBQGfMcdNvuw0ae1C30Pyr+lZqwblvZduKcSyITKgA
+        AAAASUVORK5CYII=
+</value>
+  </data>
 </root>

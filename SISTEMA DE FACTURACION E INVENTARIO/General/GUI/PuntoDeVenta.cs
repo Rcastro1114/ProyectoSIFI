@@ -10,11 +10,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace General.GUI
 {
     public partial class PuntoDeVenta : Form
     {
         BindingSource _DATOS = new BindingSource();
+
+        public static String _REPVENTA = null;
+        public static String _REPDETALLEVENTA = null;
 
         private void CargarFormasDePago()
         {
@@ -243,6 +247,9 @@ namespace General.GUI
             {
                 _ULTIMAVENTA = DataManager.DBConsultas.OBTENERULTIMAVENTA();
                 ultimaventa = _ULTIMAVENTA.Rows[0]["idVentas"].ToString();
+
+                //PASAR AL REPORTE DE LA VENTA
+                _REPVENTA = ultimaventa;
             }
             catch(Exception)
             {
@@ -262,6 +269,23 @@ namespace General.GUI
 
                 Boolean pr = dv.Insertar();
             }
+            String ultimodetalleventa = null;
+
+            DataTable _ULTIMODETALLEVENTA = new DataTable();
+            try
+            {
+                _ULTIMODETALLEVENTA = DataManager.DBConsultas.OBTENERULTIMODETALLEVENTA();
+                ultimodetalleventa = _ULTIMODETALLEVENTA.Rows[0]["idDetalleVentas"].ToString();
+
+                _REPDETALLEVENTA = ultimodetalleventa;
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Ha ocurrido un error en buscar el idDetalleVentas", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            VisorVenta f = new VisorVenta();
+            f.ShowDialog();
+
             Close();
         }
 
@@ -315,41 +339,5 @@ namespace General.GUI
                 }
             }
         }
-
-
-
-
-
-        /*foreach (DataGridViewRow row in dgtv_ventas.Rows) 
-        {
-            if (!row.IsNewRow)
-            {
-                String idprod = row.Cells[0].Value.ToString();//id
-                String prod = row.Cells[1].Value.ToString();
-                String cant = row.Cells[2].Value.ToString();//can
-                float prevent = (float)Convert.ToDouble(row.Cells[3].Value.ToString());
-                float subt = (float)Convert.ToDouble(row.Cells[4].Value.ToString());
-
-                CLS.detalleventas oDetalleVentas = new CLS.detalleventas();
-
-                oDetalleVentas.idProductos = idprod;
-                oDetalleVentas.Cantidad = cant;
-                oDetalleVentas.PrecioVenta = prevent;
-                oDetalleVentas.SubTotal = subt;
-
-                if (oDetalleVentas.Insertar())
-                {
-                    MessageBox.Show("¡Factura creada correctamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
-                }
-                else
-                {
-                    MessageBox.Show("¡La factura no fue creada!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
-            }
-        }*/
-
-
     }
 }

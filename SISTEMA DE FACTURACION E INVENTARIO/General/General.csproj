@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -42,6 +46,8 @@
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -59,19 +65,27 @@
     <Compile Include="CLS\Direcciones.cs" />
     <Compile Include="CLS\Empleados.cs" />
     <Compile Include="CLS\Product.cs" />
+    <Compile Include="CLS\Proveedores.cs" />
     <Compile Include="CLS\Rol.cs" />
     <Compile Include="CLS\ventas.cs" />
-    <Compile Include="GUI BUSQUEDAS\BuscarCliente.cs">
-      <SubType>Form</SubType>
+    <Compile Include="DATOSVENTAS\detalleventas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>detalleventas.xsd</DependentUpon>
     </Compile>
-    <Compile Include="GUI BUSQUEDAS\BuscarCliente.Designer.cs">
-      <DependentUpon>BuscarCliente.cs</DependentUpon>
+    <Compile Include="DATOSVENTAS\ventas.cs">
+      <DependentUpon>ventas.xsd</DependentUpon>
     </Compile>
-    <Compile Include="GUI BUSQUEDAS\BuscarEmpleado.cs">
-      <SubType>Form</SubType>
+    <Compile Include="DATOSVENTAS\ventas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ventas.xsd</DependentUpon>
     </Compile>
-    <Compile Include="GUI BUSQUEDAS\BuscarEmpleado.Designer.cs">
-      <DependentUpon>BuscarEmpleado.cs</DependentUpon>
+    <Compile Include="Factura.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Factura.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="GUI BUSQUEDAS\BuscarProductos.cs">
       <SubType>Form</SubType>
@@ -103,12 +117,6 @@
     <Compile Include="GUI\ComprasGestion.Designer.cs">
       <DependentUpon>ComprasGestion.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\detalledeventas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\detalledeventas.Designer.cs">
-      <DependentUpon>detalledeventas.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\DireccionesGestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +147,18 @@
     <Compile Include="GUI\ProductosGestion.Designer.cs">
       <DependentUpon>ProductosGestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ProveedoresEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ProveedoresEdicion.Designer.cs">
+      <DependentUpon>ProveedoresEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ProveedoresGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ProveedoresGestion.Designer.cs">
+      <DependentUpon>ProveedoresGestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\PuntoDeVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,11 +177,11 @@
     <Compile Include="GUI\RolesGestion.Designer.cs">
       <DependentUpon>RolesGestion.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ventas.cs">
+    <Compile Include="GUI\VisorVenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ventas.Designer.cs">
-      <DependentUpon>ventas.cs</DependentUpon>
+    <Compile Include="GUI\VisorVenta.Designer.cs">
+      <DependentUpon>VisorVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -171,6 +191,28 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DATOSVENTAS\detalleventas.xsc">
+      <DependentUpon>detalleventas.xsd</DependentUpon>
+    </None>
+    <None Include="DATOSVENTAS\detalleventas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>detalleventas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DATOSVENTAS\detalleventas.xss">
+      <DependentUpon>detalleventas.xsd</DependentUpon>
+    </None>
+    <None Include="DATOSVENTAS\ventas.xsc">
+      <DependentUpon>ventas.xsd</DependentUpon>
+    </None>
+    <None Include="DATOSVENTAS\ventas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ventas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DATOSVENTAS\ventas.xss">
+      <DependentUpon>ventas.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Resources\eliminar.png" />
   </ItemGroup>
@@ -181,6 +223,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Factura.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Factura.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI BUSQUEDAS\BuscarProductos.resx">
       <DependentUpon>BuscarProductos.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,9 +241,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ComprasGestion.resx">
       <DependentUpon>ComprasGestion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\detalledeventas.resx">
-      <DependentUpon>detalledeventas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DireccionesGestion.resx">
       <DependentUpon>DireccionesGestion.cs</DependentUpon>
@@ -214,6 +257,12 @@
     <EmbeddedResource Include="GUI\ProductosGestion.resx">
       <DependentUpon>ProductosGestion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ProveedoresEdicion.resx">
+      <DependentUpon>ProveedoresEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ProveedoresGestion.resx">
+      <DependentUpon>ProveedoresGestion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\PuntoDeVenta.resx">
       <DependentUpon>PuntoDeVenta.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,8 +272,8 @@
     <EmbeddedResource Include="GUI\RolesGestion.resx">
       <DependentUpon>RolesGestion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ventas.resx">
-      <DependentUpon>ventas.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\VisorVenta.resx">
+      <DependentUpon>VisorVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -236,6 +285,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eliminar15.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -67,11 +67,11 @@ namespace DataManager
         public static DataTable KARDEXPRODUCTOS()
         {
             DataTable Resultado = new DataTable();
-                String Sentencia = @"select m.idMovimientos,m.Fecha,m.idProductos,p.Productos,
-                                    m.TipodeMovimiento,m.Saldo
-                                    from movimientos m
-                                    INNER JOIN productos p
-                                    on m.idProductos = p.idProductos;";
+                String Sentencia = @"select m.idProductos,p.Productos,m.Fecha,
+                                        m.TipodeMovimiento,m.Saldo
+                                        from movimientos m
+                                        INNER JOIN productos p
+                                        on m.idProductos = p.idProductos;";
             DBOperacion Consultor = new DBOperacion();
             try
             {
@@ -248,6 +248,47 @@ namespace DataManager
             }
             return Resultado;
         }
+
+        public static DataTable PROVEEDORES()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"SELECT idProveedores, Proveedor,Telefono,Correo,idDirecciones FROM proveedores;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        public static DataTable MOSTRAR_PROVEEDORES()
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"select em.idProveedores, em.Proveedor,
+                                em.Telefono, em.Correo, em.idDirecciones,
+                                d.Residencia, d.Cacerio, d.Canton, m.municipios
+                                from proveedores em
+                                INNER JOIN direcciones d
+                                on em.idDirecciones=d.idDirecciones
+                                INNER JOIN municipios m
+                                on d.idMunicipios=m.idMunicipios
+                                INNER JOIN departamentos dep
+                                on m.idDepartamentos=dep.idDepartamentos;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
         public static DataTable FORMASDEPAGO()
         {
             DataTable Resultado = new DataTable();
@@ -264,7 +305,7 @@ namespace DataManager
             return Resultado;
         }
 
-        public static DataTable BuscarUltimoDetalleVenta()
+        public static DataTable OBTENERULTIMODETALLEVENTA()
         {
             DataTable Resultado = new DataTable();
             String Sentencia = @"select idDetalleVentas from detalleventas  order by idDetalleVentas desc limit 1;";
@@ -284,6 +325,48 @@ namespace DataManager
         {
             DataTable Resultado = new DataTable();
             String Sentencia = @"select idVentas from ventas order by idVentas desc limit 1";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        public static DataTable REPORTEVENTA(String pIDVENTA)
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"select concat(c.Nombres,' ',c.Apellidos)NombreApellidoCliente, concat(em.Nombres,' ',em.Apellidos)NombreApellidoEmpleado,
+                                fp.FormadePago,v.Fecha, v.Total,(v.Total*0.13)IVA,(v.Total+(v.Total*0.13))TotalFinal 
+                                from ventas v,clientes c,empleados em,formasdepagos fp
+                                where v.idClientes=c.idClientes and v.idEmpleados=em.idEmpleados and v.idFormasdePago=fp.idFormasdePagos
+                                and idVentas = '" + pIDVENTA + "';";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        public static DataTable REPORTEDETALLEVENTA(String DVpIDVENTA)
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"select dv.idProductos,p.Productos,dv.Cantidad,dv.PrecioVenta,dv.SubTotal
+                                from detalleventas dv 
+                                INNER JOIN ventas v
+                                on dv.idVentas = v.idVentas
+                                INNER JOIN productos p
+                                on dv.idProductos=p.idProductos
+                                where dv.idVentas='" + DVpIDVENTA + "';";
             DBOperacion Consultor = new DBOperacion();
             try
             {
