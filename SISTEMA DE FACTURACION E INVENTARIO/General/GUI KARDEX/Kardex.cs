@@ -14,6 +14,21 @@ namespace General.GUI_KARDEX
     {
         BindingSource _DATOS = new BindingSource();
         DataTable oKardexProductos = new DataTable();
+
+        private void CargarBusqueda()
+        {
+            try 
+            {
+                _DATOS.DataSource = DataManager.DBConsultas.BUSCARPRDUCTOKARDEX(txt_idProducto.Text.ToString());
+                dgt_kardex.AutoGenerateColumns = false;
+                dgt_kardex.DataSource = _DATOS;
+            }
+            catch(Exception)
+            {
+
+            }
+        }
+
         private void CargarKardex()
         {
             try
@@ -35,6 +50,18 @@ namespace General.GUI_KARDEX
         private void Kardex_Load(object sender, EventArgs e)
         {
             CargarKardex();
+        }
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+            if(txt_idProducto.Text.Length > 0)
+            {
+                CargarBusqueda();
+            }
+            else
+            {
+                MessageBox.Show("No se ha encontrado el producto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

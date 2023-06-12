@@ -65,6 +65,29 @@ namespace General.GUI
                     txt_Cantidad.Text,
                     txt_precioCompra.Text   
                 );
+            calculartotal();
+        }
+
+        private void calculartotal()
+        {
+            int cant = int.Parse(txt_Cantidad.Text.ToString());
+            float preCom = (float)Convert.ToDouble(txt_precioCompra.Text.ToString());
+            float totalCom = 0;
+
+            if (dgv_compra.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgv_compra.Rows) { 
+
+                    cant = int.Parse(row.Cells["Cantidad"].Value.ToString());
+                    preCom = float.Parse(row.Cells["PrecioCompra"].Value.ToString());
+
+                    totalCom += (preCom * cant);
+                }
+                txt_TotalCompra.Text = totalCom.ToString("0.00");
+            }
+
+
+
         }
 
         private void ComprasGestion_Load(object sender, EventArgs e)
@@ -79,7 +102,7 @@ namespace General.GUI
             CLS.compras c = new CLS.compras();
             c.IdProveedores = txt_idproveedores.Text.ToString();
             c.IdEmpleados = txt_idempleados.Text.ToString();
-            c.Total =(float) Convert.ToDouble(txt_TotalCompra.Text.ToString());
+            c.Total = (float) Convert.ToDouble(txt_TotalCompra.Text.ToString());
 
             Boolean f = c.Insertar();
             if(f == false)
@@ -113,11 +136,19 @@ namespace General.GUI
                 dc.PrecioCompra = (float)Convert.ToDouble(dgv_compra.Rows[i].Cells[2].Value.ToString());
                 Boolean ic = dc.Insertar();
             }
+            Close();
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btn_eliminar_prod_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow fila = dgv_compra.SelectedRows[0];
+            dgv_compra.Rows.Remove(fila);
+            dgv_compra.Refresh();
         }
     }
 }

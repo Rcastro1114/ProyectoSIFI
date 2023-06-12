@@ -215,6 +215,7 @@ namespace General.GUI
             this.btn_eliminar_prod.TabIndex = 10;
             this.btn_eliminar_prod.Text = "Eliminar Producto";
             this.btn_eliminar_prod.UseVisualStyleBackColor = false;
+            this.btn_eliminar_prod.Click += new System.EventHandler(this.btn_eliminar_prod_Click);
             // 
             // btn_guardar
             // 
@@ -321,6 +322,7 @@ namespace General.GUI
             // 
             this.txt_TotalCompra.Location = new System.Drawing.Point(567, 228);
             this.txt_TotalCompra.Name = "txt_TotalCompra";
+            this.txt_TotalCompra.ReadOnly = true;
             this.txt_TotalCompra.Size = new System.Drawing.Size(100, 20);
             this.txt_TotalCompra.TabIndex = 21;
             // 

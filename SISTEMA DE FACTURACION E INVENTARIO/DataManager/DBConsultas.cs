@@ -101,6 +101,27 @@ namespace DataManager
             return Resultado;
         }
 
+        public static DataTable BUSCARPRDUCTOKARDEX(String _IDPROD)
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"select m.idProductos,p.Productos,m.Fecha,
+                                    m.TipodeMovimiento,m.Saldo
+                                    from movimientos m
+                                    INNER JOIN productos p
+                                    on m.idProductos = p.idProductos
+                                    where p.idProductos = '"+_IDPROD+"';";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
         public static DataTable BUSCARPRODUCTOS()
         {
             DataTable Resultado = new DataTable();
