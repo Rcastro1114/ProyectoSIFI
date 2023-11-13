@@ -191,17 +191,9 @@ namespace SIFI.GUI
 
         private void stockDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            General.GUI_BUSQUEDAS.BuscarProductos f = new General.GUI_BUSQUEDAS.BuscarProductos();
+            /*General.GUI_BUSQUEDAS.BuscarProductos f = new General.GUI_BUSQUEDAS.BuscarProductos();
             f.MdiParent = this;
-            f.Show();
-        }
-
-        private void loToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Desea salir?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                this.Close();
-            }
+            f.Show();*/
         }
     }
 }

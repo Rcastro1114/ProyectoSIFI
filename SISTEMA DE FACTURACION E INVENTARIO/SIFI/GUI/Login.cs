@@ -24,15 +24,14 @@ namespace SIFI.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+
             if (oSesion.IniciarSesion(txtUsuario.Text, txtClave.Text))
             {
-                _Autorizado = true;
-
-                Main main = new Main();
-                main.Show();
-                main.FormClosed += Logout;
+                _Autorizado = true;             
                 this.Hide();
-                //Close();
+                
+                Close();
             }
             else
             {
@@ -45,16 +44,10 @@ namespace SIFI.GUI
 
         private void Login_Load(object sender, EventArgs e)
         {
-            //txtUsuario.Text = "RCASTRO";
-            //txtClave.Text = "rC@str0";
+            txtUsuario.Text = "RCASTRO";
+            txtClave.Text = "rC@str0";
         }
 
-        private void Logout(object sender, FormClosedEventArgs e)
-        {
-            txtClave.Clear();
-            txtUsuario.Clear();
-            this.Show();
-            txtUsuario.Focus();
-        }
+
     }
 }

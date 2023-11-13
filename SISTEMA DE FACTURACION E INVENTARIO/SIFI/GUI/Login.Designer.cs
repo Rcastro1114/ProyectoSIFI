@@ -57,11 +57,11 @@ namespace SIFI.GUI
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(78, 272);
+            this.button1.Location = new System.Drawing.Point(50, 262);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 36);
+            this.button1.Size = new System.Drawing.Size(121, 36);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Sign in";
+            this.button1.Text = "Iniciar sesión";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -119,9 +119,9 @@ namespace SIFI.GUI
             this.lblMensaje.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblMensaje.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensaje.ForeColor = System.Drawing.Color.White;
-            this.lblMensaje.Location = new System.Drawing.Point(34, 324);
+            this.lblMensaje.Location = new System.Drawing.Point(18, 311);
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(169, 59);
+            this.lblMensaje.Size = new System.Drawing.Size(187, 100);
             this.lblMensaje.TabIndex = 5;
             this.lblMensaje.Text = "Escriba sus credenciales";
             this.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -134,7 +134,7 @@ namespace SIFI.GUI
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 21);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Inicie Sesion";
+            this.label3.Text = "Inicie Sesión";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtClave

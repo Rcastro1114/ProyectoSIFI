@@ -84,11 +84,11 @@ namespace DataManager
         public static DataTable KARDEXPRODUCTOS()
         {
             DataTable Resultado = new DataTable();
-                String Sentencia = @"select m.idProductos,p.Productos,m.Fecha,
-                                        m.TipodeMovimiento,m.Saldo
-                                        from movimientos m
-                                        INNER JOIN productos p
-                                        on m.idProductos = p.idProductos;";
+                String Sentencia = @"select m.idProductos,p.Productos,m.Fecha,m.TipodeMovimiento,m.Cantidad,m.Saldo
+                                    from movimientos m
+                                    INNER JOIN productos p
+                                    on m.idProductos = p.idProductos
+                                    order by m.Fecha DESC;";
             DBOperacion Consultor = new DBOperacion();
             try
             {
@@ -104,12 +104,32 @@ namespace DataManager
         public static DataTable BUSCARPRDUCTOKARDEX(String _IDPROD)
         {
             DataTable Resultado = new DataTable();
-            String Sentencia = @"select m.idProductos,p.Productos,m.Fecha,
-                                    m.TipodeMovimiento,m.Saldo
+            String Sentencia = @"select m.idProductos,p.Productos,m.Fecha,m.TipodeMovimiento,m.Cantidad,m.Saldo
                                     from movimientos m
                                     INNER JOIN productos p
                                     on m.idProductos = p.idProductos
-                                    where p.idProductos = '"+_IDPROD+"';";
+                                    WHERE p.idProductos = '" +_IDPROD+ "' order by m.Fecha DESC;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        public static DataTable BUSCARPRDUCTOPORNOMBREKARDEX(String _NOMBREPRODUCTO)
+        {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"select m.idProductos,p.Productos,m.Fecha,
+                                    m.TipodeMovimiento,m.Cantidad,m.Saldo
+                                    from movimientos m
+                                    INNER JOIN productos p
+                                    on m.idProductos = p.idProductos
+                                    where p.Productos = '" + _NOMBREPRODUCTO + "'order by m.Fecha DESC;";
             DBOperacion Consultor = new DBOperacion();
             try
             {

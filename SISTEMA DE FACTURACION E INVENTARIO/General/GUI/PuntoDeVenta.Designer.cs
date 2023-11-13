@@ -30,14 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PuntoDeVenta));
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_idVentas = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.txt_Fecha = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btn_buscar_cli = new System.Windows.Forms.Button();
             this.cmbo_Formadepago = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.txt_Apellidos_cli = new System.Windows.Forms.TextBox();
@@ -47,7 +42,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txt_idClientes = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btn_buscar_emp = new System.Windows.Forms.Button();
             this.txt_apellidos_emp = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_Nombres_emp = new System.Windows.Forms.TextBox();
@@ -55,8 +49,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txt_idEmpleados = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btn_Buscar_Prod = new System.Windows.Forms.Button();
-            this.btn_Agregar = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.txt_Cantidad = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -71,8 +63,6 @@
             this.txt_Total = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txt_paga = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txt_IVA = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txt_cambio = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -83,13 +73,14 @@
             this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox1.SuspendLayout();
+            this.btn_buscar_emp = new System.Windows.Forms.Button();
+            this.btn_Buscar_Prod = new System.Windows.Forms.Button();
+            this.btn_Agregar = new System.Windows.Forms.Button();
+            this.btn_buscar_cli = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgtv_ventas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -97,68 +88,23 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(11, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(945, 641);
+            this.label1.Size = new System.Drawing.Size(880, 534);
             this.label1.TabIndex = 0;
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(191, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(252, 37);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Punto de Venta";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.txt_idVentas);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txt_Fecha);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(602, 21);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(354, 85);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Información de la venta";
-            // 
-            // txt_idVentas
-            // 
-            this.txt_idVentas.Location = new System.Drawing.Point(231, 53);
-            this.txt_idVentas.Name = "txt_idVentas";
-            this.txt_idVentas.ReadOnly = true;
-            this.txt_idVentas.Size = new System.Drawing.Size(112, 22);
-            this.txt_idVentas.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(228, 32);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 18);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "N° de Factura";
-            // 
             // txt_Fecha
             // 
-            this.txt_Fecha.Location = new System.Drawing.Point(9, 53);
+            this.txt_Fecha.Location = new System.Drawing.Point(787, 13);
             this.txt_Fecha.Name = "txt_Fecha";
             this.txt_Fecha.ReadOnly = true;
-            this.txt_Fecha.Size = new System.Drawing.Size(100, 22);
+            this.txt_Fecha.Size = new System.Drawing.Size(100, 20);
             this.txt_Fecha.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 32);
+            this.label3.Location = new System.Drawing.Point(732, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 18);
             this.label3.TabIndex = 0;
@@ -177,28 +123,12 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.txt_idClientes);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(513, 112);
+            this.groupBox2.Location = new System.Drawing.Point(20, 39);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(443, 142);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información sobre el cliente";
-            // 
-            // btn_buscar_cli
-            // 
-            this.btn_buscar_cli.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
-            this.btn_buscar_cli.ForeColor = System.Drawing.Color.White;
-            this.btn_buscar_cli.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscar_cli.Image")));
-            this.btn_buscar_cli.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_buscar_cli.Location = new System.Drawing.Point(123, 49);
-            this.btn_buscar_cli.Name = "btn_buscar_cli";
-            this.btn_buscar_cli.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btn_buscar_cli.Size = new System.Drawing.Size(85, 23);
-            this.btn_buscar_cli.TabIndex = 11;
-            this.btn_buscar_cli.Text = "Buscar";
-            this.btn_buscar_cli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_buscar_cli.UseVisualStyleBackColor = false;
-            this.btn_buscar_cli.Click += new System.EventHandler(this.btn_buscar_cli_Click);
             // 
             // cmbo_Formadepago
             // 
@@ -282,29 +212,12 @@
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.txt_idEmpleados);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(73, 112);
+            this.groupBox3.Location = new System.Drawing.Point(469, 39);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(415, 142);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Información sobre el empleado";
-            // 
-            // btn_buscar_emp
-            // 
-            this.btn_buscar_emp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
-            this.btn_buscar_emp.ForeColor = System.Drawing.Color.White;
-            this.btn_buscar_emp.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscar_emp.Image")));
-            this.btn_buscar_emp.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_buscar_emp.Location = new System.Drawing.Point(117, 47);
-            this.btn_buscar_emp.Name = "btn_buscar_emp";
-            this.btn_buscar_emp.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btn_buscar_emp.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btn_buscar_emp.Size = new System.Drawing.Size(84, 25);
-            this.btn_buscar_emp.TabIndex = 10;
-            this.btn_buscar_emp.Text = "Buscar";
-            this.btn_buscar_emp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_buscar_emp.UseVisualStyleBackColor = false;
-            this.btn_buscar_emp.Click += new System.EventHandler(this.btn_buscar_emp_Click);
             // 
             // txt_apellidos_emp
             // 
@@ -375,50 +288,18 @@
             this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Controls.Add(this.txt_idproductos);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(73, 269);
+            this.groupBox4.Location = new System.Drawing.Point(20, 187);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(883, 142);
+            this.groupBox4.Size = new System.Drawing.Size(807, 133);
             this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Información sobre el producto";
-            // 
-            // btn_Buscar_Prod
-            // 
-            this.btn_Buscar_Prod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
-            this.btn_Buscar_Prod.ForeColor = System.Drawing.Color.White;
-            this.btn_Buscar_Prod.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar_Prod.Image")));
-            this.btn_Buscar_Prod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Buscar_Prod.Location = new System.Drawing.Point(126, 47);
-            this.btn_Buscar_Prod.Name = "btn_Buscar_Prod";
-            this.btn_Buscar_Prod.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btn_Buscar_Prod.Size = new System.Drawing.Size(81, 23);
-            this.btn_Buscar_Prod.TabIndex = 11;
-            this.btn_Buscar_Prod.Text = "Buscar";
-            this.btn_Buscar_Prod.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Buscar_Prod.UseVisualStyleBackColor = false;
-            this.btn_Buscar_Prod.Click += new System.EventHandler(this.btn_Buscar_Prod_Click);
-            // 
-            // btn_Agregar
-            // 
-            this.btn_Agregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
-            this.btn_Agregar.ForeColor = System.Drawing.Color.White;
-            this.btn_Agregar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Agregar.Image")));
-            this.btn_Agregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Agregar.Location = new System.Drawing.Point(701, 45);
-            this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Padding = new System.Windows.Forms.Padding(2);
-            this.btn_Agregar.Size = new System.Drawing.Size(101, 28);
-            this.btn_Agregar.TabIndex = 13;
-            this.btn_Agregar.Text = "Agregar ";
-            this.btn_Agregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Agregar.UseVisualStyleBackColor = false;
-            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(560, 88);
+            this.label15.Location = new System.Drawing.Point(560, 77);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(66, 18);
             this.label15.TabIndex = 16;
@@ -426,7 +307,7 @@
             // 
             // txt_Cantidad
             // 
-            this.txt_Cantidad.Location = new System.Drawing.Point(563, 109);
+            this.txt_Cantidad.Location = new System.Drawing.Point(563, 98);
             this.txt_Cantidad.Name = "txt_Cantidad";
             this.txt_Cantidad.Size = new System.Drawing.Size(100, 22);
             this.txt_Cantidad.TabIndex = 17;
@@ -435,7 +316,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(385, 88);
+            this.label14.Location = new System.Drawing.Point(385, 77);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(47, 18);
             this.label14.TabIndex = 14;
@@ -443,7 +324,7 @@
             // 
             // txt_stock
             // 
-            this.txt_stock.Location = new System.Drawing.Point(388, 109);
+            this.txt_stock.Location = new System.Drawing.Point(388, 98);
             this.txt_stock.Name = "txt_stock";
             this.txt_stock.ReadOnly = true;
             this.txt_stock.Size = new System.Drawing.Size(100, 22);
@@ -453,7 +334,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(203, 88);
+            this.label13.Location = new System.Drawing.Point(203, 77);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(51, 18);
             this.label13.TabIndex = 12;
@@ -461,7 +342,7 @@
             // 
             // txt_precio_pro
             // 
-            this.txt_precio_pro.Location = new System.Drawing.Point(206, 109);
+            this.txt_precio_pro.Location = new System.Drawing.Point(206, 98);
             this.txt_precio_pro.Name = "txt_precio_pro";
             this.txt_precio_pro.ReadOnly = true;
             this.txt_precio_pro.Size = new System.Drawing.Size(100, 22);
@@ -507,7 +388,7 @@
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.White;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(739, 481);
+            this.label16.Location = new System.Drawing.Point(686, 461);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(82, 18);
             this.label16.TabIndex = 18;
@@ -515,7 +396,7 @@
             // 
             // txt_Total
             // 
-            this.txt_Total.Location = new System.Drawing.Point(742, 502);
+            this.txt_Total.Location = new System.Drawing.Point(689, 482);
             this.txt_Total.Name = "txt_Total";
             this.txt_Total.ReadOnly = true;
             this.txt_Total.Size = new System.Drawing.Size(100, 20);
@@ -525,53 +406,35 @@
             // 
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.White;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(739, 535);
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(686, 333);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(71, 18);
+            this.label17.Size = new System.Drawing.Size(137, 18);
             this.label17.TabIndex = 20;
-            this.label17.Text = "Paga con";
+            this.label17.Text = "Registro de pago";
             // 
             // txt_paga
             // 
-            this.txt_paga.Location = new System.Drawing.Point(742, 556);
+            this.txt_paga.Location = new System.Drawing.Point(689, 354);
             this.txt_paga.Name = "txt_paga";
             this.txt_paga.Size = new System.Drawing.Size(100, 20);
             this.txt_paga.TabIndex = 21;
             this.txt_paga.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_paga_KeyDown);
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.White;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(739, 427);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(29, 18);
-            this.label18.TabIndex = 22;
-            this.label18.Text = "IVA";
-            // 
-            // txt_IVA
-            // 
-            this.txt_IVA.Location = new System.Drawing.Point(742, 448);
-            this.txt_IVA.Name = "txt_IVA";
-            this.txt_IVA.Size = new System.Drawing.Size(100, 20);
-            this.txt_IVA.TabIndex = 23;
-            // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.White;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(739, 588);
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(692, 386);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(60, 18);
+            this.label19.Size = new System.Drawing.Size(66, 18);
             this.label19.TabIndex = 24;
             this.label19.Text = "Cambio";
             // 
             // txt_cambio
             // 
-            this.txt_cambio.Location = new System.Drawing.Point(742, 609);
+            this.txt_cambio.Location = new System.Drawing.Point(784, 387);
             this.txt_cambio.Name = "txt_cambio";
             this.txt_cambio.ReadOnly = true;
             this.txt_cambio.Size = new System.Drawing.Size(100, 20);
@@ -582,7 +445,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(852, 511);
+            this.button1.Location = new System.Drawing.Point(798, 459);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 46);
             this.button1.TabIndex = 26;
@@ -602,7 +465,7 @@
             this.PrecioVenta,
             this.SubTotal,
             this.eliminar});
-            this.dgtv_ventas.Location = new System.Drawing.Point(73, 427);
+            this.dgtv_ventas.Location = new System.Drawing.Point(20, 322);
             this.dgtv_ventas.Name = "dgtv_ventas";
             this.dgtv_ventas.ReadOnly = true;
             this.dgtv_ventas.Size = new System.Drawing.Size(660, 206);
@@ -647,47 +510,94 @@
             this.eliminar.Name = "eliminar";
             this.eliminar.ReadOnly = true;
             // 
-            // pictureBox1
+            // btn_buscar_emp
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(143, 28);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 48);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 28;
-            this.pictureBox1.TabStop = false;
+            this.btn_buscar_emp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
+            this.btn_buscar_emp.ForeColor = System.Drawing.Color.White;
+            this.btn_buscar_emp.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscar_emp.Image")));
+            this.btn_buscar_emp.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_buscar_emp.Location = new System.Drawing.Point(117, 47);
+            this.btn_buscar_emp.Name = "btn_buscar_emp";
+            this.btn_buscar_emp.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btn_buscar_emp.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btn_buscar_emp.Size = new System.Drawing.Size(84, 25);
+            this.btn_buscar_emp.TabIndex = 10;
+            this.btn_buscar_emp.Text = "Buscar";
+            this.btn_buscar_emp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_buscar_emp.UseVisualStyleBackColor = false;
+            this.btn_buscar_emp.Click += new System.EventHandler(this.btn_buscar_emp_Click);
+            // 
+            // btn_Buscar_Prod
+            // 
+            this.btn_Buscar_Prod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
+            this.btn_Buscar_Prod.ForeColor = System.Drawing.Color.White;
+            this.btn_Buscar_Prod.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar_Prod.Image")));
+            this.btn_Buscar_Prod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Buscar_Prod.Location = new System.Drawing.Point(126, 47);
+            this.btn_Buscar_Prod.Name = "btn_Buscar_Prod";
+            this.btn_Buscar_Prod.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btn_Buscar_Prod.Size = new System.Drawing.Size(81, 23);
+            this.btn_Buscar_Prod.TabIndex = 11;
+            this.btn_Buscar_Prod.Text = "Buscar";
+            this.btn_Buscar_Prod.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Buscar_Prod.UseVisualStyleBackColor = false;
+            this.btn_Buscar_Prod.Click += new System.EventHandler(this.btn_Buscar_Prod_Click);
+            // 
+            // btn_Agregar
+            // 
+            this.btn_Agregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
+            this.btn_Agregar.ForeColor = System.Drawing.Color.White;
+            this.btn_Agregar.Location = new System.Drawing.Point(701, 45);
+            this.btn_Agregar.Name = "btn_Agregar";
+            this.btn_Agregar.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btn_Agregar.Size = new System.Drawing.Size(81, 23);
+            this.btn_Agregar.TabIndex = 11;
+            this.btn_Agregar.Text = "Agregar ";
+            this.btn_Agregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Agregar.UseVisualStyleBackColor = false;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
+            // 
+            // btn_buscar_cli
+            // 
+            this.btn_buscar_cli.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
+            this.btn_buscar_cli.ForeColor = System.Drawing.Color.White;
+            this.btn_buscar_cli.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscar_cli.Image")));
+            this.btn_buscar_cli.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_buscar_cli.Location = new System.Drawing.Point(123, 49);
+            this.btn_buscar_cli.Name = "btn_buscar_cli";
+            this.btn_buscar_cli.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btn_buscar_cli.Size = new System.Drawing.Size(85, 23);
+            this.btn_buscar_cli.TabIndex = 11;
+            this.btn_buscar_cli.Text = "Buscar";
+            this.btn_buscar_cli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_buscar_cli.UseVisualStyleBackColor = false;
+            this.btn_buscar_cli.Click += new System.EventHandler(this.btn_buscar_cli_Click);
             // 
             // PuntoDeVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(966, 658);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(898, 552);
+            this.Controls.Add(this.txt_Fecha);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.dgtv_ventas);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.txt_cambio);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.txt_IVA);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.txt_paga);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.txt_Total);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PuntoDeVenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PuntoDeVenta";
             this.Load += new System.EventHandler(this.PuntoDeVenta_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -695,7 +605,6 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgtv_ventas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -704,10 +613,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txt_idVentas;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_Fecha;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -723,7 +628,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button btn_Agregar;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txt_Cantidad;
         private System.Windows.Forms.Label label14;
@@ -738,8 +642,6 @@
         private System.Windows.Forms.TextBox txt_Total;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txt_paga;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txt_IVA;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txt_cambio;
         private System.Windows.Forms.Button button1;
@@ -757,6 +659,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
         private System.Windows.Forms.DataGridViewButtonColumn eliminar;
         public System.Windows.Forms.TextBox txt_idClientes;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_Agregar;
     }
 }

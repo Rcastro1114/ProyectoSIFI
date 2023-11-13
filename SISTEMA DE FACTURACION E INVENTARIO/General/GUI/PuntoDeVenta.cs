@@ -43,7 +43,7 @@ namespace General.GUI
         private void PuntoDeVenta_Load(object sender, EventArgs e)
         {
             txt_Fecha.Text = DateTime.Now.ToString("yyyy-MM-dd");
-            txt_IVA.Text = "0";
+            txt_cambio.Text = "0.00";
             //txt_Fecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
             CargarFormasDePago();

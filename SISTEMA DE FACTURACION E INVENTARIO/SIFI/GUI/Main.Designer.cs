@@ -51,7 +51,6 @@ namespace SIFI.GUI
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.StockT = new System.Windows.Forms.ToolStripMenuItem();
             this.stockDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblRol = new System.Windows.Forms.ToolStripStatusLabel();
@@ -68,11 +67,10 @@ namespace SIFI.GUI
             this.ComprasT,
             this.KardexT,
             this.ClientesT,
-            this.StockT,
-            this.loToolStripMenuItem});
+            this.StockT});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(774, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(774, 24);
             this.menuStrip1.Stretch = false;
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
@@ -266,15 +264,6 @@ namespace SIFI.GUI
             this.stockDeProductosToolStripMenuItem.Text = "Stock de productos";
             this.stockDeProductosToolStripMenuItem.Click += new System.EventHandler(this.stockDeProductosToolStripMenuItem_Click);
             // 
-            // loToolStripMenuItem
-            // 
-            this.loToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.85F, System.Drawing.FontStyle.Bold);
-            this.loToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.loToolStripMenuItem.Name = "loToolStripMenuItem";
-            this.loToolStripMenuItem.Size = new System.Drawing.Size(68, 23);
-            this.loToolStripMenuItem.Text = "Logout";
-            this.loToolStripMenuItem.Click += new System.EventHandler(this.loToolStripMenuItem_Click);
-            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -351,7 +340,6 @@ namespace SIFI.GUI
         private System.Windows.Forms.ToolStripMenuItem StockT;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stockDeProductosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loToolStripMenuItem;
     }
 }
 

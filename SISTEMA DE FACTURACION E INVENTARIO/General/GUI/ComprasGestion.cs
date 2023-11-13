@@ -1,5 +1,4 @@
-﻿using General.GUI_BUSQUEDAS;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -56,12 +55,12 @@ namespace General.GUI
 
         private void btn_Agregar_Prod_Click(object sender, EventArgs e)
         {
-            GUI_BUSQUEDAS.BuscarProductos f = new GUI_BUSQUEDAS.BuscarProductos();
+            GUI.ProductosGestion f = new GUI.ProductosGestion();
             f.ShowDialog();
             dgv_compra.DataSource = null;
             dgv_compra.Rows.Add
                 (
-                    GUI_BUSQUEDAS.BuscarProductos._idProductos,
+                    //GUI.ProductosGestion._idProductos,
                     txt_Cantidad.Text,
                     txt_precioCompra.Text   
                 );
