@@ -16,6 +16,7 @@ namespace General.GUI
     public partial class PuntoDeVenta : Form
     {
         BindingSource _DATOS = new BindingSource();
+        SessionManager.Session oSesion = SessionManager.Session.Instancia;
 
         public static String _REPVENTA = null;
         public static String _REPDETALLEVENTA = null;
@@ -44,30 +45,18 @@ namespace General.GUI
         {
             txt_Fecha.Text = DateTime.Now.ToString("yyyy-MM-dd");
             txt_cambio.Text = "0.00";
+            txt_Cantidad.Text = "0";
+            txt_idClientes.Text = "0";
+            txt_idEmpleados.Text = oSesion.IDEmpleados;
+            txt_Nombres_emp.Text = oSesion.Nombres;
+            txt_apellidos_emp.Text = oSesion.Apellidos;
+            txt_idproductos.Text = "0";
             //txt_Fecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
             CargarFormasDePago();
         }
 
-        private void btn_buscar_emp_Click(object sender, EventArgs e)
-        {
-            using (var formulario = new EmpleadosGestion())
-            {
-                var result = formulario.ShowDialog();
-
-                if(result == DialogResult.OK)
-                {
-                    txt_idEmpleados.Text = formulario._Empleados.idEmpleados.ToString();
-                    txt_Nombres_emp.Text = formulario._Empleados.Nombres.ToString();
-                    txt_apellidos_emp.Text = formulario._Empleados.Apellidos.ToString();
-                }
-                else
-                {
-                    txt_idEmpleados.Select();
-                }
-            }
-        }
-
+        //BTN QUE BUSCA LOS PRODUCTOS
         private void btn_Buscar_Prod_Click(object sender, EventArgs e)
         {
             using (var formulario = new ProductosGestion())
@@ -86,7 +75,6 @@ namespace General.GUI
                 {
                     txt_idproductos.Select();
                 }
-
             }
         }
 
@@ -111,8 +99,12 @@ namespace General.GUI
             if(Convert.ToInt32(txt_stock.Text) < Convert.ToInt32(txt_Cantidad.Text))
             {
                 MessageBox.Show("La Cantidad no puede ser mayor al Stock","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                return;                
+            }
+
+            if (Convert.ToInt32(txt_Cantidad.Text) == 0) {
+                MessageBox.Show("La Cantidad no puede ser cero", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
-                
             }
 
             foreach(DataGridViewRow fila in dgtv_ventas.Rows)

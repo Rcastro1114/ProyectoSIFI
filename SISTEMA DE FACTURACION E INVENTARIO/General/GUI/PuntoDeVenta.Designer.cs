@@ -33,6 +33,7 @@
             this.txt_Fecha = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_buscar_cli = new System.Windows.Forms.Button();
             this.cmbo_Formadepago = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.txt_Apellidos_cli = new System.Windows.Forms.TextBox();
@@ -49,6 +50,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txt_idEmpleados = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btn_Buscar_Prod = new System.Windows.Forms.Button();
+            this.btn_Agregar = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.txt_Cantidad = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -73,10 +76,6 @@
             this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btn_buscar_emp = new System.Windows.Forms.Button();
-            this.btn_Buscar_Prod = new System.Windows.Forms.Button();
-            this.btn_Agregar = new System.Windows.Forms.Button();
-            this.btn_buscar_cli = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -88,7 +87,7 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(11, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(880, 534);
+            this.label1.Size = new System.Drawing.Size(891, 534);
             this.label1.TabIndex = 0;
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -129,6 +128,22 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información sobre el cliente";
+            // 
+            // btn_buscar_cli
+            // 
+            this.btn_buscar_cli.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
+            this.btn_buscar_cli.ForeColor = System.Drawing.Color.White;
+            this.btn_buscar_cli.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscar_cli.Image")));
+            this.btn_buscar_cli.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_buscar_cli.Location = new System.Drawing.Point(123, 49);
+            this.btn_buscar_cli.Name = "btn_buscar_cli";
+            this.btn_buscar_cli.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btn_buscar_cli.Size = new System.Drawing.Size(85, 23);
+            this.btn_buscar_cli.TabIndex = 11;
+            this.btn_buscar_cli.Text = "Buscar";
+            this.btn_buscar_cli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_buscar_cli.UseVisualStyleBackColor = false;
+            this.btn_buscar_cli.Click += new System.EventHandler(this.btn_buscar_cli_Click);
             // 
             // cmbo_Formadepago
             // 
@@ -198,13 +213,13 @@
             // 
             this.txt_idClientes.Location = new System.Drawing.Point(9, 48);
             this.txt_idClientes.Name = "txt_idClientes";
+            this.txt_idClientes.ReadOnly = true;
             this.txt_idClientes.Size = new System.Drawing.Size(100, 22);
             this.txt_idClientes.TabIndex = 5;
             // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.btn_buscar_emp);
             this.groupBox3.Controls.Add(this.txt_apellidos_emp);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.txt_Nombres_emp);
@@ -269,6 +284,7 @@
             // 
             this.txt_idEmpleados.Location = new System.Drawing.Point(9, 48);
             this.txt_idEmpleados.Name = "txt_idEmpleados";
+            this.txt_idEmpleados.ReadOnly = true;
             this.txt_idEmpleados.Size = new System.Drawing.Size(100, 22);
             this.txt_idEmpleados.TabIndex = 5;
             // 
@@ -294,6 +310,37 @@
             this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Información sobre el producto";
+            // 
+            // btn_Buscar_Prod
+            // 
+            this.btn_Buscar_Prod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
+            this.btn_Buscar_Prod.ForeColor = System.Drawing.Color.White;
+            this.btn_Buscar_Prod.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar_Prod.Image")));
+            this.btn_Buscar_Prod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Buscar_Prod.Location = new System.Drawing.Point(126, 47);
+            this.btn_Buscar_Prod.Name = "btn_Buscar_Prod";
+            this.btn_Buscar_Prod.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btn_Buscar_Prod.Size = new System.Drawing.Size(81, 23);
+            this.btn_Buscar_Prod.TabIndex = 11;
+            this.btn_Buscar_Prod.Text = "Buscar";
+            this.btn_Buscar_Prod.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Buscar_Prod.UseVisualStyleBackColor = false;
+            this.btn_Buscar_Prod.Click += new System.EventHandler(this.btn_Buscar_Prod_Click);
+            // 
+            // btn_Agregar
+            // 
+            this.btn_Agregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
+            this.btn_Agregar.ForeColor = System.Drawing.Color.White;
+            this.btn_Agregar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Agregar.Image")));
+            this.btn_Agregar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_Agregar.Location = new System.Drawing.Point(707, 46);
+            this.btn_Agregar.Name = "btn_Agregar";
+            this.btn_Agregar.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btn_Agregar.Size = new System.Drawing.Size(41, 32);
+            this.btn_Agregar.TabIndex = 11;
+            this.btn_Agregar.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btn_Agregar.UseVisualStyleBackColor = false;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
             // label15
             // 
@@ -344,7 +391,6 @@
             // 
             this.txt_precio_pro.Location = new System.Drawing.Point(206, 98);
             this.txt_precio_pro.Name = "txt_precio_pro";
-            this.txt_precio_pro.ReadOnly = true;
             this.txt_precio_pro.Size = new System.Drawing.Size(100, 22);
             this.txt_precio_pro.TabIndex = 13;
             // 
@@ -380,6 +426,7 @@
             // 
             this.txt_idproductos.Location = new System.Drawing.Point(9, 48);
             this.txt_idproductos.Name = "txt_idproductos";
+            this.txt_idproductos.ReadOnly = true;
             this.txt_idproductos.Size = new System.Drawing.Size(100, 22);
             this.txt_idproductos.TabIndex = 11;
             // 
@@ -510,75 +557,12 @@
             this.eliminar.Name = "eliminar";
             this.eliminar.ReadOnly = true;
             // 
-            // btn_buscar_emp
-            // 
-            this.btn_buscar_emp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
-            this.btn_buscar_emp.ForeColor = System.Drawing.Color.White;
-            this.btn_buscar_emp.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscar_emp.Image")));
-            this.btn_buscar_emp.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_buscar_emp.Location = new System.Drawing.Point(117, 47);
-            this.btn_buscar_emp.Name = "btn_buscar_emp";
-            this.btn_buscar_emp.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btn_buscar_emp.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btn_buscar_emp.Size = new System.Drawing.Size(84, 25);
-            this.btn_buscar_emp.TabIndex = 10;
-            this.btn_buscar_emp.Text = "Buscar";
-            this.btn_buscar_emp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_buscar_emp.UseVisualStyleBackColor = false;
-            this.btn_buscar_emp.Click += new System.EventHandler(this.btn_buscar_emp_Click);
-            // 
-            // btn_Buscar_Prod
-            // 
-            this.btn_Buscar_Prod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
-            this.btn_Buscar_Prod.ForeColor = System.Drawing.Color.White;
-            this.btn_Buscar_Prod.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar_Prod.Image")));
-            this.btn_Buscar_Prod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Buscar_Prod.Location = new System.Drawing.Point(126, 47);
-            this.btn_Buscar_Prod.Name = "btn_Buscar_Prod";
-            this.btn_Buscar_Prod.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btn_Buscar_Prod.Size = new System.Drawing.Size(81, 23);
-            this.btn_Buscar_Prod.TabIndex = 11;
-            this.btn_Buscar_Prod.Text = "Buscar";
-            this.btn_Buscar_Prod.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Buscar_Prod.UseVisualStyleBackColor = false;
-            this.btn_Buscar_Prod.Click += new System.EventHandler(this.btn_Buscar_Prod_Click);
-            // 
-            // btn_Agregar
-            // 
-            this.btn_Agregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
-            this.btn_Agregar.ForeColor = System.Drawing.Color.White;
-            this.btn_Agregar.Location = new System.Drawing.Point(701, 45);
-            this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btn_Agregar.Size = new System.Drawing.Size(81, 23);
-            this.btn_Agregar.TabIndex = 11;
-            this.btn_Agregar.Text = "Agregar ";
-            this.btn_Agregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Agregar.UseVisualStyleBackColor = false;
-            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
-            // 
-            // btn_buscar_cli
-            // 
-            this.btn_buscar_cli.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
-            this.btn_buscar_cli.ForeColor = System.Drawing.Color.White;
-            this.btn_buscar_cli.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscar_cli.Image")));
-            this.btn_buscar_cli.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_buscar_cli.Location = new System.Drawing.Point(123, 49);
-            this.btn_buscar_cli.Name = "btn_buscar_cli";
-            this.btn_buscar_cli.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btn_buscar_cli.Size = new System.Drawing.Size(85, 23);
-            this.btn_buscar_cli.TabIndex = 11;
-            this.btn_buscar_cli.Text = "Buscar";
-            this.btn_buscar_cli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_buscar_cli.UseVisualStyleBackColor = false;
-            this.btn_buscar_cli.Click += new System.EventHandler(this.btn_buscar_cli_Click);
-            // 
             // PuntoDeVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(898, 552);
+            this.ClientSize = new System.Drawing.Size(909, 552);
             this.Controls.Add(this.txt_Fecha);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgtv_ventas);
@@ -646,7 +630,6 @@
         private System.Windows.Forms.TextBox txt_cambio;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_buscar_cli;
-        private System.Windows.Forms.Button btn_buscar_emp;
         public System.Windows.Forms.TextBox txt_apellidos_emp;
         public System.Windows.Forms.TextBox txt_Nombres_emp;
         public System.Windows.Forms.TextBox txt_idEmpleados;

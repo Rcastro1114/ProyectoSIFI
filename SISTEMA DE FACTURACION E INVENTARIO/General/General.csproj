@@ -218,6 +218,10 @@
       <Project>{3c3073d0-28df-4bd9-8b01-1310ec0aa86e}</Project>
       <Name>DataManager</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SessionManager\SessionManager.csproj">
+      <Project>{c48c88f1-7304-46cf-9660-4fe91fb71006}</Project>
+      <Name>SessionManager</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Factura.rpt">
