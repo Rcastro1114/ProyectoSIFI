@@ -191,9 +191,9 @@ namespace SIFI.GUI
 
         private void stockDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*General.GUI_BUSQUEDAS.BuscarProductos f = new General.GUI_BUSQUEDAS.BuscarProductos();
+            General.GUI_VENDEDOR.ProductosVendedor f = new General.GUI_VENDEDOR.ProductosVendedor();
             f.MdiParent = this;
-            f.Show();*/
+            f.Show();
         }
     }
 }

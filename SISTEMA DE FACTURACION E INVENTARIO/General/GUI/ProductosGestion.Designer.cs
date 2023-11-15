@@ -44,6 +44,8 @@ namespace General.GUI
             this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBuscar = new System.Windows.Forms.TextBox();
+            this.buscar = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvProductos)).BeginInit();
@@ -183,11 +185,30 @@ namespace General.GUI
             this.Stock.Name = "Stock";
             this.Stock.ReadOnly = true;
             // 
+            // textBuscar
+            // 
+            this.textBuscar.Location = new System.Drawing.Point(321, 2);
+            this.textBuscar.Name = "textBuscar";
+            this.textBuscar.Size = new System.Drawing.Size(178, 20);
+            this.textBuscar.TabIndex = 7;
+            this.textBuscar.TextChanged += new System.EventHandler(this.textBuscar_TextChanged);
+            // 
+            // buscar
+            // 
+            this.buscar.AutoSize = true;
+            this.buscar.Location = new System.Drawing.Point(505, 6);
+            this.buscar.Name = "buscar";
+            this.buscar.Size = new System.Drawing.Size(39, 13);
+            this.buscar.TabIndex = 8;
+            this.buscar.Text = "buscar";
+            // 
             // ProductosGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 418);
+            this.Controls.Add(this.buscar);
+            this.Controls.Add(this.textBuscar);
             this.Controls.Add(this.dtgvProductos);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
@@ -222,5 +243,7 @@ namespace General.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
         public System.Windows.Forms.DataGridView dtgvProductos;
+        private System.Windows.Forms.TextBox textBuscar;
+        private System.Windows.Forms.Label buscar;
     }
 }

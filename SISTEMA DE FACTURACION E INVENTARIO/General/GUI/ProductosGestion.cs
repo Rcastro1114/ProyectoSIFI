@@ -101,5 +101,32 @@ namespace General.GUI
                 this.Close();
             }
         }
+
+        private void textBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (textBuscar.Text != "")
+            {
+                dtgvProductos.CurrentCell = null;
+                foreach (DataGridViewRow r in dtgvProductos.Rows)
+                {
+                    r.Visible = false;
+                }
+                foreach (DataGridViewRow r in dtgvProductos.Rows)
+                {
+                    foreach (DataGridViewCell c in r.Cells)
+                    {
+                        if ((c.Value.ToString().ToUpper()).IndexOf(textBuscar.Text.ToUpper()) == 0)
+                        {
+                            r.Visible = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                CargarDatos();
+            }
+        }
     }
 }

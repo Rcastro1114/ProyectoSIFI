@@ -102,5 +102,32 @@ namespace General.GUI
                 this.Close();
             }
         }
+
+        private void textBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (textBuscar.Text != "")
+            {
+                dtgvEmpleados.CurrentCell = null;
+                foreach (DataGridViewRow r in dtgvEmpleados.Rows)
+                {
+                    r.Visible = false;
+                }
+                foreach (DataGridViewRow r in dtgvEmpleados.Rows)
+                {
+                    foreach (DataGridViewCell c in r.Cells)
+                    {
+                        if ((c.Value.ToString().ToUpper()).IndexOf(textBuscar.Text.ToUpper()) == 0)
+                        {
+                            r.Visible = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                CargarEmpleados();
+            }
+        }
     }
 }

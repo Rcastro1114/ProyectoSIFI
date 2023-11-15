@@ -96,6 +96,12 @@
     <Compile Include="GUI KARDEX\Kardex.Designer.cs">
       <DependentUpon>Kardex.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI-VENDEDOR\ProductosVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI-VENDEDOR\ProductosVendedor.Designer.cs">
+      <DependentUpon>ProductosVendedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ClientesEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI KARDEX\Kardex.resx">
       <DependentUpon>Kardex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI-VENDEDOR\ProductosVendedor.resx">
+      <DependentUpon>ProductosVendedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ClientesEdicion.resx">
       <DependentUpon>ClientesEdicion.cs</DependentUpon>

@@ -46,6 +46,8 @@ namespace General.GUI
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDirecciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBuscar = new System.Windows.Forms.TextBox();
+            this.buscar = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvEmpleados)).BeginInit();
@@ -202,11 +204,30 @@ namespace General.GUI
             this.idDirecciones.Name = "idDirecciones";
             this.idDirecciones.ReadOnly = true;
             // 
+            // textBuscar
+            // 
+            this.textBuscar.Location = new System.Drawing.Point(323, 2);
+            this.textBuscar.Name = "textBuscar";
+            this.textBuscar.Size = new System.Drawing.Size(178, 20);
+            this.textBuscar.TabIndex = 6;
+            this.textBuscar.TextChanged += new System.EventHandler(this.textBuscar_TextChanged);
+            // 
+            // buscar
+            // 
+            this.buscar.AutoSize = true;
+            this.buscar.Location = new System.Drawing.Point(507, 5);
+            this.buscar.Name = "buscar";
+            this.buscar.Size = new System.Drawing.Size(39, 13);
+            this.buscar.TabIndex = 7;
+            this.buscar.Text = "buscar";
+            // 
             // EmpleadosGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 415);
+            this.Controls.Add(this.buscar);
+            this.Controls.Add(this.textBuscar);
             this.Controls.Add(this.dtgvEmpleados);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
@@ -243,5 +264,7 @@ namespace General.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDirecciones;
+        private System.Windows.Forms.TextBox textBuscar;
+        private System.Windows.Forms.Label buscar;
     }
 }

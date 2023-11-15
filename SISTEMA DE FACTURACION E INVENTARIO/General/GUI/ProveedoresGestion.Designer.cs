@@ -44,6 +44,8 @@ namespace General.GUI
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDirecciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBuscar = new System.Windows.Forms.TextBox();
+            this.buscar = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvProveedores)).BeginInit();
@@ -60,7 +62,7 @@ namespace General.GUI
             this.btn_Agregar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(658, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(685, 25);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -114,7 +116,7 @@ namespace General.GUI
             this.lblRegistrosProveedores});
             this.statusStrip1.Location = new System.Drawing.Point(0, 425);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(658, 25);
+            this.statusStrip1.Size = new System.Drawing.Size(685, 25);
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -141,7 +143,7 @@ namespace General.GUI
             this.dtgvProveedores.Location = new System.Drawing.Point(0, 28);
             this.dtgvProveedores.Name = "dtgvProveedores";
             this.dtgvProveedores.ReadOnly = true;
-            this.dtgvProveedores.Size = new System.Drawing.Size(658, 397);
+            this.dtgvProveedores.Size = new System.Drawing.Size(685, 397);
             this.dtgvProveedores.TabIndex = 7;
             this.dtgvProveedores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvProveedores_CellDoubleClick);
             // 
@@ -182,11 +184,30 @@ namespace General.GUI
             this.idDirecciones.Name = "idDirecciones";
             this.idDirecciones.ReadOnly = true;
             // 
+            // textBuscar
+            // 
+            this.textBuscar.Location = new System.Drawing.Point(322, 2);
+            this.textBuscar.Name = "textBuscar";
+            this.textBuscar.Size = new System.Drawing.Size(178, 20);
+            this.textBuscar.TabIndex = 8;
+            this.textBuscar.TextChanged += new System.EventHandler(this.textBuscar_TextChanged);
+            // 
+            // buscar
+            // 
+            this.buscar.AutoSize = true;
+            this.buscar.Location = new System.Drawing.Point(506, 5);
+            this.buscar.Name = "buscar";
+            this.buscar.Size = new System.Drawing.Size(39, 13);
+            this.buscar.TabIndex = 9;
+            this.buscar.Text = "buscar";
+            // 
             // ProveedoresGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 450);
+            this.ClientSize = new System.Drawing.Size(685, 450);
+            this.Controls.Add(this.buscar);
+            this.Controls.Add(this.textBuscar);
             this.Controls.Add(this.dtgvProveedores);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
@@ -221,5 +242,7 @@ namespace General.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDirecciones;
+        private System.Windows.Forms.TextBox textBuscar;
+        private System.Windows.Forms.Label buscar;
     }
 }
