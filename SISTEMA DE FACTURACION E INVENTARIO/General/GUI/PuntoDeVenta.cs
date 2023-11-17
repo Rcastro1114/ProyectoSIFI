@@ -194,6 +194,7 @@ namespace General.GUI
             }
         }
 
+        //GENERAR VENTA
         private void button1_Click(object sender, EventArgs e)
         {
             if(txt_idEmpleados.Text == "")

@@ -108,7 +108,7 @@ namespace DataManager
                                     from movimientos m
                                     INNER JOIN productos p
                                     on m.idProductos = p.idProductos
-                                    WHERE p.idProductos = '" +_IDPROD+ "' order by m.Fecha DESC;";
+                                    WHERE p.idProductos = '" +_IDPROD+ "' order by m.Fecha ASC;";
             DBOperacion Consultor = new DBOperacion();
             try
             {
@@ -129,7 +129,7 @@ namespace DataManager
                                     from movimientos m
                                     INNER JOIN productos p
                                     on m.idProductos = p.idProductos
-                                    where p.Productos = '" + _NOMBREPRODUCTO + "'order by m.Fecha DESC;";
+                                    where p.Productos = '" + _NOMBREPRODUCTO + "'order by m.Fecha ASC;";
             DBOperacion Consultor = new DBOperacion();
             try
             {
