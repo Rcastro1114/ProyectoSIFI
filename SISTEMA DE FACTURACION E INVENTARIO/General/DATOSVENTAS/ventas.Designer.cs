@@ -287,6 +287,8 @@ namespace General.DATOSVENTAS {
             
             private global::System.Data.DataColumn columnFecha;
             
+            private global::System.Data.DataColumn columnNumerodeFactura;
+            
             private global::System.Data.DataColumn columnTotal;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -356,6 +358,14 @@ namespace General.DATOSVENTAS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NumerodeFacturaColumn {
+                get {
+                    return this.columnNumerodeFactura;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn TotalColumn {
                 get {
                     return this.columnTotal;
@@ -399,13 +409,14 @@ namespace General.DATOSVENTAS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ventasRow AddventasRow(string NombreApellidoCliente, string NombreApellidoEmpleado, string FormadePago, string Fecha, string Total) {
+            public ventasRow AddventasRow(string NombreApellidoCliente, string NombreApellidoEmpleado, string FormadePago, string Fecha, string NumerodeFactura, string Total) {
                 ventasRow rowventasRow = ((ventasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NombreApellidoCliente,
                         NombreApellidoEmpleado,
                         FormadePago,
                         Fecha,
+                        NumerodeFactura,
                         Total};
                 rowventasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowventasRow);
@@ -433,6 +444,7 @@ namespace General.DATOSVENTAS {
                 this.columnNombreApellidoEmpleado = base.Columns["NombreApellidoEmpleado"];
                 this.columnFormadePago = base.Columns["FormadePago"];
                 this.columnFecha = base.Columns["Fecha"];
+                this.columnNumerodeFactura = base.Columns["NumerodeFactura"];
                 this.columnTotal = base.Columns["Total"];
             }
             
@@ -447,6 +459,8 @@ namespace General.DATOSVENTAS {
                 base.Columns.Add(this.columnFormadePago);
                 this.columnFecha = new global::System.Data.DataColumn("Fecha", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFecha);
+                this.columnNumerodeFactura = new global::System.Data.DataColumn("NumerodeFactura", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumerodeFactura);
                 this.columnTotal = new global::System.Data.DataColumn("Total", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotal);
                 this.ExtendedProperties.Add("Generator_TablePropName", "_ventas");
@@ -657,6 +671,22 @@ namespace General.DATOSVENTAS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NumerodeFactura {
+                get {
+                    try {
+                        return ((string)(this[this.tableventas.NumerodeFacturaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NumerodeFactura\' de la tabla \'ventas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableventas.NumerodeFacturaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Total {
                 get {
                     try {
@@ -717,6 +747,18 @@ namespace General.DATOSVENTAS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetFechaNull() {
                 this[this.tableventas.FechaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNumerodeFacturaNull() {
+                return this.IsNull(this.tableventas.NumerodeFacturaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNumerodeFacturaNull() {
+                this[this.tableventas.NumerodeFacturaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -10,29 +10,6 @@ namespace DataManager
 {
     public class DBOperacion:DBConexion
     {
-        public int NoFactura()
-        {
-            int NoFactura = 0;
-            MySqlCommand Comando = new MySqlCommand();
-            if(base.Conectar())
-            {
-              
-                try
-                {
-                    StringBuilder query = new StringBuilder();
-                    query.AppendLine("select count(*) + 1 ventas");
-                    MySqlCommand comando = new MySqlCommand(query.ToString());
-                    comando.CommandType = CommandType.Text;
-
-                    NoFactura = Convert.ToInt32(comando.ExecuteScalar());
-                }catch (Exception)
-                {
-                    NoFactura = 0;
-                }
-            }
-            return NoFactura;
-        }
-
         public Int32 EjecutarSentencia(String pSentencia)
         {
             Int32 FilasAfectadas = 0;

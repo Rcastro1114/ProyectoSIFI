@@ -224,6 +224,27 @@ namespace General.GUI
             vent.idFormasdePago = int.Parse(cmbo_Formadepago.SelectedValue.ToString());
             vent.Total = (float)Convert.ToDouble(txt_Total.Text);
 
+            //OBTENIENDO NUMERO DE FACTURA
+
+            string ultimoNumFact = "";
+            int numFactura = 0;
+
+            DataTable _ULTIMONUMFACTURA = new DataTable();
+
+            try
+            {
+                _ULTIMONUMFACTURA = DataManager.DBConsultas.OBTENERULTIMONUMEROFACTURA();
+                ultimoNumFact = _ULTIMONUMFACTURA.Rows[0]["NumerodeFactura"].ToString();
+                numFactura = int.Parse(ultimoNumFact);
+                numFactura++;
+                ultimoNumFact = numFactura.ToString("D6"); //D6 asegura que tenga 6 dígitos, agregando ceros a la izquierda si es necesario
+                vent.NumerodeFactura = ultimoNumFact;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ha ocurrido un error en buscar el último número de factura", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
             Boolean b = vent.Insertar();
 
             if(b == false)

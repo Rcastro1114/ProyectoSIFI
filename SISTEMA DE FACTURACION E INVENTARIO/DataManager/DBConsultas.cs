@@ -379,6 +379,21 @@ namespace DataManager
             return Resultado;
         }
 
+        public static DataTable OBTENERULTIMONUMEROFACTURA() {
+            DataTable Resultado = new DataTable();
+            String Sentencia = @"select NumerodeFactura from ventas ORDER BY idVentas DESC LIMIT 1;";
+            DBOperacion Consultor = new DBOperacion();
+            try
+            {
+                Resultado = Consultor.Consultar(Sentencia);
+            }
+            catch (Exception)
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
         public static DataTable OBTENERULTIMAVENTA()
         {
             DataTable Resultado = new DataTable();
@@ -399,7 +414,7 @@ namespace DataManager
         {
             DataTable Resultado = new DataTable();
             String Sentencia = @"select concat(c.Nombres,' ',c.Apellidos)NombreApellidoCliente, concat(em.Nombres,' ',em.Apellidos)NombreApellidoEmpleado,
-                                fp.FormadePago,v.Fecha, v.Total,(v.Total*0.13)IVA,(v.Total+(v.Total*0.13))TotalFinal 
+                                fp.FormadePago,v.Fecha, v.NumerodeFactura, v.Total  
                                 from ventas v,clientes c,empleados em,formasdepagos fp
                                 where v.idClientes=c.idClientes and v.idEmpleados=em.idEmpleados and v.idFormasdePago=fp.idFormasdePagos
                                 and idVentas = '" + pIDVENTA + "';";

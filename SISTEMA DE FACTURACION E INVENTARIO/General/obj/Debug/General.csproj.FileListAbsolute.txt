@@ -87,7 +87,6 @@ C:\Users\Rebeca Hernández\Documents\Final\SISTEMA DE FACTURACION E INVENTARIO-3
 C:\Users\Rebeca Hernández\Documents\Final\SISTEMA DE FACTURACION E INVENTARIO-3\SISTEMA DE FACTURACION E INVENTARIO\General\bin\Debug\DataManager.pdb
 C:\Users\Rebeca Hernández\Documents\Final\SISTEMA DE FACTURACION E INVENTARIO-3\SISTEMA DE FACTURACION E INVENTARIO\General\bin\Debug\MySql.Data.xml
 C:\Users\Rebeca Hernández\Documents\Final\SISTEMA DE FACTURACION E INVENTARIO-3\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.csproj.CopyComplete
-C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.GUI_BUSQUEDAS.BuscarProductos.resources
 C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.GUI.ClientesEdicion.resources
 C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.GUI.ComprasGestion.resources
 C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.GUI_KARDEX.Kardex.resources
@@ -218,3 +217,7 @@ C:\Users\ranto\Desktop\TodoslosArchivos\Universidad\IMPLANTACIÓN DE SISTEMAS\SI
 C:\Users\ranto\Desktop\TodoslosArchivos\Universidad\IMPLANTACIÓN DE SISTEMAS\SISTEMA DE FACTURACION E INVENTARIO\General\bin\Debug\SessionManager.pdb
 C:\Users\ranto\Desktop\TodoslosArchivos\Universidad\IMPLANTACIÓN DE SISTEMAS\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.GUI_VENDEDOR.ProductosVendedor.resources
 C:\Users\ranto\Desktop\TodoslosArchivos\Universidad\IMPLANTACIÓN DE SISTEMAS\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.GUI.Selección_tipo_de_documento_tributario.resources
+C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\General\bin\Debug\SessionManager.dll
+C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\General\bin\Debug\SessionManager.pdb
+C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.GUI_VENDEDOR.ProductosVendedor.resources
+C:\Users\ranto\Documents\GitHub\ProyectoSIFI\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.GUI.Selección_tipo_de_documento_tributario.resources

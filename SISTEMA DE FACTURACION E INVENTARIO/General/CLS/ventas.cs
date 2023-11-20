@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,21 +26,6 @@ namespace General.CLS
         public float Total { get => _Total; set => _Total = value; }
         public string idEmpleados { get => _idEmpleados; set => _idEmpleados = value; }
 
-        public string ObtenerNumerodeFactura() {
-            Boolean Resultado = false;
-            string NumeroFactura = "000000";
-            String Sentencia;
-            try {
-
-            }
-            catch (Exception ex) { 
-            
-            }
-
-            return NumeroFactura;
-        }
-        
-
         public Boolean Insertar()
         {
             Boolean Resultado = false;
@@ -47,8 +33,8 @@ namespace General.CLS
             Int32 FilasInsertadas = 0;
             try
             {
-                Sentencia = @"INSERT INTO ventas(idClientes,idEmpleados,idFormasdePago,Fecha,Total) 
-                            VALUES('" + _idClientes + "','" + _idEmpleados + "','" + _idFormasdePago + "',NOW(),'" + _Total + "');";
+                Sentencia = @"INSERT INTO ventas(idClientes,NumerodeFactura,idEmpleados,idFormasdePago,Fecha,Total) 
+                            VALUES('" + _idClientes + "','" + _NumerodeFactura + "','" + _idEmpleados + "','" + _idFormasdePago + "',NOW(),'" + _Total + "');";
                 DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
                 FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);
                 if (FilasInsertadas > 0)
