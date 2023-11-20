@@ -17,6 +17,8 @@ namespace General.CLS
         String _idProductos;
         String _Cantidad;
         float _PrecioVenta;
+        float _VentasNoSujetas;
+        float _VentasExentas;
         float _SubTotal;
         
 
@@ -25,6 +27,8 @@ namespace General.CLS
         public string idProductos { get => _idProductos; set => _idProductos = value; }
         public string Cantidad { get => _Cantidad; set => _Cantidad = value; }
         public float PrecioVenta { get => _PrecioVenta; set => _PrecioVenta = value; }
+        public float VentasNoSujetas { get => _VentasNoSujetas; set => _VentasNoSujetas = value; }
+        public float VentasExentas { get => _VentasExentas; set => _VentasExentas = value; }
         public float SubTotal { get => _SubTotal; set => _SubTotal = value; }
 
 
@@ -35,8 +39,8 @@ namespace General.CLS
             Int32 FilasInsertadas = 0;
             try
             {
-                Sentencia = @"INSERT INTO detalleventas(idVentas,idProductos,Cantidad,PrecioVenta,SubTotal) 
-                            VALUES('"+_idVentas+"','" + _idProductos + "','" + _Cantidad + "','" + _PrecioVenta + "','"+_SubTotal+"');";
+                Sentencia = @"INSERT INTO detalleventas(idVentas,idProductos,Cantidad,PrecioVenta,VentasNoSujetas,VentasExentas,SubTotal) 
+                            VALUES('" + _idVentas+"','" + _idProductos + "','" + _Cantidad + "','" + _PrecioVenta + "','" + _VentasNoSujetas + "','" + _VentasExentas + "','"+ _SubTotal +"');";
                
                 DataManager.DBOperacion Operacion = new DataManager.DBOperacion();
                 FilasInsertadas = Operacion.EjecutarSentencia(Sentencia);

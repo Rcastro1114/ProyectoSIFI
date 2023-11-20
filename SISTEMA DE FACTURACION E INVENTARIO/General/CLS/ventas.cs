@@ -9,6 +9,7 @@ namespace General.CLS
     class ventas
     {
         String _idVentas;
+        String _NumerodeFactura;
         String _idClientes;
         String _idEmpleados;
         int    _idFormasdePago;
@@ -17,11 +18,26 @@ namespace General.CLS
         
 
         public string idVentas { get => _idVentas; set => _idVentas = value; }
+        public string NumerodeFactura { get => _NumerodeFactura; set => _NumerodeFactura = value; }
         public string idClientes { get => _idClientes; set => _idClientes = value; }
         public int idFormasdePago { get => _idFormasdePago; set => _idFormasdePago = value; }
         public string Fecha { get => _Fecha; set => _Fecha = value; }
         public float Total { get => _Total; set => _Total = value; }
         public string idEmpleados { get => _idEmpleados; set => _idEmpleados = value; }
+
+        public string ObtenerNumerodeFactura() {
+            Boolean Resultado = false;
+            string NumeroFactura = "000000";
+            String Sentencia;
+            try {
+
+            }
+            catch (Exception ex) { 
+            
+            }
+
+            return NumeroFactura;
+        }
         
 
         public Boolean Insertar()

@@ -217,3 +217,4 @@ C:\Users\ranto\Desktop\TodoslosArchivos\Universidad\IMPLANTACIÓN DE SISTEMAS\SI
 C:\Users\ranto\Desktop\TodoslosArchivos\Universidad\IMPLANTACIÓN DE SISTEMAS\SISTEMA DE FACTURACION E INVENTARIO\General\bin\Debug\SessionManager.dll
 C:\Users\ranto\Desktop\TodoslosArchivos\Universidad\IMPLANTACIÓN DE SISTEMAS\SISTEMA DE FACTURACION E INVENTARIO\General\bin\Debug\SessionManager.pdb
 C:\Users\ranto\Desktop\TodoslosArchivos\Universidad\IMPLANTACIÓN DE SISTEMAS\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.GUI_VENDEDOR.ProductosVendedor.resources
+C:\Users\ranto\Desktop\TodoslosArchivos\Universidad\IMPLANTACIÓN DE SISTEMAS\SISTEMA DE FACTURACION E INVENTARIO\General\obj\Debug\General.GUI.Selección_tipo_de_documento_tributario.resources

@@ -20,8 +20,6 @@
               <xs:element name="FormadePago" msprop:Generator_ColumnVarNameInTable="columnFormadePago" msprop:Generator_ColumnPropNameInRow="FormadePago" msprop:Generator_ColumnPropNameInTable="FormadePagoColumn" msprop:Generator_UserColumnName="FormadePago" type="xs:string" minOccurs="0" />
               <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:string" minOccurs="0" />
               <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:string" minOccurs="0" />
-              <xs:element name="IVA" msprop:Generator_ColumnVarNameInTable="columnIVA" msprop:Generator_ColumnPropNameInRow="IVA" msprop:Generator_ColumnPropNameInTable="IVAColumn" msprop:Generator_UserColumnName="IVA" type="xs:string" minOccurs="0" />
-              <xs:element name="TotalFinal" msprop:Generator_ColumnVarNameInTable="columnTotalFinal" msprop:Generator_ColumnPropNameInRow="TotalFinal" msprop:Generator_ColumnPropNameInTable="TotalFinalColumn" msprop:Generator_UserColumnName="TotalFinal" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

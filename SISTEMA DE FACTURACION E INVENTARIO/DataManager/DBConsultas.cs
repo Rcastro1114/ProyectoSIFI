@@ -418,7 +418,8 @@ namespace DataManager
         public static DataTable REPORTEDETALLEVENTA(String DVpIDVENTA)
         {
             DataTable Resultado = new DataTable();
-            String Sentencia = @"select dv.idProductos,p.Productos,dv.Cantidad,dv.PrecioVenta,dv.SubTotal
+            String Sentencia = @"select dv.idProductos,p.Productos,dv.Cantidad,dv.PrecioVenta,dv.VentasNoSujetas,
+                                dv.VentasExentas,dv.SubTotal
                                 from detalleventas dv 
                                 INNER JOIN ventas v
                                 on dv.idVentas = v.idVentas

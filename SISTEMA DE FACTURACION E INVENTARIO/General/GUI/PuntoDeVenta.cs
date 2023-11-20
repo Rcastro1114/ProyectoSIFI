@@ -44,6 +44,9 @@ namespace General.GUI
         private void PuntoDeVenta_Load(object sender, EventArgs e)
         {
             txt_Fecha.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            txt_paga.Text = "0.00";
+            txt_VentasNoSujetas.Text = "0.00";
+            txt_VentasExentas.Text = "0.00";
             txt_cambio.Text = "0.00";
             txt_Cantidad.Text = "0";
             txt_idClientes.Text = "0";
@@ -69,7 +72,7 @@ namespace General.GUI
                     txt_producto.Text = formulario._Productos.Productos.ToString();
                     txt_precio_pro.Text = formulario._Productos.PrecioUnitario.ToString("0.00");
                     txt_stock.Text = formulario._Productos.Stock.ToString();
-                    txt_Cantidad.Select();
+                    txt_precio_pro.Select();
                 }
                 else
                 {
@@ -250,6 +253,8 @@ namespace General.GUI
             }
 
             General.CLS.detalleventas dv = new CLS.detalleventas();
+            dv.VentasNoSujetas = (float)Convert.ToDouble(txt_VentasNoSujetas.Text);
+            dv.VentasExentas = (float)Convert.ToDouble(txt_VentasExentas.Text);
             //String udv = null;
 
             for (int i = 0; i < dgtv_ventas.Rows.Count; i++)
@@ -331,6 +336,182 @@ namespace General.GUI
                     txt_idClientes.Select();
                 }
             }
+        }
+
+        //FUNCION PARA VENTAS NO SUJETAS
+        private void f_VentasNoSujetas() {
+
+            if (Convert.ToInt32(txt_Cantidad.Text) == 0)
+            {
+                MessageBox.Show("La cantidad de productosno puede ser cero", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else {
+
+                float subT_VentasNOSujetas = 0;
+                float precioProd = float.Parse(txt_precio_pro.Text);
+                float cantidadProd = float.Parse(txt_Cantidad.Text);
+
+                precioProd = (float)(precioProd / 1.13);
+
+                txt_precio_pro.Text = precioProd.ToString("0.00");
+
+                bool producto_existe = false;
+                float precio = 0;
+
+                if (int.Parse(txt_idproductos.Text) == 0)
+                {
+                    MessageBox.Show("Debe seleccionar un PRODUCTO", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                if (!float.TryParse(txt_precio_pro.Text, out precio))
+                {
+                    MessageBox.Show("Formato de Moneda incorrecto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txt_precio_pro.Select();
+                    return;
+                }
+
+                if (Convert.ToInt32(txt_stock.Text) < Convert.ToInt32(txt_Cantidad.Text))
+                {
+                    MessageBox.Show("La Cantidad no puede ser mayor al Stock", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                if (Convert.ToInt32(txt_Cantidad.Text) == 0)
+                {
+                    MessageBox.Show("La Cantidad no puede ser cero", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                foreach (DataGridViewRow fila in dgtv_ventas.Rows)
+                {
+                    if (fila.Cells["Productos"].Value.ToString() == txt_Nombres_emp.Text)
+                    {
+                        producto_existe = true;
+                        break;
+                    }
+                }
+
+                if (!producto_existe)
+                {
+                    dgtv_ventas.Rows.Add(new object[]
+                    {
+                    txt_idproductos.Text,
+                    txt_producto.Text,
+                    txt_Cantidad.Text,
+                    precio.ToString("0.00"),
+                    (int.Parse(txt_Cantidad.Text) * precio).ToString("0.00")
+                    });
+                    calculartotal();
+                    limpiarproducto();
+                    txt_idproductos.Select();
+                }
+
+                if (dgtv_ventas.Rows.Count > 0)
+                {
+                    foreach (DataGridViewRow row in dgtv_ventas.Rows)
+                    {
+                        subT_VentasNOSujetas += float.Parse(row.Cells["SubTotal"].Value.ToString());
+                    }
+                    txt_VentasNoSujetas.Text = subT_VentasNOSujetas.ToString("0.00");
+                }
+            }
+        }
+
+        //FUNCION PARA VENTAS EXENTAS
+        private void f_VentasExentas() {
+            if (Convert.ToInt32(txt_Cantidad.Text) == 0)
+            {
+                MessageBox.Show("La cantidad de productosno puede ser cero", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else {
+                float subT_VentasExentas = 0;
+                float precioProd = float.Parse(txt_precio_pro.Text);
+                float cantidadProd = float.Parse(txt_Cantidad.Text);
+
+                precioProd = (float)(precioProd / 1.13);
+
+                txt_precio_pro.Text = precioProd.ToString("0.00");
+
+                bool producto_existe = false;
+                float precio = 0;
+
+                if (int.Parse(txt_idproductos.Text) == 0)
+                {
+                    MessageBox.Show("Debe seleccionar un PRODUCTO", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                if (!float.TryParse(txt_precio_pro.Text, out precio))
+                {
+                    MessageBox.Show("Formato de Moneda incorrecto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txt_precio_pro.Select();
+                    return;
+                }
+
+                if (Convert.ToInt32(txt_stock.Text) < Convert.ToInt32(txt_Cantidad.Text))
+                {
+                    MessageBox.Show("La Cantidad no puede ser mayor al Stock", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                if (Convert.ToInt32(txt_Cantidad.Text) == 0)
+                {
+                    MessageBox.Show("La Cantidad no puede ser cero", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                foreach (DataGridViewRow fila in dgtv_ventas.Rows)
+                {
+                    if (fila.Cells["Productos"].Value.ToString() == txt_Nombres_emp.Text)
+                    {
+                        producto_existe = true;
+                        break;
+                    }
+                }
+
+                if (!producto_existe)
+                {
+                    dgtv_ventas.Rows.Add(new object[]
+                    {
+                    txt_idproductos.Text,
+                    txt_producto.Text,
+                    txt_Cantidad.Text,
+                    precio.ToString("0.00"),
+                    (int.Parse(txt_Cantidad.Text) * precio).ToString("0.00")
+                    });
+                    calculartotal();
+                    limpiarproducto();
+                    txt_idproductos.Select();
+                }
+
+                if (dgtv_ventas.Rows.Count > 0)
+                {
+                        foreach (DataGridViewRow row in dgtv_ventas.Rows)
+                        {
+                            subT_VentasExentas += float.Parse(row.Cells["SubTotal"].Value.ToString());
+                        }
+                        txt_VentasExentas.Text = subT_VentasExentas.ToString("0.00");
+                }
+            }
+        }
+
+        //BOTON CALCULAR VENTA NO SUJETA
+        private void btn_VentasNoSujetas_Click(object sender, EventArgs e)
+        {
+            f_VentasNoSujetas();
+        }
+
+        //BOTON CALCULAR VENTAS EXENTAS
+        private void btn_ventasExentas_Click(object sender, EventArgs e)
+        {
+            f_VentasExentas();
+        }
+
+        private void btn_limpiarCalc_Click(object sender, EventArgs e)
+        {
+            txt_paga.Text = "0.00";
+            txt_cambio.Text = "0.00";
         }
     }
 }

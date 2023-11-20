@@ -180,6 +180,12 @@
     <Compile Include="GUI\RolesGestion.Designer.cs">
       <DependentUpon>RolesGestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Selección tipo de documento tributario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Selección tipo de documento tributario.Designer.cs">
+      <DependentUpon>Selección tipo de documento tributario.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\VisorVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\RolesGestion.resx">
       <DependentUpon>RolesGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Selección tipo de documento tributario.resx">
+      <DependentUpon>Selección tipo de documento tributario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\VisorVenta.resx">
       <DependentUpon>VisorVenta.cs</DependentUpon>

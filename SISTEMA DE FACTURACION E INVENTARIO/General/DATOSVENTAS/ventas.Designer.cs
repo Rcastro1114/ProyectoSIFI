@@ -289,10 +289,6 @@ namespace General.DATOSVENTAS {
             
             private global::System.Data.DataColumn columnTotal;
             
-            private global::System.Data.DataColumn columnIVA;
-            
-            private global::System.Data.DataColumn columnTotalFinal;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ventasDataTable() {
@@ -368,22 +364,6 @@ namespace General.DATOSVENTAS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn IVAColumn {
-                get {
-                    return this.columnIVA;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TotalFinalColumn {
-                get {
-                    return this.columnTotalFinal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -419,16 +399,14 @@ namespace General.DATOSVENTAS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ventasRow AddventasRow(string NombreApellidoCliente, string NombreApellidoEmpleado, string FormadePago, string Fecha, string Total, string IVA, string TotalFinal) {
+            public ventasRow AddventasRow(string NombreApellidoCliente, string NombreApellidoEmpleado, string FormadePago, string Fecha, string Total) {
                 ventasRow rowventasRow = ((ventasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NombreApellidoCliente,
                         NombreApellidoEmpleado,
                         FormadePago,
                         Fecha,
-                        Total,
-                        IVA,
-                        TotalFinal};
+                        Total};
                 rowventasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowventasRow);
                 return rowventasRow;
@@ -456,8 +434,6 @@ namespace General.DATOSVENTAS {
                 this.columnFormadePago = base.Columns["FormadePago"];
                 this.columnFecha = base.Columns["Fecha"];
                 this.columnTotal = base.Columns["Total"];
-                this.columnIVA = base.Columns["IVA"];
-                this.columnTotalFinal = base.Columns["TotalFinal"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -473,10 +449,6 @@ namespace General.DATOSVENTAS {
                 base.Columns.Add(this.columnFecha);
                 this.columnTotal = new global::System.Data.DataColumn("Total", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotal);
-                this.columnIVA = new global::System.Data.DataColumn("IVA", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIVA);
-                this.columnTotalFinal = new global::System.Data.DataColumn("TotalFinal", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotalFinal);
                 this.ExtendedProperties.Add("Generator_TablePropName", "_ventas");
                 this.ExtendedProperties.Add("Generator_UserTableName", "ventas");
             }
@@ -701,38 +673,6 @@ namespace General.DATOSVENTAS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string IVA {
-                get {
-                    try {
-                        return ((string)(this[this.tableventas.IVAColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'IVA\' de la tabla \'ventas\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableventas.IVAColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string TotalFinal {
-                get {
-                    try {
-                        return ((string)(this[this.tableventas.TotalFinalColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TotalFinal\' de la tabla \'ventas\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableventas.TotalFinalColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsNombreApellidoClienteNull() {
                 return this.IsNull(this.tableventas.NombreApellidoClienteColumn);
             }
@@ -789,30 +729,6 @@ namespace General.DATOSVENTAS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetTotalNull() {
                 this[this.tableventas.TotalColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsIVANull() {
-                return this.IsNull(this.tableventas.IVAColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetIVANull() {
-                this[this.tableventas.IVAColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTotalFinalNull() {
-                return this.IsNull(this.tableventas.TotalFinalColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTotalFinalNull() {
-                this[this.tableventas.TotalFinalColumn] = global::System.Convert.DBNull;
             }
         }
         
