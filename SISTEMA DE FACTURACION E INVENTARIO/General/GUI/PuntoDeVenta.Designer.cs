@@ -33,9 +33,10 @@
             this.txt_Fecha = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btn_buscar_cli = new System.Windows.Forms.Button();
+            this.cmbo_Formadepago = new System.Windows.Forms.ComboBox();
             this.txt_Apellidos_cli = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.txt_Nombres_cli = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,8 +49,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txt_idEmpleados = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btn_Buscar_Prod = new System.Windows.Forms.Button();
-            this.btn_Agregar = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.txt_Cantidad = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -75,6 +74,7 @@
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_limpiarCalc = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -84,9 +84,9 @@
             this.txt_VentasNoSujetas = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_limpiarCalc = new System.Windows.Forms.Button();
-            this.cmbo_Formadepago = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
+            this.btn_Buscar_Prod = new System.Windows.Forms.Button();
+            this.btn_Agregar = new System.Windows.Forms.Button();
+            this.btn_buscar_cli = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -143,21 +143,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información sobre el cliente";
             // 
-            // btn_buscar_cli
+            // cmbo_Formadepago
             // 
-            this.btn_buscar_cli.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
-            this.btn_buscar_cli.ForeColor = System.Drawing.Color.White;
-            this.btn_buscar_cli.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscar_cli.Image")));
-            this.btn_buscar_cli.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_buscar_cli.Location = new System.Drawing.Point(9, 21);
-            this.btn_buscar_cli.Name = "btn_buscar_cli";
-            this.btn_buscar_cli.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btn_buscar_cli.Size = new System.Drawing.Size(85, 23);
-            this.btn_buscar_cli.TabIndex = 11;
-            this.btn_buscar_cli.Text = "Buscar";
-            this.btn_buscar_cli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_buscar_cli.UseVisualStyleBackColor = false;
-            this.btn_buscar_cli.Click += new System.EventHandler(this.btn_buscar_cli_Click);
+            this.cmbo_Formadepago.FormattingEnabled = true;
+            this.cmbo_Formadepago.Location = new System.Drawing.Point(473, 37);
+            this.cmbo_Formadepago.Name = "cmbo_Formadepago";
+            this.cmbo_Formadepago.Size = new System.Drawing.Size(178, 24);
+            this.cmbo_Formadepago.TabIndex = 11;
             // 
             // txt_Apellidos_cli
             // 
@@ -176,6 +168,16 @@
             this.label7.Size = new System.Drawing.Size(59, 18);
             this.label7.TabIndex = 8;
             this.label7.Text = "Apellido";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(470, 18);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(111, 18);
+            this.label20.TabIndex = 10;
+            this.label20.Text = "Forma de Pago";
             // 
             // txt_Nombres_cli
             // 
@@ -306,36 +308,6 @@
             this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Información sobre el producto";
-            // 
-            // btn_Buscar_Prod
-            // 
-            this.btn_Buscar_Prod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
-            this.btn_Buscar_Prod.ForeColor = System.Drawing.Color.White;
-            this.btn_Buscar_Prod.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar_Prod.Image")));
-            this.btn_Buscar_Prod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Buscar_Prod.Location = new System.Drawing.Point(126, 47);
-            this.btn_Buscar_Prod.Name = "btn_Buscar_Prod";
-            this.btn_Buscar_Prod.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btn_Buscar_Prod.Size = new System.Drawing.Size(81, 23);
-            this.btn_Buscar_Prod.TabIndex = 11;
-            this.btn_Buscar_Prod.Text = "Buscar";
-            this.btn_Buscar_Prod.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Buscar_Prod.UseVisualStyleBackColor = false;
-            this.btn_Buscar_Prod.Click += new System.EventHandler(this.btn_Buscar_Prod_Click);
-            // 
-            // btn_Agregar
-            // 
-            this.btn_Agregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
-            this.btn_Agregar.ForeColor = System.Drawing.Color.White;
-            this.btn_Agregar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Agregar.Image")));
-            this.btn_Agregar.Location = new System.Drawing.Point(701, 43);
-            this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btn_Agregar.Size = new System.Drawing.Size(100, 32);
-            this.btn_Agregar.TabIndex = 11;
-            this.btn_Agregar.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btn_Agregar.UseVisualStyleBackColor = false;
-            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
             // label15
             // 
@@ -570,6 +542,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Calcular cambio";
             // 
+            // btn_limpiarCalc
+            // 
+            this.btn_limpiarCalc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
+            this.btn_limpiarCalc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btn_limpiarCalc.ForeColor = System.Drawing.Color.White;
+            this.btn_limpiarCalc.Location = new System.Drawing.Point(129, 93);
+            this.btn_limpiarCalc.Name = "btn_limpiarCalc";
+            this.btn_limpiarCalc.Size = new System.Drawing.Size(93, 27);
+            this.btn_limpiarCalc.TabIndex = 30;
+            this.btn_limpiarCalc.Text = "Limpiar";
+            this.btn_limpiarCalc.UseVisualStyleBackColor = false;
+            this.btn_limpiarCalc.Click += new System.EventHandler(this.btn_limpiarCalc_Click);
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
@@ -678,36 +663,51 @@
             this.label2.TabIndex = 31;
             this.label2.Text = "Ventas No Sujetas";
             // 
-            // btn_limpiarCalc
+            // btn_Buscar_Prod
             // 
-            this.btn_limpiarCalc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
-            this.btn_limpiarCalc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_limpiarCalc.ForeColor = System.Drawing.Color.White;
-            this.btn_limpiarCalc.Location = new System.Drawing.Point(129, 93);
-            this.btn_limpiarCalc.Name = "btn_limpiarCalc";
-            this.btn_limpiarCalc.Size = new System.Drawing.Size(93, 27);
-            this.btn_limpiarCalc.TabIndex = 30;
-            this.btn_limpiarCalc.Text = "Limpiar";
-            this.btn_limpiarCalc.UseVisualStyleBackColor = false;
-            this.btn_limpiarCalc.Click += new System.EventHandler(this.btn_limpiarCalc_Click);
+            this.btn_Buscar_Prod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
+            this.btn_Buscar_Prod.ForeColor = System.Drawing.Color.White;
+            this.btn_Buscar_Prod.Image = ((System.Drawing.Image)(resources.GetObject("btn_Buscar_Prod.Image")));
+            this.btn_Buscar_Prod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Buscar_Prod.Location = new System.Drawing.Point(126, 47);
+            this.btn_Buscar_Prod.Name = "btn_Buscar_Prod";
+            this.btn_Buscar_Prod.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btn_Buscar_Prod.Size = new System.Drawing.Size(81, 23);
+            this.btn_Buscar_Prod.TabIndex = 11;
+            this.btn_Buscar_Prod.Text = "Buscar";
+            this.btn_Buscar_Prod.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Buscar_Prod.UseVisualStyleBackColor = false;
+            this.btn_Buscar_Prod.Click += new System.EventHandler(this.btn_Buscar_Prod_Click);
             // 
-            // cmbo_Formadepago
+            // btn_Agregar
             // 
-            this.cmbo_Formadepago.FormattingEnabled = true;
-            this.cmbo_Formadepago.Location = new System.Drawing.Point(473, 37);
-            this.cmbo_Formadepago.Name = "cmbo_Formadepago";
-            this.cmbo_Formadepago.Size = new System.Drawing.Size(178, 24);
-            this.cmbo_Formadepago.TabIndex = 11;
+            this.btn_Agregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
+            this.btn_Agregar.ForeColor = System.Drawing.Color.White;
+            this.btn_Agregar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Agregar.Image")));
+            this.btn_Agregar.Location = new System.Drawing.Point(701, 43);
+            this.btn_Agregar.Name = "btn_Agregar";
+            this.btn_Agregar.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btn_Agregar.Size = new System.Drawing.Size(100, 32);
+            this.btn_Agregar.TabIndex = 11;
+            this.btn_Agregar.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btn_Agregar.UseVisualStyleBackColor = false;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
-            // label20
+            // btn_buscar_cli
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(470, 18);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(111, 18);
-            this.label20.TabIndex = 10;
-            this.label20.Text = "Forma de Pago";
+            this.btn_buscar_cli.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(133)))), ((int)(((byte)(73)))));
+            this.btn_buscar_cli.ForeColor = System.Drawing.Color.White;
+            this.btn_buscar_cli.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscar_cli.Image")));
+            this.btn_buscar_cli.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_buscar_cli.Location = new System.Drawing.Point(9, 21);
+            this.btn_buscar_cli.Name = "btn_buscar_cli";
+            this.btn_buscar_cli.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btn_buscar_cli.Size = new System.Drawing.Size(85, 23);
+            this.btn_buscar_cli.TabIndex = 11;
+            this.btn_buscar_cli.Text = "Buscar";
+            this.btn_buscar_cli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_buscar_cli.UseVisualStyleBackColor = false;
+            this.btn_buscar_cli.Click += new System.EventHandler(this.btn_buscar_cli_Click);
             // 
             // PuntoDeVenta
             // 

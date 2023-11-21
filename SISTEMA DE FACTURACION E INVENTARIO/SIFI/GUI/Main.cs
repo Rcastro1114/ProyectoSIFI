@@ -195,5 +195,18 @@ namespace SIFI.GUI
             f.MdiParent = this;
             f.Show();
         }
+
+        private void créditoFiscalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                General.GUI.CreditoFiscal f = new General.GUI.CreditoFiscal();
+                f.MdiParent = this;
+                f.Show();
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 }

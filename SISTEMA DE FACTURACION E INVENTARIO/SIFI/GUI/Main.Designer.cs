@@ -54,6 +54,7 @@ namespace SIFI.GUI
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblRol = new System.Windows.Forms.ToolStripStatusLabel();
+            this.créditoFiscalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -70,7 +71,7 @@ namespace SIFI.GUI
             this.StockT});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(774, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(774, 39);
             this.menuStrip1.Stretch = false;
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
@@ -150,7 +151,8 @@ namespace SIFI.GUI
             // 
             this.VentasT.AutoSize = false;
             this.VentasT.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.puntoDeVentaToolStripMenuItem});
+            this.puntoDeVentaToolStripMenuItem,
+            this.créditoFiscalToolStripMenuItem});
             this.VentasT.Font = new System.Drawing.Font("Segoe UI", 9.85F, System.Drawing.FontStyle.Bold);
             this.VentasT.ForeColor = System.Drawing.Color.White;
             this.VentasT.Image = ((System.Drawing.Image)(resources.GetObject("VentasT.Image")));
@@ -164,8 +166,8 @@ namespace SIFI.GUI
             this.puntoDeVentaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.puntoDeVentaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.puntoDeVentaToolStripMenuItem.Name = "puntoDeVentaToolStripMenuItem";
-            this.puntoDeVentaToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
-            this.puntoDeVentaToolStripMenuItem.Text = "Punto de Ventas";
+            this.puntoDeVentaToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.puntoDeVentaToolStripMenuItem.Text = "Factura ";
             this.puntoDeVentaToolStripMenuItem.Click += new System.EventHandler(this.puntoDeVentaToolStripMenuItem_Click);
             // 
             // ComprasT
@@ -291,6 +293,15 @@ namespace SIFI.GUI
             this.lblRol.Size = new System.Drawing.Size(56, 21);
             this.lblRol.Text = "ROL";
             // 
+            // créditoFiscalToolStripMenuItem
+            // 
+            this.créditoFiscalToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.créditoFiscalToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.créditoFiscalToolStripMenuItem.Name = "créditoFiscalToolStripMenuItem";
+            this.créditoFiscalToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.créditoFiscalToolStripMenuItem.Text = "Crédito fiscal";
+            this.créditoFiscalToolStripMenuItem.Click += new System.EventHandler(this.créditoFiscalToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,6 +351,7 @@ namespace SIFI.GUI
         private System.Windows.Forms.ToolStripMenuItem StockT;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stockDeProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem créditoFiscalToolStripMenuItem;
     }
 }
 
